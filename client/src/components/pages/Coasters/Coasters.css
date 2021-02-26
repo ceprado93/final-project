@@ -1,0 +1,19 @@
+.coaster-card {
+    margin-bottom: 40px;
+}
+
+.coaster-card img {
+    height: 150px;
+    object-fit: cover;
+}
+
+
+.coaster-card h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.new-coaster-btn {
+    margin-bottom: 20px;
+}
