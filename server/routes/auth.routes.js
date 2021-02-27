@@ -2,7 +2,6 @@ const express = require("express")
 const router = express.Router()
 const passport = require("passport")
 const bcrypt = require("bcrypt")
-
 const User = require("../models/user.model")
 
 router.post('/signup', (req, res) => {
@@ -10,12 +9,12 @@ router.post('/signup', (req, res) => {
     const { username, password } = req.body
 
     if (!username || !password) {
-        res.status(400).json({ message: 'Rellena todos los campos' })
+        res.status(400).json({ message: 'Complete all the fields' })
         return
     }
 
-    if (password.length < 2) {
-        res.status(400).json({ message: 'Contraseña insegura' })
+    if (password.length < 5) {
+        res.status(400).json({ message: 'Weak password' })
         return
     }
 
@@ -23,7 +22,7 @@ router.post('/signup', (req, res) => {
         .findOne({ username })
         .then(foundUser => {
             if (foundUser) {
-                res.status(400).json({ message: 'El usuario ya existe' })
+                res.status(400).json({ message: 'Username is already registered' })
                 return
             }
 
@@ -36,10 +35,6 @@ router.post('/signup', (req, res) => {
                 .catch(() => res.status(500).json({ message: 'Error saving user to DB' }))
         })
 })
-
-
-
-
 
 router.post('/login', (req, res, next) => {
 
@@ -60,13 +55,10 @@ router.post('/login', (req, res, next) => {
     })(req, res, next)
 })
 
-
-
 router.post('/logout', (req, res) => {
     req.logout()
     res.json({ message: 'Log out success!' });
 })
-
 
 router.get('/loggedin', (req, res) => req.isAuthenticated() ? res.json(req.user) : res.status(403).json({ message: 'Unauthorized' }))
 
