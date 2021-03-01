@@ -1,19 +1,19 @@
-.coaster-card {
+.wave-card {
     margin-bottom: 40px;
 }
 
-.coaster-card img {
+.wave-card img {
     height: 150px;
     object-fit: cover;
 }
 
 
-.coaster-card h3 {
+.wave-card h3 {
     font-size: 1.2em;
     font-weight: 300;
     margin-bottom: 10px;
 }
 
-.new-coaster-btn {
+.new-wave-btn {
     margin-bottom: 20px;
 }
