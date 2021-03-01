@@ -5,15 +5,13 @@
 ## Introducción
 
 
-**1. Ver los mejores olas y dónde encontrarlas**
-**2. Poder llevar un registro de tus baños**
 -------------------------------------------------------------------
 -------------------------------------------------------------------
 
 
 ## Endpoints 
 
-Base Url : heroku/api
+Base Url => `heroku/api`
 
 |       Route        | HTTP Verb |          Description          |
 |--------------------|-----------|-------------------------------|
@@ -36,7 +34,7 @@ Base Url : heroku/api
 
 ## Modelos
 
-El modelo `User` debe de tener:
+El modelo `User` debe tener:
 - `username` - String
 - `password` - String
 - `description` - String
@@ -44,7 +42,7 @@ El modelo `User` debe de tener:
 - `role` - String
 
 
-El modelo `Waves` debe de tener:
+El modelo `Waves` debe tener:
 
 - `title` - String
 - `description` - String
