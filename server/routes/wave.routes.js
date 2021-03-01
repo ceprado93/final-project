@@ -20,10 +20,10 @@ router.get('/details/:wave_id', (req, res) => {
 
 router.post('/new', (req, res) => {
 
-    const Wave = { ...req.body, owner: req.user._id }
+    const wave = { ...req.body, createdBy: req.user._id }
 
     Wave
-        .create(Wave)
+        .create(wave)
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
