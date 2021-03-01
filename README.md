@@ -5,15 +5,13 @@
 ## Introducción
 
 
-**1. Ver los mejores olas y dónde encontrarlas**
-**2. Poder llevar un registro de tus baños**
 -------------------------------------------------------------------
 -------------------------------------------------------------------
 
 
 ## Endpoints 
 
-Base Url : heroku/api
+Base Url => `heroku/api`
 
 |       Route        | HTTP Verb |          Description          |
 |--------------------|-----------|-------------------------------|
@@ -24,11 +22,11 @@ Base Url : heroku/api
 | `/profile` |    GET    | Al perfil de usuario. |
 | `/profile/edit/:id` |    PUT    | Modificar el perfil de usuario en la BBDD |
 | `/profile/delete/:id` |    POST    | Dar de baja la cuenta de usuario |
-| `/waves` |    GET    | Mostrar los lugares con olas en lista o en mapa |
-| `/waves/details/:waves_id` |    GET    | Te lleva a los detalles de la ola |
-| `/waves/new` |    POST    | Te crea la ola en la BBDD y redirige al componente waves |
-| `/waves/edit/:waves_id` |    PUT    | Te modifica la ola en la BBDD |
-| `/waves/delete/:waves_id` |    POST    | Te elimina la ola en la BBDD |
+| `/wave` |    GET    | Mostrar los lugares con olas en lista o en mapa |
+| `/wave/details/:wave_id` |    GET    | Te lleva a los detalles de la ola |
+| `/wave/new` |    POST    | Te crea la ola en la BBDD y redirige al componente waves |
+| `/wave/edit/:wave_id` |    PUT    | Te modifica la ola en la BBDD |
+| `/wave/delete/:wave_id` |    POST    | Te elimina la ola en la BBDD |
 
 
 -------------------------------------------------------------------
@@ -36,7 +34,7 @@ Base Url : heroku/api
 
 ## Modelos
 
-El modelo `User` debe de tener:
+El modelo `User` debe tener:
 - `username` - String
 - `password` - String
 - `description` - String
@@ -44,7 +42,7 @@ El modelo `User` debe de tener:
 - `role` - String
 
 
-El modelo `Waves` debe de tener:
+El modelo `Wave` debe tener:
 
 - `title` - String
 - `description` - String
@@ -57,6 +55,12 @@ El modelo `Waves` debe de tener:
 - `swellRange` - String
 - `swellConsistency` - String
 - `crowd` - String
-- `rating` - Number
+- `quality` - Number
 - `createdBy` - mongoose.Schema.Types.ObjectId
+
+El modelo `Comment` debe tener:
+- `createdBy` - mongoose.Schema.Types.ObjectId
+- `wave` - mongoose.Schema.Types.ObjectId
+- `description` - String
+- `title` - String
 

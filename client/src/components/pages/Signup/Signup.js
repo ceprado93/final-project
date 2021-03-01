@@ -42,21 +42,21 @@ class Signup extends Component {
 
                     <Col md={{ span: 4, offset: 4 }}>
 
-                        <h1>Registro de usuario</h1>
+                        <h1>Sign up</h1>
 
                         <hr />
 
                         <Form onSubmit={e => this.handleSubmit(e)}>
                             <Form.Group>
-                                <Form.Label>Usuario</Form.Label>
+                                <Form.Label>Username</Form.Label>
                                 <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Contraseña</Form.Label>
+                                <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
 
-                            <Button variant="dark" block type="submit">Registrarme</Button>
+                            <Button variant="dark" block type="submit">Sign up</Button>
                         </Form>
 
                     </Col>

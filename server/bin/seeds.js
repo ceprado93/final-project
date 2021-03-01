@@ -22,7 +22,7 @@ const Waves = [
         swellDirections: 330,
         windDirections: 140,
         swellRange: '1-5',
-        bestSeason: 'Autumn',
+        bestSeason: 'Autumn', // to do
         crowd: 'Fairly crowded',
         quality: 5,
         level: 'Experienced surfers',
