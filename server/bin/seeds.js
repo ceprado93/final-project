@@ -7,7 +7,7 @@ const Waves = [
     {
         title: 'Thurso east',
         description: 'Scotland’s premier righthand reefbreak and a world-class barrel on its day. In NW swells at mid tide a relatively simple drop leads into one of the longest, hollowest rides in Europe.',
-        image: 'https://www.wavelengthmag.com/wp-content/uploads/2019/01/Thurso-1024x683.jpg',
+        image: 'https://www.wavelengthmag.com/wp-content/uploads/2019/01/Thurso-1024x683.jpg', //to do
         location: '',
         type: 'Pointbreak',
         seaBed: 'Rock',
@@ -16,7 +16,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 5,
+        quality: 5,
         level: 'Expereinced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -34,7 +34,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Empty',
-        rating: 4,
+        quality: 4,
         level: 'Expereinced surfers',
         tide: 'Low to mid',
         createdBy: ''
@@ -52,7 +52,7 @@ const Waves = [
         swellRange: '3-7+',
         swellConsistency: 0,
         crowd: 'Empty',
-        rating: 5,
+        quality: 5,
         level: 'Pros',
         tide: 'High tide',
         createdBy: ''
@@ -70,7 +70,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'All surfers',
         tide: 'Low to mid',
         createdBy: ''
@@ -88,7 +88,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4.5,
+        quality: 4.5,
         level: 'Pros',
         tide: 'All tides',
         createdBy: ''
@@ -106,7 +106,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 5,
+        quality: 5,
         level: 'Pros',
         tide: 'Hight tide',
         createdBy: ''
@@ -124,7 +124,7 @@ const Waves = [
         swellRange: '0.5-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -142,7 +142,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'Mid tide',
         createdBy: ''
@@ -159,7 +159,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'Mid tide',
         createdBy: ''
@@ -176,7 +176,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4,
+        quality: 4,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -193,7 +193,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -210,7 +210,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 5,
+        quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -227,7 +227,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full ',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -244,7 +244,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -261,7 +261,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3.5,
+        quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -278,7 +278,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3.5,
+        quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -295,7 +295,7 @@ const Waves = [
         swellRange: '1-6',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3.5,
+        quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -312,7 +312,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'Low to mid tide',
         createdBy: ''
@@ -329,7 +329,7 @@ const Waves = [
         swellRange: '1-2',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -346,7 +346,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3.5,
+        quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -363,7 +363,7 @@ const Waves = [
         swellRange: '1-7',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 5,
+        quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -380,7 +380,7 @@ const Waves = [
         swellRange: '1-6',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'High tide',
         createdBy: ''
@@ -397,7 +397,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: ' All tides',
         createdBy: ''
@@ -414,7 +414,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 5,
+        quality: 5,
         level: 'Experienced surfers',
         tide: 'Low tide',
         createdBy: ''
@@ -431,7 +431,7 @@ const Waves = [
         swellRange: '1-5',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3.5,
+        quality: 3.5,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -448,7 +448,7 @@ const Waves = [
         swellRange: '1-2',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -465,7 +465,7 @@ const Waves = [
         swellRange: '2-6',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 5,
+        quality: 5,
         level: ' Pros',
         tide: ' Hight tide',
         createdBy: ''
@@ -482,7 +482,7 @@ const Waves = [
         swellRange: '1-2',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -499,7 +499,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -516,7 +516,7 @@ const Waves = [
         swellRange: '3-7+',
         swellConsistency: 0,
         crowd: 'Empty',
-        rating: 5,
+        quality: 5,
         level: ' Pros',
         tide: ' All tides',
         createdBy: ''
@@ -533,7 +533,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -550,7 +550,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -567,7 +567,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -584,7 +584,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: 'Experienced surfers',
         tide: 'High tide',
         createdBy: ''
@@ -601,7 +601,7 @@ const Waves = [
         swellRange: '1-2',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3.5,
+        quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -618,7 +618,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -635,7 +635,7 @@ const Waves = [
         swellRange: '1-6',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 5,
+        quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -652,7 +652,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: 'All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -669,7 +669,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -686,7 +686,7 @@ const Waves = [
         swellRange: '2-7',
         swellConsistency: 0,
         crowd: 'Empty',
-        rating: 5,
+        quality: 5,
         level: ' Pros',
         tide: 'All tides',
         createdBy: ''
@@ -703,7 +703,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3.5,
+        quality: 3.5,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -720,7 +720,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4,
+        quality: 4,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -737,7 +737,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -754,7 +754,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4,
+        quality: 4,
         level: ' Experienced surfers',
         tide: 'All tides',
         createdBy: ''
@@ -771,7 +771,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -788,7 +788,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: ' Experienced surfers',
         tide: 'Low tide',
         createdBy: ''
@@ -805,7 +805,7 @@ const Waves = [
         swellRange: '1-4',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 4,
+        quality: 4,
         level: ' Experienced surfers',
         tide: 'Mid to high tide',
         createdBy: ''
@@ -822,7 +822,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Full',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -839,7 +839,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
@@ -856,7 +856,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 4,
+        quality: 4,
         level: ' Experienced surfers',
         tide: 'Low tide',
         createdBy: ''
@@ -873,7 +873,7 @@ const Waves = [
         swellRange: '1-3',
         swellConsistency: 0,
         crowd: 'Fairly crowded',
-        rating: 3,
+        quality: 3,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''

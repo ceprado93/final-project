@@ -1,47 +1,47 @@
 const express = require('express')
 const router = express.Router()
-const Waves = require('../models/waves.model')
+const Wave = require('../models/Wave.model')
 
 router.get('/', (req, res) => {
 
-    Waves
+    Wave
         .find()
         .then(response => res.json(response))
-        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching waves', err }))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.get('/details/:waves_id', (req, res) => {
+router.get('/details/:wave_id', (req, res) => {
 
-    Waves
-        .findById(req.params.waves_id)
-        .then(response  => res.json(response))
-        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching coaster', err }))
+    Wave
+        .findById(req.params.wave_id)
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
 router.post('/new', (req, res) => {
 
-    const waves = { ...req.body, owner: req.user._id }
+    const Wave = { ...req.body, owner: req.user._id }
 
-    Waves
-        .create(waves)
+    Wave
+        .create(Wave)
         .then(response => res.json(response))
-        .catch(err => res.status(500).json({ code: 500, message: 'Error saving waves', err }))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
 
-router.put('/edit/:waves_id', (req, res) => {
+router.put('/edit/:wave_id', (req, res) => {
 
-    Waves
-        .findByIdAndUpdate(req.params.waves_id, req.body)
+    Wave
+        .findByIdAndUpdate(req.params.wave_id, req.body)
         .then(response => res.json(response))
-        .catch(err => res.status(500).json({ code: 500, message: 'Error editing waves', err }))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error editing Wave', err }))
 })
 
-router.post('/delete/:waves_id', (req, res) => {
+router.post('/delete/:wave_id', (req, res) => {
 
-    Waves
-        .findByIdAndRemove(req.params.waves_id)
+    Wave
+        .findByIdAndRemove(req.params.wave_id)
         .then(response => res.json(response))
-        .catch(err => res.status(500).json({ code: 500, message: 'Error saving waves', err }))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
 
 module.exports = router

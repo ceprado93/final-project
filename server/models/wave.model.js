@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const wavesSchema = new Schema({
+const waveSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -10,10 +10,11 @@ const wavesSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
-        type: Array,
-        // default: //TO DO
-    },
+    images: [{
+        url: String,
+        description: String,
+        title: String
+    }],
     location: {
         type: String,
         required: true
@@ -42,10 +43,10 @@ const wavesSchema = new Schema({
         type: String,
         enum: ['Empty', 'Fairly crowded', 'Full']
     },
-    rating: Number,
+    quality: Number,
     level: {
         type: String,
-        enum: ['Beginners wave', 'All surfers', 'Experienced surfers, Pros '],
+        enum: ['Beginners wave', 'All surfers', 'Experienced surfers', 'Pros'],
         required: true
     },
     tide: String,
@@ -57,6 +58,6 @@ const wavesSchema = new Schema({
     timestamps: true
 })
 
-const Waves = mongoose.model('Waves', wavesSchema)
-module.exports = Waves
+const Wave = mongoose.model('Wave', waveSchema)
+module.exports = Wave
 
