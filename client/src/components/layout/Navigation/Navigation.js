@@ -2,7 +2,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 import logo from './logo_size.jpg'
 
 import { NavLink, Link } from 'react-router-dom'
-import AuthModal from '../../shared/Modal/AuthModal'
+// import AuthModal from '../../shared/Modal/AuthModal'
 import AuthService from './../../../service/auth.service'
 
 const Navigation = ({ storeUser, loggedUser }) => {

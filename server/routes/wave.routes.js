@@ -20,10 +20,18 @@ router.get('/details/:wave_id', (req, res) => {
 
 router.post('/new', (req, res) => {
 
-    const wave = { ...req.body, createdBy: req.user._id }
+    const {title, description, region, continent, latitude, longitude, imageUrl, imageAuthor,type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide} = req.body, createdBy= req.user._id 
+    const location = {
+        type: 'Point',
+        coordinates: [latitude, longitude]
+    }
+    const images = {
+        url: imageUrl,
+        title:imageAuthor
+    }
 
     Wave
-        .create(wave)
+        .create({title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images})
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
