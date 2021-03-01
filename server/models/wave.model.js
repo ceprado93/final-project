@@ -12,13 +12,16 @@ const waveSchema = new Schema({
     },
     images: [{
         url: String,
-        description: String,
         title: String
     }],
     location: {
-        type: String,
-        required: true
-    },    //PREGUNTAR A TEO SI HACE FALTA LAT LONG
+        type: {
+            type: String
+        },
+        coordinates: [Number]
+    },
+    region: String,
+    continent: String,
     type: {
         type: String,
         enum: ['Beachbreak', 'Pointbreak', 'Slab', 'A-frame']
@@ -38,7 +41,10 @@ const waveSchema = new Schema({
         max: 359
     },
     swellRange: String,
-    swellConsistency: Number,
+    bestSeason: {
+        type: String,
+        enum: ['winter', 'Spring', 'Summer', 'Autumn']
+    },
     crowd: {
         type: String,
         enum: ['Empty', 'Fairly crowded', 'Full']
