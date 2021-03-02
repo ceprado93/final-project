@@ -10,29 +10,30 @@ class Regions extends Component {
     constructor() {
         super()
         this.state = {
-            region : [],
+            region: [],
             numberOfWaves: 0
         }
         this.waveService = new WaveService()
     }
-    
+
     componentDidMount() {
 
-        const continent = this.props.match.params.continent
-        console.log(this.props.match.params.continent)
-        const newRegion =[]
+        // const continent = this.props.match.params.continent
+        console.log(this.props.match.params)
+        const newRegion = []
 
         this.waveService
             .getRegion()
-            .then(response =>{
+            .then(response => {
                 console.log(response.data)
-                response.data.map(elm=>newRegion.push(elm))
+                response.data.map(elm => newRegion.push(elm))
                 const filteredSet = new Set(newRegion)
                 const filteredArr = [...filteredSet]
+                //to do
                 console.log(filteredArr)
-              
+
                 this.setState({
-                    region:filteredArr
+                    region: filteredArr
                     // numberOfWaves:this.state.region.length
                 })
             })
@@ -42,28 +43,22 @@ class Regions extends Component {
     render() {
         return (
             <>
-            <Container as="section">
-               
-                {this.state.region
+                <Container as="section">
 
-                    ?
-                    <Row>
-                        <Col md={{ span: 6 }}>
-                            <ul>
-                                <li>{this.state.region.map(elm=><Link to='/'key={elm._id}>{elm.region}</Link>)}</li>
-                            </ul>
-                            <hr />
-                        </Col>
+                    {this.state.region
 
-                        <Col md={6}>
-                            <h3>Photos</h3>
-                            <img style={{ width: '100%', marginBottom: 20 }} src={this.state.wave?.images[0].url} alt={this.state.wave?.images[0].title} />
-                            <small>{this.state.wave?.images[0].title}</small>
-                        </Col>
-                    </Row>
-                    :
-                    <Spinner />}
-            </Container>
+                        ?
+                        <Row>
+                            <Col md={{ span: 6 }}>
+                                <ul>
+                                    {this.state.region.map(elm => <li key={elm._id}> <Link to={`/waves/${elm.region}`} {...this.props} >{elm.region}</Link></li>)}
+                                </ul>
+                                <hr />
+                            </Col>
+                        </Row>
+                        :
+                        <Spinner />}
+                </Container>
             </>
         )
     }

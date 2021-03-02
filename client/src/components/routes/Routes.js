@@ -14,16 +14,16 @@ const Routes = ({ storeUser, loggedUser }) => {
 
     return (
         <>
-        <Switch>
-            <Route path="/" exact render={() => <IndexPage />} />
-            <Route exact path="/waves" render={() => <Continents />} />
-            <Route exact path="/wavesdet" render={() => <Waves loggedUser={loggedUser} />} />
-            <Route path="/waves/:continent" render={props => <Regions {...props} />} />
-            <Route path="/details/:id" render={props => <WaveDetails {...props} />} />
-            <Route path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
-            <Route path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
-            <Route path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
-        </Switch>
+            <Switch>
+                <Route path="/" exact render={() => <IndexPage />} />
+                <Route exact path="/continents" render={() => <Continents />} />
+                <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} />} />
+                <Route exact path="/:continent" render={props => <Regions {...props} />} />
+                <Route path="/details/:id" render={props => <WaveDetails {...props} />} />
+                <Route path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
+                <Route path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
+                <Route path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
+            </Switch>
         </>
     )
 }

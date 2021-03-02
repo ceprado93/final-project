@@ -25,9 +25,17 @@ class Waves extends Component {
     }
 
     loadWaves() {
+        console.log(this.props.match.params.region)
+        const newRegion = []
+
         this.wavesService
             .getWaves()
-            .then(response => this.setState({ waves: response.data }))
+            .then(response => {
+                const filteredArr = response.data.filter(elm => elm.region === this.props.match.params.region)
+                console.log(filteredArr)
+
+                this.setState({ waves: filteredArr })
+            })
             .catch(err => console.log(err))
     }
 
@@ -41,6 +49,7 @@ class Waves extends Component {
         return (
 
             <>
+                hola
                 <Container as="section">
                     <h1>The waves</h1>
                     {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
@@ -48,14 +57,14 @@ class Waves extends Component {
                 </Container>
 
 
-                <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                {/* <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
                     <Modal.Header closeButton>
                         <Modal.Title>New wave</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <WaveForm closeModal={() => this.togglemodalForm(false)} refreshList={() => this.loadWaves()} />
                     </Modal.Body>
-                </Modal>
+                </Modal> */}
 
             </>
 
