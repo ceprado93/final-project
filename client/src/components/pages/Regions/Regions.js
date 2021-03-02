@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 
-
 class Regions extends Component {
 
     constructor() {
@@ -16,8 +15,7 @@ class Regions extends Component {
         }
         this.waveService = new WaveService()
     }
-
-
+    
     componentDidMount() {
 
         const continent = this.props.match.params.continent
@@ -29,7 +27,7 @@ class Regions extends Component {
                 console.log(response.data)
                 this.setState({
                     region:response.data.region,
-                    numberOfWaves:
+                    numberOfWaves
                 })
             } 
 )

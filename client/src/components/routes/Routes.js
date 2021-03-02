@@ -13,6 +13,7 @@ import Regions from './../pages/Regions/Regions'
 const Routes = ({ storeUser, loggedUser }) => {
 
     return (
+        <>
         <Switch>
             <Route path="/" exact render={() => <IndexPage />} />
             <Route exact path="/waves" render={() => <Continents />} />
@@ -23,6 +24,7 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
             <Route path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
         </Switch>
+        </>
     )
 }
 

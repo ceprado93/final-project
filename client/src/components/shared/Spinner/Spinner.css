@@ -6,7 +6,7 @@
     top: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
-    border: 10px solid #15529b;
+    border: 3px solid #15529b;
 }
 
 .container-spinner {
@@ -29,7 +29,7 @@
     margin-top: 15px;
     margin-left: -50%;
   position: absolute;
-    border: 10px solid #15529b;
+    border: 3px solid #15529b;
 }
 
 @keyframes rotate {
