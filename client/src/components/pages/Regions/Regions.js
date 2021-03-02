@@ -11,7 +11,8 @@ class Regions extends Component {
     constructor() {
         super()
         this.state = {
-            wave: undefined
+            region : '',
+            numberOfWaves: 0
         }
         this.waveService = new WaveService()
     }
@@ -24,7 +25,14 @@ class Regions extends Component {
 
         this.waveService
             .getRegion()
-            .then(response => console.log(response))
+            .then(response =>{
+                console.log(response.data)
+                this.setState({
+                    region:response.data.region,
+                    numberOfWaves:
+                })
+            } 
+)
             .catch(err => console.log(err))
     }
 
