@@ -10,7 +10,7 @@ class Regions extends Component {
     constructor() {
         super()
         this.state = {
-            region : '',
+            region : [],
             numberOfWaves: 0
         }
         this.waveService = new WaveService()
@@ -20,36 +20,39 @@ class Regions extends Component {
 
         const continent = this.props.match.params.continent
         console.log(this.props.match.params.continent)
+        const newRegion =[]
 
         this.waveService
             .getRegion()
             .then(response =>{
                 console.log(response.data)
+                response.data.map(elm=>newRegion.push(elm))
+                const filteredSet = new Set(newRegion)
+                const filteredArr = [...filteredSet]
+                console.log(filteredArr)
+              
                 this.setState({
-                    region:response.data.region,
-                    // numberOfWaves
+                    region:filteredArr
+                    // numberOfWaves:this.state.region.length
                 })
-            } 
-)
+            })
             .catch(err => console.log(err))
     }
 
     render() {
         return (
+            <>
             <Container as="section">
-                hola
-
-                {/* {this.state.wave
+               
+                {this.state.region
 
                     ?
                     <Row>
                         <Col md={{ span: 6 }}>
-                            <h1>{this.state.wave?.title}</h1>
+                            <ul>
+                                <li>{this.state.region.map(elm=><Link to='/'key={elm._id}>{elm.region}</Link>)}</li>
+                            </ul>
                             <hr />
-                            <p>{this.state.wave?.description}</p>
-                            <hr />
-                            <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
-                            <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
                         </Col>
 
                         <Col md={6}>
@@ -59,8 +62,9 @@ class Regions extends Component {
                         </Col>
                     </Row>
                     :
-                    <Spinner />} */}
+                    <Spinner />}
             </Container>
+            </>
         )
     }
 }
