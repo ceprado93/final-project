@@ -5,7 +5,7 @@ const whitelist = [process.env.DOMAIN]
 const corsOptions = {
     origin: (origin, cb) => {
         const originIsWhitelisted = whitelist.includes(origin)
-        cb(null, originIsWhitelisted)
+        cb(null, true)
     },
     credentials: true
 }
