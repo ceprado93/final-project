@@ -27,7 +27,7 @@ class Regions extends Component {
                 console.log(response.data)
                 this.setState({
                     region:response.data.region,
-                    numberOfWaves
+                    // numberOfWaves
                 })
             } 
 )
