@@ -289,7 +289,6 @@ const Waves = [
     {
         title: 'La Graviere',
         description: 'Sited on an old gravel pit, this is the legendary Hossegor tube spot. Dredging the rivermouth has affected wave quality in the past, but it is back with a vengeance, hosting pro-surfing competitions in huge conditions, including the 2011 Quik Pro. Sometimes white-caps outside, rolls in and reforms, standing up over the shallow inside bars. Heavy, thick-lipped beasts, break perilously close to shore and often close-out, snapping more boards than just about anywhere.',
-        image: 'https://www.surf-forecast.com/system/images/16457/large/La-Graviere.jpg?1467501246',
         image: [{
             url: 'https://www.surf-forecast.com/system/images/16457/large/La-Graviere.jpg?1467501246',
             title: '@Ego'
