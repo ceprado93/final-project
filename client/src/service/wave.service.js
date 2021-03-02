@@ -10,6 +10,7 @@ class WaveService {
     }
 
     getWaves = () => this.api.get('/')
+    getRegion = () => this.api.get('/region')
     getWave = waveId => this.api.get(`/details/${waveId}`)
     saveWave = waveDetails => this.api.post('/new', waveDetails)
     editWave = (waveId, waveDetails) => this.api.put(`/edit/${waveId}`, waveDetails)

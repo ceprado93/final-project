@@ -43,7 +43,7 @@ const waveSchema = new Schema({
     swellRange: String,
     bestSeason: {
         type: String,
-        enum: ['winter', 'Spring', 'Summer', 'Autumn']
+        enum: ['Winter', 'Spring', 'Summer', 'Autumn']
     },
     crowd: {
         type: String,

@@ -10,6 +10,15 @@ router.get('/', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
+router.get('/region', (req, res) => {
+
+    Wave
+        .find()
+        .select('region continent')
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
+})
+
 router.get('/details/:wave_id', (req, res) => {
 
     Wave
@@ -20,24 +29,24 @@ router.get('/details/:wave_id', (req, res) => {
 
 router.post('/new', (req, res) => {
 
-    const {title, description, region, continent, latitude, longitude, imageUrl, imageAuthor,type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide} = req.body, createdBy= req.user._id 
+    const { title, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body, createdBy = req.user._id
     const location = {
         type: 'Point',
         coordinates: [latitude, longitude]
     }
     const images = {
         url: imageUrl,
-        title:imageAuthor
+        title: imageAuthor
     }
 
     Wave
-        .create({title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images})
+        .create({ title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
 
 router.put('/edit/:wave_id', (req, res) => {
-
+    // to do
     Wave
         .findByIdAndUpdate(req.params.wave_id, req.body)
         .then(response => res.json(response))

@@ -6,7 +6,7 @@ import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 
 
-class WaveDetails extends Component {
+class Regions extends Component {
 
     constructor() {
         super()
@@ -19,20 +19,21 @@ class WaveDetails extends Component {
 
     componentDidMount() {
 
-        const wave_id = this.props.match.params.id
-        console.log(this.props)
+        const continent = this.props.match.params.continent
+        console.log(this.props.match.params.continent)
 
         this.waveService
-            .getWave(wave_id)
-            .then(response => this.setState({ wave: response.data }))
+            .getRegion()
+            .then(response => console.log(response))
             .catch(err => console.log(err))
     }
 
     render() {
         return (
             <Container as="section">
+                hola
 
-                {this.state.wave
+                {/* {this.state.wave
 
                     ?
                     <Row>
@@ -52,11 +53,11 @@ class WaveDetails extends Component {
                         </Col>
                     </Row>
                     :
-                    <Spinner />}
+                    <Spinner />} */}
             </Container>
         )
     }
 }
 
 
-export default WaveDetails
+export default Regions
