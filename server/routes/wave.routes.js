@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Wave = require('../models/Wave.model')
+const Wave = require('../models/wave.model')
 
 router.get('/', (req, res) => {
 
