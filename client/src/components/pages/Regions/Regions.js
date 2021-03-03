@@ -8,53 +8,46 @@ import Map from './../Map/Map'
 
 class Regions extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             region: [],
             numberOfWaves: 0,
-            center:{
-                lat:undefined,
-                lng:undefined
-            },
-                zoom:undefined
+
         }
         this.waveService = new WaveService()
     }
 
     componentDidMount() {
-    this.getRegion()
-       
+        console.log(this.props)
+        this.getRegion()
+
     }
-    
-    getRegion(){
-console.log(this.props.lat)
-    const newRegion = []
 
-    this.waveService
-        .getRegion()
-        .then(response => {
-            const reg = response.data.map(elm => elm.region)
-            reg.map(elm => newRegion.push(elm))
-            const filteredSet = new Set(newRegion)
-            const filteredArr = [...filteredSet]
-            //to do
-            this.setState({
-                region: filteredArr,
-                center:{lat:this.props.lat, lng:this.props.lng},
-                zoom:this.props.zoom
+    getRegion() {
+        const newRegion = []
 
-                // numberOfWaves:this.state.region.length
+        this.waveService
+            .getRegion()
+            .then(response => {
+                const reg = response.data.map(elm => elm.region)
+                reg.map(elm => newRegion.push(elm))
+                const filteredSet = new Set(newRegion)
+                const filteredArr = [...filteredSet]
+                //to do
+                this.setState({
+                    region: filteredArr,
+                    // numberOfWaves:this.state.region.length
+                })
             })
-        })
-        .catch(err => console.log(err))
-}
+            .catch(err => console.log(err))
+    }
 
     render() {
         return (
             <>
                 <Container as="section">
-                <Map lat={this.state?.center.lat} lng={this.state?.center.lng} zoom={this.state?.zoom}></Map>
+                    <Map lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} zoom={this.props.history.location.state.zoom}></Map>
                     {this.state.region
 
                         ?

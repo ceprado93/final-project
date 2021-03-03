@@ -4,6 +4,8 @@ import WavesList from './WavesList'
 import Spinner from '../../shared/Spinner/Spinner'
 import WaveForm from './../Wave-form/Wave-form'
 import './Waves.css'
+import Map from './../Map/Map'
+
 
 
 import WavesService from './../../../service/wave.service'
@@ -36,6 +38,7 @@ class Waves extends Component {
                 console.log(filteredArr)
 
                 this.setState({ waves: filteredArr })
+                console.log(this.state.waves)
             })
             .catch(err => console.log(err))
     }
@@ -50,9 +53,15 @@ class Waves extends Component {
         return (
 
             <>
-                hola
+
                 <Container as="section">
                     <h1>The waves</h1>
+                    {/* {this.state.waves
+                        ?
+                        <Map lat={this.state.waves[0].location.coordinates[0]} lng={this.state.waves[0].location.coordinates[1]} zoom={4} ></Map>
+                        :
+                        null
+                    } */}
                     {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
                     {this.state.waves.length ? <WavesList waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
                 </Container>
