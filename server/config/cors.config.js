@@ -5,6 +5,7 @@ const whitelist = [process.env.DOMAIN]
 
 const corsOptions = {
     origin: function (origin, callback) {
+        console.log(whitelist, origin)
       if (whitelist.indexOf(origin) !== -1 || !origin) {
         callback(null, true)
       } else {
