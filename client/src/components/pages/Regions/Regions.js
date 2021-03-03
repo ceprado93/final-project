@@ -5,56 +5,61 @@ import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 
-
 class Regions extends Component {
 
     constructor() {
         super()
         this.state = {
-            wave: undefined
+            region: [],
+            numberOfWaves: 0
         }
         this.waveService = new WaveService()
     }
 
-
     componentDidMount() {
 
-        const continent = this.props.match.params.continent
-        console.log(this.props.match.params.continent)
+        // const continent = this.props.match.params.continent
+        console.log(this.props.match.params)
+        const newRegion = []
 
         this.waveService
             .getRegion()
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response.data)
+                response.data.map(elm => newRegion.push(elm))
+                const filteredSet = new Set(newRegion)
+                const filteredArr = [...filteredSet]
+                //to do
+                console.log(filteredArr)
+
+                this.setState({
+                    region: filteredArr
+                    // numberOfWaves:this.state.region.length
+                })
+            })
             .catch(err => console.log(err))
     }
 
     render() {
         return (
-            <Container as="section">
-                hola
+            <>
+                <Container as="section">
 
-                {/* {this.state.wave
+                    {this.state.region
 
-                    ?
-                    <Row>
-                        <Col md={{ span: 6 }}>
-                            <h1>{this.state.wave?.title}</h1>
-                            <hr />
-                            <p>{this.state.wave?.description}</p>
-                            <hr />
-                            <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
-                            <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
-                        </Col>
-
-                        <Col md={6}>
-                            <h3>Photos</h3>
-                            <img style={{ width: '100%', marginBottom: 20 }} src={this.state.wave?.images[0].url} alt={this.state.wave?.images[0].title} />
-                            <small>{this.state.wave?.images[0].title}</small>
-                        </Col>
-                    </Row>
-                    :
-                    <Spinner />} */}
-            </Container>
+                        ?
+                        <Row>
+                            <Col md={{ span: 6 }}>
+                                <ul>
+                                    {this.state.region.map(elm => <li key={elm._id}> <Link to={`/waves/${elm.region}`} {...this.props} >{elm.region}</Link></li>)}
+                                </ul>
+                                <hr />
+                            </Col>
+                        </Row>
+                        :
+                        <Spinner />}
+                </Container>
+            </>
         )
     }
 }

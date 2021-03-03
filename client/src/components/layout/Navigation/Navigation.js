@@ -35,11 +35,11 @@ const Navigation = ({ storeUser, loggedUser }) => {
                     <NavLink to="/" exact>
                         <Nav.Link as="span">Home</Nav.Link>
                     </NavLink>
+                    <NavLink to="/continents">
+                        <Nav.Link as="span">Atlas</Nav.Link>
+                    </NavLink>
                     <NavLink to="/waves">
                         <Nav.Link as="span">Waves</Nav.Link>
-                    </NavLink>
-                    <NavLink to="/wavesdet">
-                        <Nav.Link as="span">Wavesssss</Nav.Link>
                     </NavLink>
 
                     {

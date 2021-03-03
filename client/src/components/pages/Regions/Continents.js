@@ -14,16 +14,16 @@ const Continents = () => {
                     <Row>
                         <Col>
                             <ul>
-                                <li><Link to='/waves/Europe' >Europe</Link></li>
-                                <li><Link to='/waves/Africa' >Africa</Link></li>
-                                <li> <Link to='/waves/Asia' >Asia</Link></li>
+                                <li><Link to='/Europe' >Europe</Link></li>
+                                <li><Link to='/Africa' >Africa</Link></li>
+                                <li> <Link to='/Asia' >Asia</Link></li>
                             </ul>
                         </Col>
                         <Col>
                             <ul>
-                                <li><Link to='/waves/AustraliaNZ' >Australia and NZ</Link></li>
-                                <li> <Link to='/waves/Pacific' >Pacific</Link></li>
-                                <li> <Link to='/waves/America' >America</Link></li>
+                                <li><Link to='/AustraliaNZ' >Australia and NZ</Link></li>
+                                <li> <Link to='/Pacific' >Pacific</Link></li>
+                                <li> <Link to='/America' >America</Link></li>
                             </ul>
                         </Col>
                     </Row>

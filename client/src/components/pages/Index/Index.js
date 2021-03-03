@@ -10,7 +10,7 @@ const IndexPage = () => {
                 <small> Photo: Chris Buckard</small>
                 <Row>
                     <h1>Welcome</h1>
-                    <Link to="/waves" className="btn btn-dark btn-sm">See waves</Link>
+                    <Link to="/continents" className="btn btn-dark btn-sm">See waves</Link>
                 </Row>
 
             </Container>
