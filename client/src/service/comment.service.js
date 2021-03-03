@@ -13,6 +13,7 @@ class CommentService {
     saveComment = commentDetails => this.api.post('/new', commentDetails)
     editComment = (commentId, commentDetails) => this.api.put(`/edit/${commentId}`, commentDetails)
     deleteComment = (commentId) => this.api.post(`/delete/${commentId}`)
+    getUsers = ()=> this.api.get('/users')
 }
 
 export default CommentService

@@ -1,58 +1,49 @@
 import { Component } from 'react'
 import { Container, Button, Modal } from 'react-bootstrap'
-import CommentCard from './WavesList'
+import CommentCard from './CommentCard'
 import Spinner from '../../shared/Spinner/Spinner'
-import './Waves.css'
 
-import WavesService from '../../../service/wave.service'
+import CommentService from '../../../service/comment.service'
 
-class Waves extends Component {
+class Comments extends Component {
 
     constructor() {
         super()
         this.state = {
-            waves: [],
+            comments: [],
             showForm: false
         }
 
-        this.wavesService = new WavesService()
+        this.CommentService = new CommentService()
     }
 
 
     componentDidMount() {
-        this.loadWaves()
+        this.loadComments()
     }
 
-    loadWaves() {
-        console.log(this.props.match.params.region)
-        const newRegion = []
-
-        this.wavesService
-            .getWaves()
+    loadComments() {
+       
+        this.CommentService
+            .getComments()
             .then(response => {
-                const filteredArr = response.data.filter(elm => elm.region === this.props.match.params.region)
+                console.log(response)
+                const filteredArr = response.data.filter(elm => elm.wave === this.props.wave_id)
                 console.log(filteredArr)
 
-                this.setState({ waves: filteredArr })
+                this.setState({ comments: filteredArr })
             })
             .catch(err => console.log(err))
     }
-
-
-    togglemodalForm(value) {
-        this.setState({ showForm: value })
-    }
-
 
     render() {
         return (
 
             <>
-                hola
+              
                 <Container as="section">
-                    <h1>The waves</h1>
-                    {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
-                    {this.state.waves.length ? <WavesList waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
+                    <h3>Comments</h3>
+                    {this.state.comments ?.map(elm=> <CommentCard key={elm._id}{...elm}/>)}
                 </Container>
 
 
@@ -71,4 +62,4 @@ class Waves extends Component {
     }
 }
 
-export default Waves
+export default Comments

@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
+import Comments from '../Comments/CommentsList'
 
 
 class WaveDetails extends Component {
@@ -30,11 +31,13 @@ class WaveDetails extends Component {
 
     render() {
         return (
+        <>
             <Container as="section">
 
                 {this.state.wave
 
                     ?
+                    <>
                     <Row>
                         <Col md={{ span: 6 }}>
                             <h1>{this.state.wave?.title}</h1>
@@ -50,10 +53,17 @@ class WaveDetails extends Component {
                             <img style={{ width: '100%', marginBottom: 20 }} src={this.state.wave?.images[0].url} alt={this.state.wave?.images[0].title} />
                             <small>{this.state.wave?.images[0].title}</small>
                         </Col>
+            
                     </Row>
+                    
+                    <Row>
+                        <Col><Comments wave_id={this.state.wave._id}></Comments></Col>
+                    </Row>
+                    </>
                     :
                     <Spinner />}
             </Container>
+        </>
         )
     }
 }

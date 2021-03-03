@@ -23,7 +23,7 @@ module.exports = app => {
 
     app.use(flash())
 
-    passport.use(new LocalStrategy({ passReqToCallback: true }, (req, res, username, password, next) => {
+    passport.use(new LocalStrategy({ passReqToCallback: true }, (req, username, password, next) => {
         User.findOne({ username })
             .then(user => {
                 if (!user) {
