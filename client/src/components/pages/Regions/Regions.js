@@ -25,8 +25,9 @@ class Regions extends Component {
         this.waveService
             .getRegion()
             .then(response => {
-                console.log(response.data)
-                response.data.map(elm => newRegion.push(elm))
+                console.log(response.data.map(elm => elm.region))
+                const reg = response.data.map(elm => elm.region)
+                reg.map(elm => newRegion.push(elm))
                 const filteredSet = new Set(newRegion)
                 const filteredArr = [...filteredSet]
                 //to do
@@ -51,7 +52,7 @@ class Regions extends Component {
                         <Row>
                             <Col md={{ span: 6 }}>
                                 <ul>
-                                    {this.state.region.map(elm => <li key={elm._id}> <Link to={`/waves/${elm.region}`} {...this.props} >{elm.region}</Link></li>)}
+                                    {this.state.region.map((elm, idx) => <li key={idx}> <Link to={`/waves/${elm}`} {...this.props} >{elm}</Link></li>)}
                                 </ul>
                                 <hr />
                             </Col>

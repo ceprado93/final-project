@@ -1469,26 +1469,26 @@ const Waves = [
         createdBy: ''
     },
     {
-        title: '',
-        description: '',
+        title: 'Unstad',
+        description: 'Beachbreak that suffers a bit of swell shadow compared to the two pointbreaks that flank it. Breaks over sand and some scattered boulders but is fine for beginners and the local surf school.',
         image: [{
-            url: '',
-            title: ''
+            url: 'https://uploads-ssl.webflow.com/5aa276d9013ff400018dd29d/5c28953732e9aa36e1a5afd9__40A4352.jpg',
+            title: '@bourksteer'
         }],
         location: {
             type: 'Point',
-            coordinates: []
+            coordinates: [68.268330, 13.580922]
         },
         region: 'Spain',
         continent: 'Europe',
         type: 'Beachbreak',
         seaBed: 'Sand',
-        swellDirections: 310,
-        windDirections: 180,
+        swellDirections: 250,
+        windDirections: 100,
         swellRange: '1-3',
         bestSeason: 'Autumn',
         crowd: 'Fairly crowded',
-        quality: 3,
+        quality: 4,
         level: ' All surfers',
         tide: 'All tides',
         createdBy: ''
