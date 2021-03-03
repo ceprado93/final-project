@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { Container, Button, Modal } from 'react-bootstrap'
 import CommentCard from './CommentCard'
 import Spinner from '../../shared/Spinner/Spinner'
-
+import CommentForm from './CommentForm'
 import CommentService from '../../../service/comment.service'
 
 class Comments extends Component {
@@ -42,7 +42,9 @@ class Comments extends Component {
             <>
               
                 <Container as="section">
+                    
                     <h3>Comments</h3>
+                    <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()}/>
                     {this.state.comments ?.map(elm=> <CommentCard key={elm._id}{...elm}/>)}
                 </Container>
 

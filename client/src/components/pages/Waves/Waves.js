@@ -5,6 +5,7 @@ import Spinner from '../../shared/Spinner/Spinner'
 import WaveForm from './../Wave-form/Wave-form'
 import './Waves.css'
 
+
 import WavesService from './../../../service/wave.service'
 
 class Waves extends Component {

@@ -1,6 +1,7 @@
 import { Card, Col } from 'react-bootstrap'
 import CommentService from '../../../service/comment.service'
 import { Component } from 'react'
+import './Comments.css'
 
 
 class CommentCard extends Component {
@@ -35,7 +36,7 @@ render(){
     return (
 
         <Col md={4}>
-             <Card>
+             <Card className="comment-card">
                  {/* to do */}
                 {/* <Card.Img variant="top" src={images[0].url} /> */}
                 <Card.Body>

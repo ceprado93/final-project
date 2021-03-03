@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
+import Map from './../Map/Map'
 const Continents = () => {
 
     return (
@@ -11,10 +11,11 @@ const Continents = () => {
             </section>
             <section style={{ marginTop: 100 }}>
                 <Container>
+                    <Map></Map>
                     <Row>
                         <Col>
                             <ul>
-                                <li><Link to='/Europe' >Europe</Link></li>
+                                <li><Link to='/Europe' lat={46.757418} lng={7.288779} zoom={5}>Europe</Link></li>
                                 <li><Link to='/Africa' >Africa</Link></li>
                                 <li> <Link to='/Asia' >Asia</Link></li>
                             </ul>
