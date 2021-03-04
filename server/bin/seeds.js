@@ -2,60 +2,60 @@ const mongoose = require('mongoose');
 const Waves = require('../models/wave.model');
 
 const dbName = 'mongodb+srv://evavirsedasanz:popinothebest@cluster0.by1bk.mongodb.net/final-project';
-mongoose.connect(`mongodb://localhost/${DB_REMOTE}`);
+mongoose.connect(`${dbName}`);
 const waves = [
-    // {
-    //     title: 'Thurso east',
-    //     description: 'Scotland’s premier righthand reefbreak and a world-class barrel on its day. In NW swells at mid tide a relatively simple drop leads into one of the longest, hollowest rides in Europe.',
-    //     image: [{
-    //         url: 'https://www.wavelengthmag.com/wp-content/uploads/2019/01/Thurso-1024x683.jpg',
-    //         title: '@lugarts'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [58.602074, -3.507895]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 330,
-    //     windDirections: 140,
-    //     swellRange: '1-5',
-    //     bestSeason: 'Autumn', // to do
-    //     crowd: 'Fairly crowded',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
+    {
+        title: 'Thurso east',
+        description: 'Scotland’s premier righthand reefbreak and a world-class barrel on its day. In NW swells at mid tide a relatively simple drop leads into one of the longest, hollowest rides in Europe.',
+        image: [{
+            url: 'https://www.wavelengthmag.com/wp-content/uploads/2019/01/Thurso-1024x683.jpg',
+            title: '@lugarts'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [58.602074, -3.507895]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 330,
+        windDirections: 140,
+        swellRange: '1-5',
+        bestSeason: 'Autumn', // to do
+        crowd: 'Fairly crowded',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
 
-    // },
-    // {
-    //     title: 'Bimms ness',
-    //     description: 'Fickle, long, left point needs specific swell direction and light winds to work.',
-    //     image: [{
-    //         url: 'https://ec2-im-1.msw.ms/md/image.php?id=343937&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3',
-    //         title: '@BENJAMIN59'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [58.620647, -3.656371]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 340,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Empty',
-    //     quality: 4,
-    //     level: 'Expereinced surfers',
-    //     tide: 'Low to mid',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Bimms ness',
+        description: 'Fickle, long, left point needs specific swell direction and light winds to work.',
+        image: [{
+            url: 'https://ec2-im-1.msw.ms/md/image.php?id=343937&type=PHOTOLAB&resize_type=STREAM_MEDIUM_SQUARE&fromS3',
+            title: '@BENJAMIN59'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [58.620647, -3.656371]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 340,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Empty',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Low to mid',
+        createdBy: '603d1af4e72dca32acd44dfa'
 
-    // },
+    },
     {
         title: 'Mullaghmore Head',
         description: 'Ireland’s premier big-wave spot. The Head is a savage, shallow, lefthand reefbreak only surfable on high tide. Handles any size swell, producing massive tubes, but needs to be well overhead to break clear of exposed rocks.',
@@ -133,334 +133,334 @@ const waves = [
         tide: 'All tides',
         createdBy: '603d1af4e72dca32acd44dfa'
 
-    }
-    // {
-    //     title: 'Rileys',
-    //     description: 'It´s the perfect set up for heavy, bowling, top to bottom left hand barrels, not a wave for the faint-hearted – it’s a powerful, pitching shallow spot that claims injuries and all time rides in almost equal measure.',
-    //     image: [{
-    //         url: 'https://img.redbull.com/images/c_crop,x_0,y_0,h_5301,w_7952/c_fill,w_790,h_527/q_auto,f_auto/redbullcom/2020/5/4/rj0x6artbzgeumdggcpp/conor-maguire-rileys',
-    //         title: 'Connor Flanagan'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [52.930938, -9.347559]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'Slab',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 270,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 5,
-    //     level: 'Pros',
-    //     tide: 'Hight tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Rileys',
+        description: 'It´s the perfect set up for heavy, bowling, top to bottom left hand barrels, not a wave for the faint-hearted – it’s a powerful, pitching shallow spot that claims injuries and all time rides in almost equal measure.',
+        image: [{
+            url: 'https://img.redbull.com/images/c_crop,x_0,y_0,h_5301,w_7952/c_fill,w_790,h_527/q_auto,f_auto/redbullcom/2020/5/4/rj0x6artbzgeumdggcpp/conor-maguire-rileys',
+            title: 'Connor Flanagan'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [52.930938, -9.347559]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'Slab',
+        seaBed: 'Rocks',
+        swellDirections: 270,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 5,
+        level: 'Pros',
+        tide: 'Hight tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
 
-    // },
-    // {
-    //     title: 'Fistral Beach',
-    //     description: 'Very consistent, beachbreak peak, that occasionally gets epic. Mainly rights that get hollow at lower tides. Likes W swell best. Usually a bit bigger than South Fistral.',
-    //     image: [{
-    //         url: 'https://cdn.familyfuncanada.com/wp-content/uploads/2016/05/Headland_aerial_Fistral.jpg',
-    //         title: '@headland hotel'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [50.416154, -5.100316]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 100,
-    //     swellRange: '0.5-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Fistral Beach',
+        description: 'Very consistent, beachbreak peak, that occasionally gets epic. Mainly rights that get hollow at lower tides. Likes W swell best. Usually a bit bigger than South Fistral.',
+        image: [{
+            url: 'https://cdn.familyfuncanada.com/wp-content/uploads/2016/05/Headland_aerial_Fistral.jpg',
+            title: '@headland hotel'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [50.416154, -5.100316]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 100,
+        swellRange: '0.5-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
 
-    // },
-    // {
-    //     title: 'St Agnes',
-    //     description: 'Powerful, beachbreak peaks over a rocky beach. One of the few spots working in big SW swells and winds.',
-    //     image: [{
-    //         url: 'https://visitstagnes.com/wp-content/uploads/2019/02/activities-header-2.jpg',
-    //         title: '@visitstagnes'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [50.301929, -5.235988]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'Mid tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Porthleven',
-    //     description: 'Fast, hollow, crowded reef peak to the west of the harbour. A short right barrel that gets very shallow on the inside and good lefts on certain swell directions. Cornwall’s best reefbreak is always busy when on with a large local crew, pros and media. Dangerous at high and low tide – experts only. Also another hollow right reef in front of the pier popular with lids.',
-    //     image: [{
-    //         url: 'https://www.surferrule.com/surferrule/wp-content/uploads/2017/02/Porthleven-1.jpg',
-    //         title: '@Surfer rule'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [50.082297, -5.321046]
-    //     },
-    //     region: 'UK & Ireland',
-    //     continent: 'Europe',
-    //     type: 'A-frame',
-    //     seaBed: 'Reef',
-    //     swellDirections: 240,
-    //     windDirections: 60,
-    //     swellRange: '1-5',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Mid tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Lacanau',
-    //     description: ' Consistent surf, easily checked from the boardwalk at Plage Centrale before opting for a session at La Nord, La Sud or Super Sud among 14km of beaches ideal with a medium size W-NW swell. Handles more size thanks to the deep scalloped baines around the Rocks jetties that are there to hold the sand in place',
-    //     image: [{
-    //         url: 'https://www.surfingfrance.com/media/k2/items/cache/621e04774107f8d6d16119a4df4b377b_XL.jpg',
-    //         title: 'Laurent Rondi'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [45.002002, -1.202693]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 90,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Culs nuls',
-    //     description: 'The link between the normal beachbreaks to the north and the heavy shories of La Graviere. Usually better at mid to high tides with a moderate swell, because of the steeper beach angle. Powerful action close to shore.',
-    //     image: [{
-    //         url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/01074752/klein_france2015_19270-1560x1039.jpg',
-    //         title: 'Jeremiah Klein'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.680217, -1.440469]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 290,
-    //     windDirections: 90,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // // {
-    // //     title: 'La Graviere',
-    // //     description: 'Sited on an old gravel pit, this is the legendary Hossegor tube spot. Dredging the rivermouth has affected wave quality in the past, but it is back with a vengeance, hosting pro-surfing competitions in huge conditions, including the 2011 Quik Pro. Sometimes white-caps outside, rolls in and reforms, standing up over the shallow inside bars. Heavy, thick-lipped beasts, break perilously close to shore and often close-out, snapping more boards than just about anywhere.',
-    // //     image: [{
-    // //         url: 'https://www.surf-forecast.com/system/images/16457/large/La-Graviere.jpg?1467501246',
-    // //         title: '@Ego'
-    // //     }],
-    // //     location: {
-    // //         type: 'Point',
-    // //         coordinates: [43.670936, -1.441787]
-    // //     },
-    // //     region: 'France',
-    // //     continent: 'Europe',
-    // //     type: 'Beachbreak',
-    // //     seaBed: 'Sand',
-    // //     swellDirections: 290,
-    // //     windDirections: 90,
-    // //     swellRange: '1-3',
-    // //     bestSeason: 'Autumn',
-    // //     crowd: 'Full',
-    // //     quality: 5,
-    // //     level: 'Experienced surfers',
-    // //     tide: 'All tides',
-    // //     createdBy: '603d1af4e72dca32acd44dfa'
-    // // },
-    // {
-    //     title: 'La piste',
-    //     description: 'Perfect barrels are regularly on offer for those that can handle the packs of gifted locals and tube-hungry visitors. From low to mid tide is prime time, when the swell focuses on banks that seem to have a bit more punch and urgency than just about anywhere in Hossegor, so prepare for air drops and some solid floggings when it reaches headhigh plus.',
-    //     image: [{
-    //         url: 'https://i.pinimg.com/originals/59/b7/df/59b7df4261eb0e937ef21efca40a8711.jpg',
-    //         title: 'Carole Braud'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.641952, -1.447120]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 110,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Anglet',
-    //     description: 'Swell angle often dictates whether the longer rights or hollower lefts will be better and powerful tubes appear on the good days. May seem a bit easier to get out when the swell jumps and the jetty rips can help avoid a pounding',
-    //     image: [{
-    //         url: 'https://www.angletsurfinfo.com/admin/images/galeries/2013/02/galerie_1408_13418.jpg',
-    //         title: 'Angletsurfphoto'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.499058, -1.544171]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Biarritz - Grand Plage',
-    //     description: 'The Basque coast’s chic city beach receives less swell than Anglet, but handles a very large variety of conditions. Rocks on the south part of the beach contribute to the beauty of the site while shaping the banks and blocking S-SW winds. Sometimes the fat rolling peaks are fun and easy, other times they are sucky and close-out.',
-    //     image: [{
-    //         url: 'https://www.ultimatefrance.com/wp-content/uploads/2015/09/biarritz-surfing.jpg',
-    //         title: 'drip&ju'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.486092, -1.557671]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 290,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Biarritz- Cote des Basque',
-    //     description: 'The birthplace of Frances surfing scene remains popular with longboarders enjoying mellow walls sheltered from northern winds.Theres usually a peak close to the headland and another defined peak a bit further down the beach. While it is friendly and fun-loving for mals and beginners at knee to shoulder-high, there is a bit more energy at headhigh plus, especially if you drift south.',
-    //     image: [{
-    //         url: 'https://hushoots.com/wp-content/uploads/2019/01/Cote_des_Basques-compresse%CC%81e.jpg',
-    //         title: 'hushoots'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.479836, -1.566772]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Parlamentia',
-    //     description: 'The Guéthary terrace gives the best view of this Sunset-like right with a shifting peak and short shoulder that holds up to 6m faces on a clean, NW swell. The outside bombora style reef is quite deep, so the peak draws up a lot of water and only invites those on large, long, voluminous boards to get in early.',
-    //     image: [{
-    //         url: 'https://margruesa.com/wp-content/uploads/2019/11/guethary-olas-grandes.jpg',
-    //         title: 'margruesa'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.427159, -1.608665]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 280,
-    //     windDirections: 120,
-    //     swellRange: '1-6',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Lafitenia',
-    //     description: 'A beautiful righthand pointbreak, complete with steps in the steep take-off, that leads into a long wall and occasionally hollow inside section. After the excitement of the first steep section, the wall fattens up and allows repetitive cutbacks into the hook before the final race to the shorebreak close-out.',
-    //     image: [{
-    //         url: 'https://live.staticflickr.com/8591/16820656346_8e03991ea9_z.jpg',
-    //         title: 'lafiteniaphoto'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.414333, -1.628112]
-    //     },
-    //     region: 'France',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand and rocks',
-    //     swellDirections: 295,
-    //     windDirections: 120,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low to mid tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
+    },
+    {
+        title: 'St Agnes',
+        description: 'Powerful, beachbreak peaks over a rocky beach. One of the few spots working in big SW swells and winds.',
+        image: [{
+            url: 'https://visitstagnes.com/wp-content/uploads/2019/02/activities-header-2.jpg',
+            title: '@visitstagnes'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [50.301929, -5.235988]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'Mid tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Porthleven',
+        description: 'Fast, hollow, crowded reef peak to the west of the harbour. A short right barrel that gets very shallow on the inside and good lefts on certain swell directions. Cornwall’s best reefbreak is always busy when on with a large local crew, pros and media. Dangerous at high and low tide – experts only. Also another hollow right reef in front of the pier popular with lids.',
+        image: [{
+            url: 'https://www.surferrule.com/surferrule/wp-content/uploads/2017/02/Porthleven-1.jpg',
+            title: '@Surfer rule'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [50.082297, -5.321046]
+        },
+        region: 'UK & Ireland',
+        continent: 'Europe',
+        type: 'A-frame',
+        seaBed: 'Reef',
+        swellDirections: 240,
+        windDirections: 60,
+        swellRange: '1-5',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Mid tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Lacanau',
+        description: ' Consistent surf, easily checked from the boardwalk at Plage Centrale before opting for a session at La Nord, La Sud or Super Sud among 14km of beaches ideal with a medium size W-NW swell. Handles more size thanks to the deep scalloped baines around the rock jetties that are there to hold the sand in place',
+        image: [{
+            url: 'https://www.surfingfrance.com/media/k2/items/cache/621e04774107f8d6d16119a4df4b377b_XL.jpg',
+            title: 'Laurent Rondi'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [45.002002, -1.202693]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 90,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Culs nuls',
+        description: 'The link between the normal beachbreaks to the north and the heavy shories of La Graviere. Usually better at mid to high tides with a moderate swell, because of the steeper beach angle. Powerful action close to shore.',
+        image: [{
+            url: 'https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/09/01074752/klein_france2015_19270-1560x1039.jpg',
+            title: 'Jeremiah Klein'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.680217, -1.440469]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 290,
+        windDirections: 90,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'La Graviere',
+        description: 'Sited on an old gravel pit, this is the legendary Hossegor tube spot. Dredging the rivermouth has affected wave quality in the past, but it is back with a vengeance, hosting pro-surfing competitions in huge conditions, including the 2011 Quik Pro. Sometimes white-caps outside, rolls in and reforms, standing up over the shallow inside bars. Heavy, thick-lipped beasts, break perilously close to shore and often close-out, snapping more boards than just about anywhere.',
+        image: [{
+            url: 'https://www.surf-forecast.com/system/images/16457/large/La-Graviere.jpg?1467501246',
+            title: '@Ego'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.670936, -1.441787]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 290,
+        windDirections: 90,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'La piste',
+        description: 'Perfect barrels are regularly on offer for those that can handle the packs of gifted locals and tube-hungry visitors. From low to mid tide is prime time, when the swell focuses on banks that seem to have a bit more punch and urgency than just about anywhere in Hossegor, so prepare for air drops and some solid floggings when it reaches headhigh plus.',
+        image: [{
+            url: 'https://i.pinimg.com/originals/59/b7/df/59b7df4261eb0e937ef21efca40a8711.jpg',
+            title: 'Carole Braud'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.641952, -1.447120]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 110,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Anglet',
+        description: 'Swell angle often dictates whether the longer rights or hollower lefts will be better and powerful tubes appear on the good days. May seem a bit easier to get out when the swell jumps and the jetty rips can help avoid a pounding',
+        image: [{
+            url: 'https://www.angletsurfinfo.com/admin/images/galeries/2013/02/galerie_1408_13418.jpg',
+            title: 'Angletsurfphoto'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.499058, -1.544171]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Biarritz - Grand Plage',
+        description: 'The Basque coast’s chic city beach receives less swell than Anglet, but handles a very large variety of conditions. Rocks on the south part of the beach contribute to the beauty of the site while shaping the banks and blocking S-SW winds. Sometimes the fat rolling peaks are fun and easy, other times they are sucky and close-out.',
+        image: [{
+            url: 'https://www.ultimatefrance.com/wp-content/uploads/2015/09/biarritz-surfing.jpg',
+            title: 'drip&ju'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.486092, -1.557671]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 290,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Biarritz- Cote des Basque',
+        description: 'The birthplace of Frances surfing scene remains popular with longboarders enjoying mellow walls sheltered from northern winds.Theres usually a peak close to the headland and another defined peak a bit further down the beach. While it is friendly and fun-loving for mals and beginners at knee to shoulder-high, there is a bit more energy at headhigh plus, especially if you drift south.',
+        image: [{
+            url: 'https://hushoots.com/wp-content/uploads/2019/01/Cote_des_Basques-compresse%CC%81e.jpg',
+            title: 'hushoots'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.479836, -1.566772]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Parlamentia',
+        description: 'The Guéthary terrace gives the best view of this Sunset-like right with a shifting peak and short shoulder that holds up to 6m faces on a clean, NW swell. The outside bombora style reef is quite deep, so the peak draws up a lot of water and only invites those on large, long, voluminous boards to get in early.',
+        image: [{
+            url: 'https://margruesa.com/wp-content/uploads/2019/11/guethary-olas-grandes.jpg',
+            title: 'margruesa'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.427159, -1.608665]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 280,
+        windDirections: 120,
+        swellRange: '1-6',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Lafitenia',
+        description: 'A beautiful righthand pointbreak, complete with steps in the steep take-off, that leads into a long wall and occasionally hollow inside section. After the excitement of the first steep section, the wall fattens up and allows repetitive cutbacks into the hook before the final race to the shorebreak close-out.',
+        image: [{
+            url: 'https://live.staticflickr.com/8591/16820656346_8e03991ea9_z.jpg',
+            title: 'lafiteniaphoto'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.414333, -1.628112]
+        },
+        region: 'France',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand and rocks',
+        swellDirections: 295,
+        windDirections: 120,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Low to mid tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
     // {
     //     title: 'La zurriola',
     //     description: 'Consistent, medium-quality beachbreak that can have good peaks depending on the sandbars. A lefthander peels towards the pier at low tide. Best on small swells; anything over about 5 closes out.',
@@ -1293,206 +1293,206 @@ const waves = [
     //     tide: 'Low tide',
     //     createdBy: '603d1af4e72dca32acd44dfa'
     // },
-    // {
-    //     title: 'Pantin',
-    //     description: 'The most popular surf spot in Galicia, home to an annual pro contest. Ultra consistent, Pantin hoovers up W-NW swell and can hold quite a bit of size. Both left and right peaks can line up and spitting barrels are common. Better low to mid but surfable on all tides. Strong rips with paddling channel at northern end.',
-    //     image: [{
-    //         url: 'https://surfcamp.es/wp-content/uploads/2020/04/surf-en-pantin-1-1024x768.jpg',
-    //         title: '@todosurf'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.639533, -8.111995]
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 300,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Doniños',
-    //     description: 'Most popular wave in the area, thanks to superior quality and consistency. 2km’s of swell sucking peaks that are hollowest at low to mid tide.',
-    //     image: [{
-    //         url: 'http://www.ferrolactivo.es/images/surf/luisrodriguez/lr.jpg',
-    //         title: '@ferrolactivo'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [43.500205, -8.318757]
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Nazare',
-    //     description: 'People are only just beginning to wake up to the potential of Nazaré. A finger of deep water points directly at the beach to the north of town and the result is similar to La Nord in Hossegor. Huge, heavy and hollow beach peaks for the brave.',
-    //     image: [{
-    //         url: 'https://www.surfholidays.com/assets/images/blog/2016-09-26-nazare-desinema-jpg',
-    //         title: '@barcroftmedia'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [39.607931, -9.084569]
-    //     },
-    //     region: 'Portugal',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 270,
-    //     windDirections: 90,
-    //     swellRange: '1-10+',
-    //     bestSeason: 'Winter',
-    //     crowd: 'Fairly crowded',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Coxos',
-    //     description: 'This European point/reefbreak gem peels down a series of rocky shelves and outcrops into a small bay. Coxos is long, fast and hollow when it hits the slabs just right. Power is the key word as swells unload out of deep water. It can handle big waves if the swells are clean and from the NW. When all the conditions come together you will see why this is Portugal’s best wave.',
-    //     image: [{
-    //         url: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2019/08/coxos-ericeira.jpg',
-    //         title: 'Jop Hermans'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [39.001342, -9.426550]
-    //     },
-    //     region: 'Portugal',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 250,
-    //     windDirections: 90,
-    //     swellRange: '1-4',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low to mid tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Supertubos',
-    //     description: 'The name speaks for itself! World-class spot and undoubtedly the best beachbreak in Portugal, Supertubos has become a favourite stop on the world pro tour and a perfect warm-up for Pipeline. Long, heavy, gas-filled tubes are guaranteed as well as a few shut-down close-outs, such is the speed of this wave. The lefts are usually better, but plenty of shorter rights peel off the main peak, especially in NW conditions. It’s at its best with NE winds, a decent SW swell and mid-tide, but these conditions don’t come around everyday.',
-    //     image: [{
-    //         url: 'http://www.boardrap.com/wp-content/uploads/2017/04/supertubos-wsl-contest-barrel-huge-crowds-peniche-portugal-surf-trip-guide.jpg',
-    //         title: '@wsl'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [39.344340, -9.362887]
-    //     },
-    //     region: 'Portugal',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 260,
-    //     windDirections: 90,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Beliche',
-    //     description: 'The best beach in the Sagres area. It needs a hefty NW swell or a standard S to work and is offshore on N winds. When good it’s a classy left wedge that handles up to double overhead. It’s very hollow and fast and overrun with hot locals.',
-    //     image: [{
-    //         url: 'https://lh3.googleusercontent.com/proxy/6Ry2BF_3kQSMPPLp1j06ZiWoO2gsWr9AYkc0Z7qFnYI85BiEWXiVu4ssDde8u46cFer5FnSrVybh302sIaDWZfmYBoEPh2CJk6iNv25Jb-qZQN7LvG9cJLMFd6csYtggfBt-XMrWZg',
-    //         title: '@atlanticsurfroute'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [37.025802, -8.965570]
-    //     },
-    //     region: 'Portugal',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 200,
-    //     windDirections: 40,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'Low to mid tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Yerbabuena',
-    //     description: 'La Yerbabuena in Andalucia is a fairly exposed point/rivermouth break that has unreliable waves. Summer in particular tends to be flat. The best wind direction is from the northeast. Most of the surf here comes from groundswells and the ideal swell angle is from the southwest. Often Crowded. Take special care here if it gets very crowded.',
-    //     image: [{
-    //         url: 'https://www.surferrule.com/wp-content/uploads/2018/12/Captura-de-pantalla-2018-12-12-a-las-12.36.12-e1544615139694.png',
-    //         title: '@surferrule'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [36.178087, -5.974051]
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 200,
-    //     windDirections: 350,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Winter',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    // },
-    // {
-    //     title: 'Unstad',
-    //     description: 'Beachbreak that suffers a bit of swell shadow compared to the two pointbreaks that flank it. Breaks over sand and some scattered boulders but is fine for beginners and the local surf school.',
-    //     image: [{
-    //         url: 'https://uploads-ssl.webflow.com/5aa276d9013ff400018dd29d/5c28953732e9aa36e1a5afd9__40A4352.jpg',
-    //         title: '@bourksteer'
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: [68.268330, 13.580922]
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 250,
-    //     windDirections: 100,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa'
-    //},
+    {
+        title: 'Pantin',
+        description: 'The most popular surf spot in Galicia, home to an annual pro contest. Ultra consistent, Pantin hoovers up W-NW swell and can hold quite a bit of size. Both left and right peaks can line up and spitting barrels are common. Better low to mid but surfable on all tides. Strong rips with paddling channel at northern end.',
+        image: [{
+            url: 'https://surfcamp.es/wp-content/uploads/2020/04/surf-en-pantin-1-1024x768.jpg',
+            title: '@todosurf'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.639533, -8.111995]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 300,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Doniños',
+        description: 'Most popular wave in the area, thanks to superior quality and consistency. 2km’s of swell sucking peaks that are hollowest at low to mid tide.',
+        image: [{
+            url: 'http://www.ferrolactivo.es/images/surf/luisrodriguez/lr.jpg',
+            title: '@ferrolactivo'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.500205, -8.318757]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Nazare',
+        description: 'People are only just beginning to wake up to the potential of Nazaré. A finger of deep water points directly at the beach to the north of town and the result is similar to La Nord in Hossegor. Huge, heavy and hollow beach peaks for the brave.',
+        image: [{
+            url: 'https://www.surfholidays.com/assets/images/blog/2016-09-26-nazare-desinema-jpg',
+            title: '@barcroftmedia'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [39.607931, -9.084569]
+        },
+        region: 'Portugal',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 270,
+        windDirections: 90,
+        swellRange: '1-10+',
+        bestSeason: 'Winter',
+        crowd: 'Fairly crowded',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Coxos',
+        description: 'This European point/reefbreak gem peels down a series of rocky shelves and outcrops into a small bay. Coxos is long, fast and hollow when it hits the slabs just right. Power is the key word as swells unload out of deep water. It can handle big waves if the swells are clean and from the NW. When all the conditions come together you will see why this is Portugal’s best wave.',
+        image: [{
+            url: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2019/08/coxos-ericeira.jpg',
+            title: 'Jop Hermans'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [39.001342, -9.426550]
+        },
+        region: 'Portugal',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 250,
+        windDirections: 90,
+        swellRange: '1-4',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'Low to mid tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Supertubos',
+        description: 'The name speaks for itself! World-class spot and undoubtedly the best beachbreak in Portugal, Supertubos has become a favourite stop on the world pro tour and a perfect warm-up for Pipeline. Long, heavy, gas-filled tubes are guaranteed as well as a few shut-down close-outs, such is the speed of this wave. The lefts are usually better, but plenty of shorter rights peel off the main peak, especially in NW conditions. It’s at its best with NE winds, a decent SW swell and mid-tide, but these conditions don’t come around everyday.',
+        image: [{
+            url: 'http://www.boardrap.com/wp-content/uploads/2017/04/supertubos-wsl-contest-barrel-huge-crowds-peniche-portugal-surf-trip-guide.jpg',
+            title: '@wsl'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [39.344340, -9.362887]
+        },
+        region: 'Portugal',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 260,
+        windDirections: 90,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Beliche',
+        description: 'The best beach in the Sagres area. It needs a hefty NW swell or a standard S to work and is offshore on N winds. When good it’s a classy left wedge that handles up to double overhead. It’s very hollow and fast and overrun with hot locals.',
+        image: [{
+            url: 'https://lh3.googleusercontent.com/proxy/6Ry2BF_3kQSMPPLp1j06ZiWoO2gsWr9AYkc0Z7qFnYI85BiEWXiVu4ssDde8u46cFer5FnSrVybh302sIaDWZfmYBoEPh2CJk6iNv25Jb-qZQN7LvG9cJLMFd6csYtggfBt-XMrWZg',
+            title: '@atlanticsurfroute'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [37.025802, -8.965570]
+        },
+        region: 'Portugal',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 200,
+        windDirections: 40,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'Low to mid tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Yerbabuena',
+        description: 'La Yerbabuena in Andalucia is a fairly exposed point/rivermouth break that has unreliable waves. Summer in particular tends to be flat. The best wind direction is from the northeast. Most of the surf here comes from groundswells and the ideal swell angle is from the southwest. Often Crowded. Take special care here if it gets very crowded.',
+        image: [{
+            url: 'https://www.surferrule.com/wp-content/uploads/2018/12/Captura-de-pantalla-2018-12-12-a-las-12.36.12-e1544615139694.png',
+            title: '@surferrule'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [36.178087, -5.974051]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 200,
+        windDirections: 350,
+        swellRange: '1-3',
+        bestSeason: 'Winter',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Low tide',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    },
+    {
+        title: 'Unstad',
+        description: 'Beachbreak that suffers a bit of swell shadow compared to the two pointbreaks that flank it. Breaks over sand and some scattered boulders but is fine for beginners and the local surf school.',
+        image: [{
+            url: 'https://uploads-ssl.webflow.com/5aa276d9013ff400018dd29d/5c28953732e9aa36e1a5afd9__40A4352.jpg',
+            title: '@bourksteer'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [68.268330, 13.580922]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 250,
+        windDirections: 100,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa'
+    }
     // {
     //     title: '',
     //     description: '',
@@ -1548,10 +1548,14 @@ const waves = [
 
 ];
 
+// then(()=>{
+//to do drop
+
 Waves
     .create(waves)
     .then(allWavesCreated => {
-        console.log(`Created ${allWavesCreated.length} moviess`)
+        console.log(`Created ${allWavesCreated.length} waves`)
         mongoose.connection.close();
     })
     .catch(err => console.log('Hubo un error,', err))
+//})
