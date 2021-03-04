@@ -16,7 +16,10 @@ class Waves extends Component {
         super()
         this.state = {
             waves: [],
-            showForm: false
+            showForm: false,
+            lat: undefined,
+            lng: undefined,
+            zoom: 4
         }
 
         this.wavesService = new WavesService()
@@ -29,7 +32,6 @@ class Waves extends Component {
 
     loadWaves() {
         console.log(this.props.match.params.region)
-        const newRegion = []
 
         this.wavesService
             .getWaves()
@@ -37,7 +39,14 @@ class Waves extends Component {
                 const filteredArr = response.data.filter(elm => elm.region === this.props.match.params.region)
                 console.log(filteredArr)
 
-                this.setState({ waves: filteredArr })
+
+
+                this.setState({
+                    waves: filteredArr,
+                    lat: filteredArr[0].location.coordinates[0],
+                    lng: filteredArr[0].location.coordinates[1],
+                    zoom: 5
+                })
                 console.log(this.state.waves)
             })
             .catch(err => console.log(err))
@@ -56,25 +65,25 @@ class Waves extends Component {
 
                 <Container as="section">
                     <h1>The waves</h1>
-                    {/* {this.state.waves
+                    {this.state.lat
                         ?
-                        <Map lat={this.state.waves[0].location.coordinates[0]} lng={this.state.waves[0].location.coordinates[1]} zoom={4} ></Map>
+                        <Map lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} ></Map>
                         :
                         null
-                    } */}
+                    }
                     {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
                     {this.state.waves.length ? <WavesList waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
                 </Container>
 
 
-                {/* <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
                     <Modal.Header closeButton>
                         <Modal.Title>New wave</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <WaveForm closeModal={() => this.togglemodalForm(false)} refreshList={() => this.loadWaves()} />
                     </Modal.Body>
-                </Modal> */}
+                </Modal>
 
             </>
 

@@ -9,22 +9,22 @@ class WaveForm extends Component {
         this.state = {
             title: '',
             description: '',
-            imageUrl:'',
-            imageAuthor:'',
-            latitude:0,
-            longitude:0,
-            region:'',
-            continent:'',
-            type:'',
-            seaBed:'',
-            swellDirections:0,
-            windDirections:0,
-            swellRange:'',
-            bestSeason:'',
-            crowd:'',
-            quality:0,
-            level:'',
-            tide:''
+            imageUrl: '',
+            imageAuthor: '',
+            latitude: 0,
+            longitude: 0,
+            region: '',
+            continent: '',
+            type: '',
+            seaBed: '',
+            swellDirections: 0,
+            windDirections: 0,
+            swellRange: '',
+            bestSeason: '',
+            crowd: '',
+            quality: 0,
+            level: '',
+            tide: ''
         }
 
         this.waveService = new WaveService()
@@ -126,7 +126,7 @@ class WaveForm extends Component {
                         <Form.Label>Tide</Form.Label>
                         <Form.Control type="text" name="tide" value={this.state.tide} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
-      
+
                     <Button variant="dark" block type="submit">New wave</Button>
                 </Form>
             </Container>

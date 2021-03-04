@@ -31,39 +31,40 @@ class WaveDetails extends Component {
 
     render() {
         return (
-        <>
-            <Container as="section">
+            <>
+                <Container as="section">
 
-                {this.state.wave
+                    {this.state.wave
 
-                    ?
-                    <>
-                    <Row>
-                        <Col md={{ span: 6 }}>
-                            <h1>{this.state.wave?.title}</h1>
-                            <hr />
-                            <p>{this.state.wave?.description}</p>
-                            <hr />
-                            <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
-                            <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
-                        </Col>
+                        ?
+                        <>
+                            <Row>
+                                <Col md={{ span: 6 }}>
+                                    <h1>{this.state.wave?.title}</h1>
+                                    <hr />
+                                    <p>{this.state.wave?.description}</p>
+                                    <hr />
+                                    <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
+                                    <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
+                                    {/* to do */}
+                                </Col>
 
-                        <Col md={6}>
-                            <h3>Photos</h3>
-                            <img style={{ width: '100%', marginBottom: 20 }} src={this.state.wave?.images[0].url} alt={this.state.wave?.images[0].title} />
-                            <small>{this.state.wave?.images[0].title}</small>
-                        </Col>
-            
-                    </Row>
-                    
-                    <Row>
-                        <Col><Comments wave_id={this.state.wave._id}></Comments></Col>
-                    </Row>
-                    </>
-                    :
-                    <Spinner />}
-            </Container>
-        </>
+                                <Col md={6}>
+                                    <h3>Photos</h3>
+                                    <img style={{ width: '100%', marginBottom: 20 }} src={this.state.wave?.images[0].url} alt={this.state.wave?.images[0].title} />
+                                    <small>{this.state.wave?.images[0].title}</small>
+                                </Col>
+
+                            </Row>
+
+                            <Row>
+                                <Col><Comments wave_id={this.state.wave._id}></Comments></Col>
+                            </Row>
+                        </>
+                        :
+                        <Spinner />}
+                </Container>
+            </>
         )
     }
 }

@@ -11,7 +11,8 @@ const Continents = () => {
             </section>
             <section style={{ marginTop: 100 }}>
                 <Container>
-                    <Map lat={26.907911} lng={-32.725575} zoom={1}></Map>
+                    <Map lat={26.907911} lng={-32.725575} zoom={1}>
+                    </Map>
                     <Row>
                         <Col>
                             <ul>
