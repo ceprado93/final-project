@@ -13,7 +13,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedUser: undefined
+      loggedUser: undefined,
+      isAdmin:undefined
     }
     this.authService = new AuthService()
   }
@@ -31,12 +32,13 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchUser()
+    // this.findAdmin()
   }
 
   render() {
     return (
       <>
-        <Navigation storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} />
+        <Navigation storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.isAdmin} />
         <main>
           <Routes storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} />
         </main>

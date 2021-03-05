@@ -19,7 +19,7 @@ router.put('/edit/:id',(req,res)=>{
     .catch(err => res.status(500).json({ code: 500, message: 'Error fetching user', err }))
 })
 
-router.post('/delete/:id',(req,res)=>{
+router.delete('/delete/:id',(req,res)=>{
     
     User
     .findByIdAndRemove(req.user._id)

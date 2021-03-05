@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Wave = require('../models/wave.model')
+const { checkMongoId, checkLoggedIn } = require('./../middlewares')
+
 
 router.get('/', (req, res) => {
 
@@ -9,6 +11,17 @@ router.get('/', (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
+
+router.get('/:region/details', (req, res) => {
+
+    Wave
+    //to do
+        .find({region:req.params})
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
+})
+
+
 
 router.get('/region', (req, res) => {
 
@@ -19,7 +32,7 @@ router.get('/region', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.get('/details/:wave_id', (req, res) => {
+router.get('/details/:wave_id',checkMongoId, (req, res) => {
 
     Wave
         .findById(req.params.wave_id)
@@ -27,7 +40,7 @@ router.get('/details/:wave_id', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.post('/new', (req, res) => {
+router.post('/new', checkLoggedIn,(req, res) => {
 
     const { title, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body, createdBy = req.user._id
     const location = {
@@ -53,7 +66,7 @@ router.put('/edit/:wave_id', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Wave', err }))
 })
 
-router.post('/delete/:wave_id', (req, res) => {
+router.delete('/delete/:wave_id', (req, res) => {
 
     Wave
         .findByIdAndRemove(req.params.wave_id)

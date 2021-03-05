@@ -15,8 +15,8 @@ class Regions extends Component {
         this.state = {
             region: [],
             numberOfWaves: 0,
-            mapClass: 'notSeeMap',
-            listClass: 'seeList'
+            showList: true,
+            showMap: false
 
         }
         this.waveService = new WaveService()
@@ -47,35 +47,22 @@ class Regions extends Component {
             .catch(err => console.log(err))
     }
 
-    showMap() {
-        this.setState({
-            mapClass: 'seeMap',
-            listClass: 'notSeeList'
-        })
-    }
-
-    showList() {
-        this.setState({
-            mapClass: 'notSeeMap',
-            listClass: 'seeList'
-        })
-    }
 
     render() {
         return (
             <>
                 <Container as="section">
                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
-                        <Button variant="dark" onClick={() => this.showMap()}> Map</Button>
-                        <Button variant="outline-dark" onClick={() => this.showList()}>List</Button>
+                        <Button variant="dark" onClick={() => this.setState({showMap:true, showList:false})}> Map</Button>
+                        <Button variant="outline-dark" onClick={() => this.setState({showMap:false, showList:true})}>List</Button>
                     </ButtonGroup>
-                    <div className={this.state.mapClass} >
+                    <div style={{display: this.state.showMap ? 'block' : 'none'}}  >
                         <Map lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} zoom={this.props.history.location.state.zoom} />
                     </div>
                     {this.state.region
 
                         ?
-                        <Row className={this.state.listClass}>
+                        <Row style={{display: this.state.showList ? 'block' : 'none'}} >
                             <hr />
                             <Col md={{ span: 6 }}>
                                 <ul>
@@ -83,6 +70,7 @@ class Regions extends Component {
                                 </ul>
                             </Col>
                         </Row>
+                     
                         :
                         <Spinner />}
                 </Container>

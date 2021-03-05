@@ -6,28 +6,16 @@ import supercluster from 'points-cluster';
 import Marker from './Marker';
 import ClusterMarker from './ClusterMarker';
 import mapStyles from './mapStyles.json';
-// import { markersData, susolvkaCoords } from './Data';
-import MapWrapper from './MapWrapper';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>
-
-const MAP = {
-    defaultZoom: 3,
-    defaultCenter: { lat: 60.814305, lng: 47.051773 },
-    options: {
-      styles: mapStyles,
-      maxZoom: 19,
-    },
-  };
 
 class MyMap extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-     mapOptions:{
-        center: { lat: 60.814305, lng: 47.051773 },
-        zoom: undefined
-     },
+      mapOptions:{
+        center:{ lat: this.props.lat, lng: this.props.lng }, 
+        zoom: this.props.zoom,
+        styles: mapStyles},
       waves: [],
       ready: false,
       clusters:[]
@@ -52,19 +40,20 @@ class MyMap extends Component {
   }
 
   getClusters =  () => this.getWaves().then(markers => {
-
+console.log(markers)
       const clusters = supercluster(markers, {
         minZoom: 0,
         maxZoom: 16,
         radius: 60,
       });
+      console.log(clusters(this.state.mapOptions))
       return clusters(this.state.mapOptions);
     })
   
 
   createClusters = props => {
     this.getClusters().then(clusters => {
-
+console.log(clusters)
       const mappedClusters = clusters.map(({ wx, wy, numPoints, points }) => ({
           lat: wy,
           lng: wx,
@@ -82,7 +71,8 @@ class MyMap extends Component {
   };
   
   handleMapChange = ({ center, zoom, bounds }) => {
-    console.log(this.state.clusters)
+    this.setValues()
+    console.log(center, zoom, bounds)
     this.setState(
       {
         mapOptions: {
@@ -97,14 +87,9 @@ class MyMap extends Component {
     );
   };
 
-  componentDidMount() {
-    this.setValues()
-  }
-
+ 
   setValues() {
-    this.setState({
-     mapOptions:{center:{ lat: 40.814305, lng: 7.051773 }, zoom:2}
-    }, () => {
+  
       this.waveService
         .getWaves()
         .then(response => {
@@ -112,18 +97,21 @@ class MyMap extends Component {
           console.log(response.data[2].location.coordinates)
         })
         .catch(err => console.log(err))
-    })
+  
 
   }
 
   render() {
     return (
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={{ height: '1000px', width: '1000px' }}>
         <GoogleMapReact
+        id="map"
+        yesIWantToUseGoogleMapApiInternals
           bootstrapURLKeys={{ key: 'AIzaSyDWox-Ew5Z4Wm2OMqZSFRhM-IIwzPtxRgU' }}
-          defaultCenter={ this.state.mapOptions.center }
-          defaultZoom={4}
-          onChange={this.handleMapChange}
+          defaultCenter={ this.state.mapOptions.center}
+          defaultZoom={this.state.mapOptions.zoom}
+          onChange={(e)=>this.handleMapChange(e)}
+          // options={MAP.options}
         >
             {this.state.clusters.map(item => {
             if (item.numPoints === 1) {

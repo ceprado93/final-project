@@ -3,30 +3,19 @@ import { Container, Row, Col, Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Map from './../Map/Map'
 import './Continents.css'
+import MyMap from './../Cluster/MyMap'
 
 class Continents extends Component {
 
     constructor() {
         super()
         this.state = {
-            mapClass: 'notSeeMap',
-            listClass: 'seeList'
+            showList: true,
+            showMap: false
         }
     }
 
-    showMap() {
-        this.setState({
-            mapClass: 'seeMap',
-            listClass: 'notSeeList'
-        })
-    }
-
-    showList() {
-        this.setState({
-            mapClass: 'notSeeMap',
-            listClass: 'seeList'
-        })
-    }
+   
 
     render() {
         return (
@@ -39,13 +28,13 @@ class Continents extends Component {
 
                     <Container>
                         <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
-                            <Button variant="dark" onClick={() => this.showMap()}> Map</Button>
-                            <Button variant="outline-dark" onClick={() => this.showList()}>List</Button>
+                            <Button variant="dark" onClick={() => this.setState({showMap:true, showList:false})}> Map</Button>
+                            <Button variant="outline-dark" onClick={() => this.setState({showMap:false, showList:true})}>List</Button>
                         </ButtonGroup>
-                        <div className={this.state.mapClass} >
-                            <Map lat={26.907911} lng={-32.725575} zoom={1} />
-                        </div>
-                        <div className={this.state.listClass}>
+                        
+                          { this.state.showMap &&  <MyMap lat={26.907911} lng={-32.725575} zoom={1} />}
+                       
+                        <div style={{display: this.state.showList ? 'block' : 'none'}}>
                             <Row >
                                 <Col>
                                     <ul>

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Comment = require('../models/comment.model')
 const User = require('../models/user.model')
+const {checkLoggedIn} = require('./../middlewares')
 
 router.get('/', (req, res) => {
 
@@ -20,7 +21,7 @@ router.get('/users', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching User', err }))
 })
 
-router.post('/new', (req, res) => {
+router.post('/new', checkLoggedIn,(req, res) => {
 
     const { wave, description, title } = req.body, writtenBy = req.user.id
 
@@ -31,7 +32,7 @@ router.post('/new', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving Comment', err }))
 })
 
-router.put('/edit/:comment_id', (req, res) => {
+router.put('/edit/:comment_id', checkLoggedIn, (req, res) => {
 
     Comment
         .findByIdAndUpdate(req.params.comment_id, req.body)
@@ -39,7 +40,7 @@ router.put('/edit/:comment_id', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Comment', err }))
 })
 
-router.post('/delete/:comment_id', (req, res) => {
+router.delete('/delete/:comment_id',checkLoggedIn, (req, res) => {
 
     Comment
         .findByIdAndRemove(req.params.comment_id)
