@@ -16,15 +16,15 @@
 //   },
 // };
 
-// export class GoogleMap extends React.PureComponent {
-//   // eslint-disable-line react/prefer-stateless-function
-//   state = {
-//     mapOptions: {
-//       center: { lat: 60.814305, lng: 47.051773 },
-//       zoom: 5,
-//     },
-//     clusters: [],
-//   };
+export class GoogleMap extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
+  state = {
+    mapOptions: {
+      center: MAP.defaultCenter,
+      zoom: MAP.defaultZoom,
+    },
+    clusters: [],
+  };
 
 //   getClusters = props => {
 //     const clusters = supercluster(markersData, {

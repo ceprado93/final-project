@@ -8,7 +8,7 @@ import Waves from './../pages/Waves/Waves'
 import WaveDetails from './../pages/Wave-details/Wave-details'
 import Continents from './../pages/Regions/Continents'
 import Regions from './../pages/Regions/Regions'
-import GoogleMap from '../pages/Cluster/GMap'
+import MyMap from '../pages/Cluster/MyMap'
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -17,7 +17,7 @@ const Routes = ({ storeUser, loggedUser }) => {
         <>
             <Switch>
                 <Route path="/" exact render={() => <IndexPage />} />
-                {/* <Route exact path="/gmap" render={() => <GoogleMap/>} /> */}
+                <Route exact path="/gmap" render={() => <MyMap />} />
                 <Route exact path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
                 <Route exact path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
                 <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
