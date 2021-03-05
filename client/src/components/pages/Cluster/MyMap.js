@@ -6,7 +6,7 @@ import supercluster from 'points-cluster';
 import Marker from './Marker';
 import ClusterMarker from './ClusterMarker';
 import mapStyles from './mapStyles.json';
-import { markersData, susolvkaCoords } from './Data';
+// import { markersData, susolvkaCoords } from './Data';
 import MapWrapper from './MapWrapper';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>
@@ -34,30 +34,50 @@ class MyMap extends Component {
     }
     this.waveService = new waveService()
   }
-  getClusters = () => {
 
+  getWaves =   () =>{
 
+    return this.waveService.getWaves()
+    .then(response => {
+        console.log(response.data)
+        const markersData = [...response.data].map((elm, index) => ({
+          id: index,
+          lat: elm.location.coordinates[0],
+          lng: elm.location.coordinates[1]
+        }))
+       return markersData
+    })
+    .catch(err => [])
 
-    const clusters = supercluster(markersData, {
-      minZoom: 0,
-      maxZoom: 16,
-      radius: 60,
-    });
-
-    return clusters(this.state.mapOptions);
   }
+
+  getClusters =  () => this.getWaves().then(markers => {
+
+      const clusters = supercluster(markers, {
+        minZoom: 0,
+        maxZoom: 16,
+        radius: 60,
+      });
+      return clusters(this.state.mapOptions);
+    })
+  
+
   createClusters = props => {
-    this.setState({
-        clusters: this.state.mapOptions.bounds
-        ? this.getClusters(props).map(({ wx, wy, numPoints, points }) => ({
-            lat: wy,
-            lng: wx,
-            numPoints,
-            id: `${numPoints}_${points[0].id}`,
-            points,
-          }))
-        : [],
-    });
+    this.getClusters().then(clusters => {
+
+      const mappedClusters = clusters.map(({ wx, wy, numPoints, points }) => ({
+          lat: wy,
+          lng: wx,
+          numPoints,
+          id: `${numPoints}_${points[0].id}`,
+          points,
+        }))
+      this.setState({
+          clusters: this.state.mapOptions.bounds 
+          ? mappedClusters
+          : [],
+      });
+    })
     
   };
   

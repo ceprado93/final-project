@@ -3,6 +3,10 @@ const router = express.Router()
 const passport = require("passport")
 const bcrypt = require("bcrypt")
 const User = require("../models/user.model")
+const Comment = require("../models/comment.model")
+const Wave = require("../models/wave.model")
+const {checkRole} = require ('./../middlewares')
+
 
 router.post('/signup', (req, res) => {
 
@@ -62,5 +66,29 @@ router.post('/logout', (req, res) => {
 
 router.get('/loggedin', (req, res) => req.isAuthenticated() ? res.json(req.user) : res.status(403).json({ message: 'Unauthorized' }))
 
+router.get('/admin-profile', checkRole('admin'), (req, res) => {
+
+    const promise1 = Wave.find()
+    const promise2 = Comment.find()
+
+    Promise
+        .all(promise1,promise2)
+        .then(response=> res.json(response.data)
+        )
+        .catch(() => res.status(403).json({ message: 'Unauthorized' }))
+})
+// to do
+// router.post('/admin-profile', checkRole('admin'), (req, res) => {
+
+// const {wave_id, comment_id} =req.body
+//     const promise1 = Wave.findByIdAndUpdate(wave_id)
+//     const promise2 = Comment.findByIdAndUpdate(comment_id)
+
+//     Promise
+//         .any(promise1,promise2)
+//         .then(response=> res.json(response.data)
+//         )
+//         .catch(() => res.status(403).json({ message: 'Unauthorized' }))
+// })
 
 module.exports = router

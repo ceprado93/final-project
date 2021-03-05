@@ -59,6 +59,10 @@ const waveSchema = new Schema({
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    isAccepted:{
+        type:Boolean,
+        default:false
     }
 }, {
     timestamps: true

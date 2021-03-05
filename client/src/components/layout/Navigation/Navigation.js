@@ -45,12 +45,24 @@ const Navigation = ({ storeUser, loggedUser }) => {
                     {
                         loggedUser
                             ?
+
+                            // isAdmin ?
+                            // <>
+                            //     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                            //     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            //     <NavDropdown.Divider />
+                            //     <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            //   </NavDropdown>
+                            // </>
+                            // :
                             <>
                                 <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
                                 <NavLink to="/profile">
                                     <Nav.Link as="span">Profile</Nav.Link>
                                 </NavLink>
+                            
                             </>
+                            
                             :
                             <>
                                 <NavLink to="/signup">

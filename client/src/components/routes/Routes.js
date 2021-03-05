@@ -11,7 +11,7 @@ import Regions from './../pages/Regions/Regions'
 import MyMap from '../pages/Cluster/MyMap'
 
 
-const Routes = ({ storeUser, loggedUser }) => {
+const Routes = ({ storeUser, loggedUser, isAdmin }) => {
 
     return (
         <>
@@ -21,6 +21,7 @@ const Routes = ({ storeUser, loggedUser }) => {
                 <Route exact path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
                 <Route exact path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
                 <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
+                <Route exact path="/admin-profile" render={() => isAdmin ? <Profile isAdmin={isAdmin} /> : <Redirect to="/" />} />
                 <Route exact path="/continents" render={() => <Continents />} />
                 <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} />} />
                 <Route exact path="/:continent" render={(props) => <Regions {...props} />} />

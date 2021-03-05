@@ -13,6 +13,8 @@ class AuthService {
     signup = userData => this.api.post('/signup', userData)
     logout = () => this.api.post('/logout')
     isLoggedIn = () => this.api.get('/loggedin')
+    isAdmin =()=> this.api.get('/admin-profile')
+    addChanges = changes => this.api.post('/admin-profile',changes)
 }
 
 export default AuthService

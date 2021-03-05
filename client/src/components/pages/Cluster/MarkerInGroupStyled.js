@@ -18,4 +18,5 @@ const MarkerInGroupStyled = styled.div`
   background-position: center;
 `;
 
+
 export default MarkerInGroupStyled;
