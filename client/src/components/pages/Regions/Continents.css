@@ -1,0 +1,27 @@
+.seeMap{
+    width: 100%;
+}
+
+.seeList{
+    width: 100%;
+}
+
+.notSeeMap{
+    display: none;
+    width: 10%;
+}
+
+.notSeeList{
+    display: none;
+}
+
+.first-sect{
+    /* background-image: url('https://img.redbull.com/images/c_crop,x_0,y_0,h_5301,w_7952/c_fill,w_790,h_527/q_auto,f_auto/redbullcom/2020/5/4/rj0x6artbzgeumdggcpp/conor-maguire-rileys'); */
+    height: 150px;
+    object-fit: cover;
+    margin-top: 0;
+}
+
+.first-sect h1{
+    margin: 20px auto
+}
