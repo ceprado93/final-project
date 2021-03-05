@@ -27,9 +27,7 @@ class MyMap extends Component {
      mapOptions:{
         center: { lat: 60.814305, lng: 47.051773 },
         zoom: undefined
-     }
-        
-      ,
+     },
       waves: [],
       ready: false,
       clusters:[]
@@ -37,6 +35,9 @@ class MyMap extends Component {
     this.waveService = new waveService()
   }
   getClusters = () => {
+
+
+
     const clusters = supercluster(markersData, {
       minZoom: 0,
       maxZoom: 16,

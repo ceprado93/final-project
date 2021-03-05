@@ -15,3 +15,5 @@ export const markersData = [...Array(TOTAL_COUNT)].fill(0) // fill(0) for loose 
       Math.cos(70 + 23 * Math.PI * index / 180) *
       Math.cos(50 * Math.PI * index / 180) + Math.sin(5 * index / 180),
   }))
+
+  
