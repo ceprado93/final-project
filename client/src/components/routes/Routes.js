@@ -17,7 +17,7 @@ const Routes = ({ storeUser, loggedUser }) => {
         <>
             <Switch>
                 <Route path="/" exact render={() => <IndexPage />} />
-                <Route exact path="/gmap" render={() => <MyMap/>} />
+                <Route exact path="/gmap" render={() => <MyMap />} />
                 <Route exact path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
                 <Route exact path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
                 <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
@@ -25,7 +25,7 @@ const Routes = ({ storeUser, loggedUser }) => {
                 <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} />} />
                 <Route exact path="/:continent" render={(props) => <Regions {...props} />} />
                 <Route exact path="/details/:id" render={props => <WaveDetails {...props} />} />
-              
+
 
 
             </Switch>

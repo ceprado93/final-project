@@ -1551,11 +1551,11 @@ const waves = [
 // then(()=>{
 //to do drop
 
-    Waves
-        .create(waves)
-        .then(allWavesCreated => {
-            console.log(`Created ${allWavesCreated.length} waves`)
-            mongoose.connection.close();
-        })
-        .catch(err => console.log('Hubo un error,', err))
-// })
+Waves
+    .create(waves)
+    .then(allWavesCreated => {
+        console.log(`Created ${allWavesCreated.length} waves`)
+        mongoose.connection.close();
+    })
+    .catch(err => console.log('Hubo un error,', err))
+//})
