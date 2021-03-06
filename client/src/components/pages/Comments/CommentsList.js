@@ -20,10 +20,11 @@ class Comments extends Component {
 
     componentDidMount() {
         this.loadComments()
+        console.log(this.props.commentUser)
     }
 
     loadComments() {
-       
+
         this.CommentService
             .getComments()
             .then(response => {
@@ -40,23 +41,13 @@ class Comments extends Component {
         return (
 
             <>
-              
+
                 <Container as="section">
-                    
+
                     <h3>Comments</h3>
-                    <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()}/>
-                    {this.state.comments ?.map(elm=> <CommentCard key={elm._id}{...elm}/>)}
+                    <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()} />
+                    {this.state.comments?.map(elm => <CommentCard userId={this.props.commentUser} refreshList={() => this.loadComments()} key={elm._id}{...elm} />)}
                 </Container>
-
-
-                {/* <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>New wave</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <WaveForm closeModal={() => this.togglemodalForm(false)} refreshList={() => this.loadWaves()} />
-                    </Modal.Body>
-                </Modal> */}
 
             </>
 

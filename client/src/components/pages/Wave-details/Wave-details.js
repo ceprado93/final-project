@@ -1,10 +1,11 @@
 import { Component } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Modal, ButtonGroup, Button } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 import Comments from '../Comments/CommentsList'
+import WaveForm from '../Wave-form/Wave-form'
 
 
 class WaveDetails extends Component {
@@ -12,7 +13,8 @@ class WaveDetails extends Component {
     constructor() {
         super()
         this.state = {
-            wave: undefined
+            wave: undefined,
+            showForm: false
         }
         this.waveService = new WaveService()
     }
@@ -27,6 +29,10 @@ class WaveDetails extends Component {
             .getWave(wave_id)
             .then(response => this.setState({ wave: response.data }))
             .catch(err => console.log(err))
+    }
+
+    togglemodalForm(value) {
+        this.setState({ showForm: value })
     }
 
     render() {
@@ -45,7 +51,10 @@ class WaveDetails extends Component {
                                     <p>{this.state.wave?.description}</p>
                                     <hr />
                                     <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
-                                    <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
+                                    <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
+                                        <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
+                                        <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
+                                    </ButtonGroup>
                                     {/* to do */}
                                 </Col>
 
@@ -58,8 +67,17 @@ class WaveDetails extends Component {
                             </Row>
 
                             <Row>
-                                <Col><Comments wave_id={this.state.wave._id}></Comments></Col>
+                                <Col><Comments wave_id={this.state.wave._id} commentUser={this.props.loggedUser?._id}></Comments></Col>
                             </Row>
+
+                            <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                                <Modal.Header closeButton>
+                                    <Modal.Title>Edit wave</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <WaveForm closeModal={() => this.togglemodalForm(false)} wave={this.state?.wave} modalType="Edit" refreshList={() => this.loadWaves()} />
+                                </Modal.Body>
+                            </Modal>
                         </>
                         :
                         <Spinner />}

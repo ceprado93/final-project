@@ -5,6 +5,8 @@ import Spinner from '../../shared/Spinner/Spinner'
 import WaveForm from './../Wave-form/Wave-form'
 import './Waves.css'
 import Map from './../Map/Map'
+import MyMap from './../Cluster/MyMap'
+
 
 
 
@@ -65,12 +67,8 @@ class Waves extends Component {
 
                 <Container as="section">
                     <h1>The waves</h1>
-                    {this.state.lat
-                        ?
-                        <Map lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} ></Map>
-                        :
-                        null
-                    }
+
+                    {this.state.lat && <MyMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} ></MyMap>}
                     {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
                     {this.state.waves.length ? <WavesList waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
                 </Container>
@@ -81,7 +79,7 @@ class Waves extends Component {
                         <Modal.Title>New wave</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <WaveForm closeModal={() => this.togglemodalForm(false)} refreshList={() => this.loadWaves()} />
+                        <WaveForm closeModal={() => this.togglemodalForm(false)} modalType="New" refreshList={() => this.loadWaves()} />
                     </Modal.Body>
                 </Modal>
 

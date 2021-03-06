@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 router.get('/:region/details', (req, res) => {
 
     Wave
-    //to do
-        .find({region:req.params})
+        //to do
+        .find({ region: req.params })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
@@ -32,7 +32,7 @@ router.get('/region', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.get('/details/:wave_id',checkMongoId, (req, res) => {
+router.get('/details/:wave_id', checkMongoId, (req, res) => {
 
     Wave
         .findById(req.params.wave_id)
@@ -40,7 +40,7 @@ router.get('/details/:wave_id',checkMongoId, (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.post('/new', checkLoggedIn,(req, res) => {
+router.post('/new', checkLoggedIn, (req, res) => {
 
     const { title, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body, createdBy = req.user._id
     const location = {
@@ -53,16 +53,39 @@ router.post('/new', checkLoggedIn,(req, res) => {
     }
 
     Wave
-        .create({ title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
+        .create({ title, description, region, createdBy, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error saving Wave', err }))
 })
 
-router.put('/edit/:wave_id', (req, res) => {
+router.put('/edit', (req, res) => {
     // to do
+    const { title, id, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body
+    const location = {
+        type: 'Point',
+        coordinates: [latitude, longitude]
+    }
+    const images = {
+        url: imageUrl,
+        title: imageAuthor
+    }
     Wave
-        .findByIdAndUpdate(req.params.wave_id, req.body)
+        .findByIdAndUpdate(id, { title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
         .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error editing Wave', err }))
+})
+
+router.put('/accept/:wavedetails', (req, res) => {
+    // to do
+    console.log(req.params.wavedetails)
+    const id = req.params.wavedetails
+    const isAccepted = true
+    Wave
+        .findByIdAndUpdate(id, isAccepted)
+        .then(response => {
+            console.log('holaaaaaaaaa')
+            res.json(response)
+        })
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Wave', err }))
 })
 

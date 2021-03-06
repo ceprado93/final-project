@@ -4,43 +4,58 @@ import { Form, Button, Container } from 'react-bootstrap'
 
 class WaveForm extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            title: '',
-            description: '',
-            imageUrl: '',
-            imageAuthor: '',
-            latitude: 0,
-            longitude: 0,
-            region: '',
-            continent: '',
-            type: '',
-            seaBed: '',
-            swellDirections: 0,
-            windDirections: 0,
-            swellRange: '',
-            bestSeason: '',
-            crowd: '',
-            quality: 0,
-            level: '',
-            tide: ''
+            title: this.props.wave?.title || '',
+            description: this.props.wave?.description || '',
+            imageUrl: this.props.wave?.images[0].url || '',
+            imageAuthor: this.props.wave?.images[0].title || '',
+            latitude: this.props.wave?.location.coordinates[0] || 0,
+            longitude: this.props.wave?.location.coordinates[0] || 0,
+            region: this.props.wave?.region || '',
+            continent: this.props.wave?.continent || '',
+            type: this.props.wave?.type || '',
+            seaBed: this.props.wave?.seaBed || '',
+            swellDirections: this.props.wave?.swellDirections || 0,
+            windDirections: this.props.wave?.windDirections || 0,
+            swellRange: this.props.wave?.swellRange || '',
+            bestSeason: this.props.wave?.bestSeason || '',
+            crowd: this.props.wave?.crowd || '',
+            quality: this.props.wave?.quality || 0,
+            level: this.props.wave?.level || '',
+            tide: this.props.wave?.tide || '',
+            id: this.props.wave?._id || ''
         }
 
         this.waveService = new WaveService()
     }
 
     handleInputChange(e) {
+        console.log(this.props)
         const { name, value } = e.target
         this.setState({ [name]: value })
     }
 
-    handleSubmit(e) {
+    handleEdit(e) {
 
         e.preventDefault()
 
         this.waveService
-            .saveWave(this.state)
+            .editWave(this.state)
+            .then(() => {
+                this.props.closeModal()
+                this.props.refreshList()
+            })
+            .catch(err => console.log(err))
+    }
+
+    handleNew(e) {
+
+        e.preventDefault()
+
+        this.waveService
+            .editWave(this.state)
             .then(() => {
                 this.props.closeModal()
                 this.props.refreshList()
@@ -53,7 +68,7 @@ class WaveForm extends Component {
         return (
             <Container>
 
-                <Form onSubmit={e => this.handleSubmit(e)}>
+                <Form >
                     <Form.Group>
                         <Form.Label>Title</Form.Label>
                         <Form.Control type="text" name="title" value={this.state.title} onChange={e => this.handleInputChange(e)} />
@@ -127,9 +142,13 @@ class WaveForm extends Component {
                         <Form.Control type="text" name="tide" value={this.state.tide} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
 
-                    <Button variant="dark" block type="submit">New wave</Button>
+                    {this.props.modalType === 'New'
+                        ?
+                        <Button variant="dark" block type="submit" onClick={e => this.handleNew(e)}>New wave</Button>
+                        :
+                        <Button variant="dark" block type="submit" onClick={e => this.handleEdit(e)}> Edit wave</Button>}
                 </Form>
-            </Container>
+            </Container >
         )
     }
 }

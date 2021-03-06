@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 import Map from './../Map/Map'
-import './Continents.css'
+import MyMap from './../Cluster/MyMap'
 
 
 class Regions extends Component {
@@ -53,16 +53,14 @@ class Regions extends Component {
             <>
                 <Container as="section">
                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
-                        <Button variant="dark" onClick={() => this.setState({showMap:true, showList:false})}> Map</Button>
-                        <Button variant="outline-dark" onClick={() => this.setState({showMap:false, showList:true})}>List</Button>
+                        <Button variant="dark" onClick={() => this.setState({ showMap: true, showList: false })}> Map</Button>
+                        <Button variant="outline-dark" onClick={() => this.setState({ showMap: false, showList: true })}>List</Button>
                     </ButtonGroup>
-                    <div style={{display: this.state.showMap ? 'block' : 'none'}}  >
-                        <Map lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} zoom={this.props.history.location.state.zoom} />
-                    </div>
+                    {this.state.showMap && <MyMap lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} zoom={this.props.history.location.state.zoom} />}
                     {this.state.region
 
                         ?
-                        <Row style={{display: this.state.showList ? 'block' : 'none'}} >
+                        <Row style={{ display: this.state.showList ? 'block' : 'none' }} >
                             <hr />
                             <Col md={{ span: 6 }}>
                                 <ul>
@@ -70,7 +68,7 @@ class Regions extends Component {
                                 </ul>
                             </Col>
                         </Row>
-                     
+
                         :
                         <Spinner />}
                 </Container>

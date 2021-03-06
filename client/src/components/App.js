@@ -14,19 +14,22 @@ class App extends Component {
     super()
     this.state = {
       loggedUser: undefined,
-      isAdmin:undefined
+      isAdmin: undefined
     }
     this.authService = new AuthService()
   }
 
   storeUser(loggedUser) {
-    this.setState({ loggedUser }, () => console.log('Usuario modificado:', this.state.loggedUser))
+    this.setState({ loggedUser, isAdmin: loggedUser?.role }, () => console.log('Usuario modificado:', this.state.loggedUser))
   }
 
   fetchUser() {
     this.authService
       .isLoggedIn()
-      .then(response => this.storeUser(response.data))
+      .then(response => {
+        console.log(response.data)
+        this.storeUser(response.data)
+      })
       .catch(() => this.storeUser(undefined))
   }
 
@@ -40,7 +43,7 @@ class App extends Component {
       <>
         <Navigation storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.isAdmin} />
         <main>
-          <Routes storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} />
+          <Routes storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.isAdmin} />
         </main>
         <Footer />
       </>

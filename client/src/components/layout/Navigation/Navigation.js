@@ -1,12 +1,12 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import logo from './logo_size.jpg'
 
-import { NavLink, Link} from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 // import AuthModal from '../../shared/Modal/AuthModal'
 import AuthService from './../../../service/auth.service'
 import './Navigation.css'
 
-const Navigation = ({ storeUser, loggedUser , isAdmin}) => {
+const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
 
     const authService = new AuthService()
 
@@ -46,23 +46,27 @@ const Navigation = ({ storeUser, loggedUser , isAdmin}) => {
                         loggedUser
                             ?
 
-                            isAdmin ?
-                            <>
-                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                              </NavDropdown>
-                            </>
-                            :
-                            <>
-                                <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
-                                <NavLink to="/profile">
-                                    <Nav.Link as="span">Profile</Nav.Link>
-                                </NavLink>
-                            
-                            </>
-                            
+
+                            isAdmin === 'admin' ?
+                                <>
+                                    <NavDropdown title="Private" id="basic-nav-dropdown">
+                                        <NavDropdown.Item > <Link to="/profile">Profile</Link></NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item ><Link to="/admin-page">Admin page</Link></NavDropdown.Item>
+                                    </NavDropdown>
+                                    <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
+
+                                </>
+                                :
+                                <>
+                                    <NavLink to="/profile">
+                                        <Nav.Link as="span">Profile</Nav.Link>
+                                    </NavLink>
+                                    <Nav.Link as="span" onClick={() => logoutUser()}>Log out</Nav.Link>
+
+
+                                </>
+
                             :
                             <>
                                 <NavLink to="/signup">
