@@ -15,9 +15,9 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
             .then(() => storeUser(undefined))
             .catch(err => console.log(err))
     }
-    
+
     return (
-        <Navbar bg="light" variant="light" expand="md" className="navb">
+        <Navbar variant="light" expand="md" className="navb" fixed="top">
             <Link to="/">
                 <Navbar.Brand> <img
                     alt="logo"
@@ -25,16 +25,14 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                     width="28"
                     height="28"
                     className="d-inline-block align-top"
-                />{' '} WaveMaps</Navbar.Brand>
+                />{' '} </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                    <NavLink to="/" exact>
-                        <Nav.Link as="span">Home</Nav.Link>
-                    </NavLink>
-                    <NavLink to="/continents">
-                        <Nav.Link as="span">Atlas</Nav.Link>
+
+                    <NavLink to="/continents" >
+                        <Nav.Link as="span">Search</Nav.Link>
                     </NavLink>
 
                     {
