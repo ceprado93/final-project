@@ -9,7 +9,7 @@ class CommentForm extends Component {
         this.state = {
             title: '',
             description: '',
-            wave:''
+            wave: ''
         }
 
         this.CommentService = new CommentService()
@@ -17,8 +17,8 @@ class CommentForm extends Component {
     componentDidMount() {
         this.setWave()
     }
-    setWave(){
-        this.setState({wave: this.props.wave})
+    setWave() {
+        this.setState({ wave: this.props.wave })
     }
 
     handleInputChange(e) {
@@ -33,9 +33,8 @@ class CommentForm extends Component {
         this.CommentService
             .saveComment(this.state)
             .then((response) => {
-                console.log(response)
                 this.props.refreshList()
-                this.setState({title:'', description:''})
+                this.setState({ title: '', description: '' })
             })
             .catch(err => console.log(err))
     }

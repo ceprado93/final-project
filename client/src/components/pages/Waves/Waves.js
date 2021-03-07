@@ -33,23 +33,11 @@ class Waves extends Component {
     }
 
     loadWaves() {
-        console.log(this.props.match.params.region)
-
         this.wavesService
             .getWaves()
             .then(response => {
                 const filteredArr = response.data.filter(elm => elm.region === this.props.match.params.region)
-                console.log(filteredArr)
-
-
-
-                this.setState({
-                    waves: filteredArr,
-                    lat: filteredArr[0].location.coordinates[0],
-                    lng: filteredArr[0].location.coordinates[1],
-                    zoom: 5
-                })
-                console.log(this.state.waves)
+                this.setState({ waves: filteredArr, lat: filteredArr[0].location.coordinates[0], lng: filteredArr[0].location.coordinates[1], zoom: 5 })
             })
             .catch(err => console.log(err))
     }

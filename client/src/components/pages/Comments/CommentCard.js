@@ -16,31 +16,23 @@ class CommentCard extends Component {
 
     componentDidMount() {
         this.loadUsers()
-        console.log(this.props.userId)
-        console.log(this.props.writtenBy)
     }
 
     loadUsers() {
-        console.log(this.props)
         this.CommentService
             .getUsers()
             .then(response => {
-                console.log(response)
-
                 const filteredArr = response.data.filter(elm => elm._id === this.props.writtenBy)
-                console.log(filteredArr)
-
                 this.setState({ user: filteredArr[0].username })
             })
             .catch(err => console.log(err))
     }
 
     handleDelete() {
-        console.log(this.props._id)
         this.CommentService
             .deleteComment(this.props._id)
-            .then(() => this.props.refreshList()
-            )
+            .then(() => this.props.refreshList())
+            .catch(err => console.log(err))
 
     }
     render() {

@@ -20,12 +20,10 @@ class AdminPage extends Component {
     }
 
     loadWaves() {
-        console.log('hola')
         this.Waveservice
             .getWaves()
             .then(response => {
                 const pendingWaves = response.data.filter(elm => !elm.isAccepted)
-                console.log(pendingWaves)
                 this.setState({ waves: pendingWaves })
             })
             .catch(err => console.log(err))
