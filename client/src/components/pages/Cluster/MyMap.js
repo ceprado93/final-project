@@ -8,9 +8,11 @@ import ClusterMarker from './ClusterMarker';
 import mapStyles from './mapStyles.json';
 
 const MAP = {
-  
+  options: {
     styles: mapStyles,
-  }
+    maxZoom: 19,
+  },
+}
 
 
 class MyMap extends Component {
@@ -97,6 +99,7 @@ class MyMap extends Component {
           bootstrapURLKeys={{ key: 'AIzaSyDWox-Ew5Z4Wm2OMqZSFRhM-IIwzPtxRgU' }}
           defaultCenter={this.state.mapOptions.center}
           defaultZoom={this.state.mapOptions.zoom}
+          options={MAP.options}
           onChange={(e) => this.handleMapChange(e)}
         // options={MAP.options}
         >
