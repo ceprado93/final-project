@@ -32,15 +32,12 @@ class WaveForm extends Component {
     }
 
     handleInputChange(e) {
-        console.log(this.props)
         const { name, value } = e.target
         this.setState({ [name]: value })
     }
 
     handleEdit(e) {
-
         e.preventDefault()
-
         this.waveService
             .editWave(this.state)
             .then(() => {

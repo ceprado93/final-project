@@ -23,7 +23,6 @@ class WaveDetails extends Component {
     componentDidMount() {
 
         const wave_id = this.props.match.params.id
-        console.log(this.props)
 
         this.waveService
             .getWave(wave_id)

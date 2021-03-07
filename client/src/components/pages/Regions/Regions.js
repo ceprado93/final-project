@@ -23,7 +23,6 @@ class Regions extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
         this.getRegion()
 
     }
