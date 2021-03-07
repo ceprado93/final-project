@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import './App.css'
-
 import Routes from './routes/Routes'
 import Footer from './layout/Footer/Footer'
 import Navigation from './layout/Navigation/Navigation'

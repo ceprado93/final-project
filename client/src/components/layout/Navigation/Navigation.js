@@ -1,8 +1,6 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import logo from './logo_size.jpg'
-
+import logo from './logo.png'
 import { NavLink, Link } from 'react-router-dom'
-// import AuthModal from '../../shared/Modal/AuthModal'
 import AuthService from './../../../service/auth.service'
 import './Navigation.css'
 
@@ -17,17 +15,17 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
             .then(() => storeUser(undefined))
             .catch(err => console.log(err))
     }
-
+    
     return (
         <Navbar bg="light" variant="light" expand="md" className="navb">
             <Link to="/">
                 <Navbar.Brand> <img
-                    alt=""
+                    alt="logo"
                     src={logo}
-                    width="30"
-                    height="30"
+                    width="28"
+                    height="28"
                     className="d-inline-block align-top"
-                />{' '} Waves Map</Navbar.Brand>
+                />{' '} WaveMaps</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -37,9 +35,6 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                     </NavLink>
                     <NavLink to="/continents">
                         <Nav.Link as="span">Atlas</Nav.Link>
-                    </NavLink>
-                    <NavLink to="/waves">
-                        <Nav.Link as="span">Waves</Nav.Link>
                     </NavLink>
 
                     {
@@ -77,7 +72,6 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                                 </NavLink>
                             </>
                     }
-
 
                 </Nav>
             </Navbar.Collapse>

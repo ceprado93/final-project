@@ -27,9 +27,6 @@ const Routes = ({ storeUser, loggedUser, isAdmin }) => {
                 <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} />} />
                 <Route exact path="/:continent" render={(props) => <Regions {...props} />} />
                 <Route exact path="/details/:id" render={props => <WaveDetails {...props} loggedUser={loggedUser} />} />
-
-
-
             </Switch>
         </>
     )

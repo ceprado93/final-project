@@ -7,7 +7,7 @@ const MarkerStyled = styled.div`
   align-items: center;
   width: 36px;
   height: 36px;
-  font-size: 14px;
+  font-size: 10px;
   color: #fff;
   text-transform: uppercase;
   border: 2px solid #fff;
@@ -19,6 +19,7 @@ const MarkerStyled = styled.div`
   animation: ${easyMove} 0.3s;
   &:hover {
     transform: scale(1.2);
+    background-color:${COLORS.hovercolor}
   }
 `;
 

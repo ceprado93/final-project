@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 const IndexPage = () => {
     return (
         <>
+
+        
             <img className='front-image' src='https://offgridhideaways.com/worldwide/assets/uploads/CB_AleutianIslands_wp-1200x816.jpg' alt='aleutians-wave' />
             <Container as="section">
                 <small> Photo: Chris Buckard</small>
@@ -19,3 +21,4 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
