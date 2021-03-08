@@ -63,12 +63,13 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
 
                             :
                             <>
-                                <NavLink to="/signup">
-                                    <Nav.Link as="span">Sign up</Nav.Link>
-                                </NavLink>
                                 <NavLink to="/login">
                                     <Nav.Link as="span">Log in</Nav.Link>
                                 </NavLink>
+                                <NavLink to="/signup">
+                                    <Nav.Link as="span">Sign up</Nav.Link>
+                                </NavLink>
+
                             </>
                     }
 
