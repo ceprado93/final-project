@@ -20,7 +20,7 @@ const IndexPage = () => {
             </section>
 
             <section className="second-section">
-                <h2>Best waves</h2>
+                <h2>OUR WAVES</h2>
                 <Carousel style={{ height: 600 }} >
                     <Carousel.Item>
                         <img height={600}

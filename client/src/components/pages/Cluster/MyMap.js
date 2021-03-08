@@ -92,7 +92,7 @@ class MyMap extends Component {
 
   render() {
     return (
-      <div style={{ height: '1000px', width: '1000px' }}>
+      <div style={{ height: '800px', width: '1100px' }}>
         <GoogleMapReact
           id="map"
           yesIWantToUseGoogleMapApiInternals
@@ -130,6 +130,8 @@ class MyMap extends Component {
         //   />)} */}
 
         </GoogleMapReact>
+
+  
 
       </div>
     );

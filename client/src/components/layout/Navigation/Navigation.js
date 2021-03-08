@@ -1,5 +1,5 @@
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import logo from './logo.png'
+import logo from './logoblack.png'
 import { NavLink, Link } from 'react-router-dom'
 import AuthService from './../../../service/auth.service'
 import './Navigation.css'
@@ -22,8 +22,9 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                 <Navbar.Brand> <img
                     alt="logo"
                     src={logo}
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
+                    style={{marginLeft:15}}
                     className="d-inline-block align-top"
                 />{' '} </Navbar.Brand>
             </Link>

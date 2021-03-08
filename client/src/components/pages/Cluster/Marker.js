@@ -20,6 +20,7 @@ class Marker extends React.PureComponent {
             </MarkerInGroupStyled>
           : <MarkerStyled>
               <Spy scale="0.55" />
+              
             </MarkerStyled>}
       </div>
     );

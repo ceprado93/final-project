@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import AuthService from '../../../service/auth.service'
-
-import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Form, Button, Container, Row, Col,Jumbotron } from 'react-bootstrap'
+import './Login.css'
 
 class Login extends Component {
 
@@ -36,34 +36,34 @@ class Login extends Component {
 
     render() {
         return (
+            <section className="login">
             <Container>
 
                 <Row>
 
-                    <Col md={{ span: 4, offset: 4 }}>
-
+<                       Col>
                         <h1>Log in</h1>
 
-                        <hr />
-
+                        <Jumbotron className="jumbo-login">
                         <Form onSubmit={e => this.handleSubmit(e)}>
                             <Form.Group>
-                                <Form.Label>Username</Form.Label>
+                                <Form.Label className="label-login">Username</Form.Label>
                                 <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label className="label-login">Password</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
 
-                            <Button variant="dark" block type="submit">Log in</Button>
+                            <Button variant="outline-dark" block type="submit" className="sign-button">Log in</Button>
                         </Form>
-
+                        </Jumbotron>
                     </Col>
 
                 </Row>
 
             </Container>
+            </section>
         )
     }
 }

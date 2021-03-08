@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import AuthService from '../../../service/auth.service'
-
-import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Form, Button, Container, Row, Col, Jumbotron} from 'react-bootstrap'
+import './Signup.css'
 
 class Signup extends Component {
 
@@ -36,34 +36,35 @@ class Signup extends Component {
 
     render() {
         return (
+    <section className="signup">
             <Container>
 
                 <Row>
 
-                    <Col md={{ span: 4, offset: 4 }}>
+                    <Col>
 
                         <h1>Sign up</h1>
 
-                        <hr />
-
-                        <Form onSubmit={e => this.handleSubmit(e)}>
+                        <Jumbotron className="jumbo-signup">
+                        <Form className="form-signup"onSubmit={e => this.handleSubmit(e)}>
                             <Form.Group>
-                                <Form.Label>Username</Form.Label>
+                                <Form.Label className="label-signup">Username</Form.Label>
                                 <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label className="label-signup">Password</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
 
-                            <Button variant="dark" block type="submit">Sign up</Button>
+                            <Button variant="outline-dark" block type="submit" className="sign-button">Sign up</Button>
                         </Form>
-
+</Jumbotron>
                     </Col>
 
                 </Row>
 
             </Container>
+            </section>
         )
     }
 }
@@ -71,3 +72,6 @@ class Signup extends Component {
 
 
 export default Signup
+
+
+

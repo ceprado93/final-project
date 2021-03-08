@@ -479,870 +479,578 @@ const waves = [
         createdBy: '603d1af4e72dca32acd44dfa',
         isAccepted: true
     },
-    // {
-    //     title: 'La zurriola',
-    //     description: 'Consistent, medium-quality beachbreak that can have good peaks depending on the sandbars. A lefthander peels towards the pier at low tide. Best on small swells; anything over about 5 closes out.',
-    //     images: 'https://www.surfsearchspot.com/wp-content/uploads/2016/05/Surf-en-La-Zurriola-bY-Jonxa-4-1024x627.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-2',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Zarautz',
-    //     description: 'Very consistent, good quality, beachbreak. Doesn’t need much swell to work, although W swells struggle to get in here. A long beach with several peaks, mostly performance orientated. Highly competitive in the water with a very high level of surfing.',
-    //     images: 'https://lh3.googleusercontent.com/proxy/dMt7MGyYOuAQfHkkTw4nEnZlwPpVUxokkaQlAMVgXCIN0okG9y_JBMhIcNQCYd_dGBoZLubG3FY58ffM7J3n15j0hMjsF7_5DcBFZzfQwJJgNOm8H6xg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Orrua - Roka Puta',
-    //     description: 'Orrua in Pais Vasco is an exposed reef break that has fairly consistent surf. Autumn and winter are the favoured times of year for waves. The best wind direction is from the south southeast. Windswells and groundswells in equal measure and the best swell direction is from the northwest. No beach break here and a right hand reef break too.. Best around low tide. When the surf is up, crowds are likely Beware of rocks / rips and pollution.',
-    //     images: 'https://2.bp.blogspot.com/-7BCk9YcEmLI/W6c0PTkonlI/AAAAAAABmnM/Gkn689bSVlgOvXW4mLoUQkk-fQlSKx-mQCLcBGAs/s1600/orrua.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Poinbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 310,
-    //     windDirections: 160,
-    //     swellRange: '1-7',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Deba',
-    //     description: 'Deba in Pais Vasco is an exposed beach and reef break that does not work very often with no particular seasonal pattern. The best wind direction is from the south. Tends to receive a mix of groundswells and windswells and the best swell direction is from the northwest',
-    //     images: 'https://lh3.googleusercontent.com/-RpzlmkrIjrU/Wm8tq1XvqWI/AAAAAAAATnk/MxHaQZZvAIErxOH2E7WvLJuyqpXKgB6lgCHMYCw/sorgin%252Betxe%252Bdeba%252Bdesde%252Bfoto%252Bdenisainz%252Bla%252Bcarretera.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand and rocks',
-    //     swellDirections: 310,
-    //     windDirections: 170,
-    //     swellRange: '1-6',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'High tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Laga',
-    //     description: 'Consistent, good to excellent beachbreak, sometimes producing barrels. OK on most tides although changes with sandbars.',
-    //     images: 'https://cf.bstatic.com/images/hotel/max500/203/203748124.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-5',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: ' All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Mundaka',
-    //     description: 'Mundaka is a dream lefthand barrel and possibly the best rivermouth wave in the world. A long triangular sandbank catches the stronger NW swells, creating a long flawless tube with rides of up to 150-200 meters possible. From the peak, the wave sucks up hard, making for steep challenging take-offs straight into a sick barrel section. The ensuing long, fast wall, allows a few turns if you are going close to warp speed.',
-    //     images: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2019/07/la-barra-mundaka.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-5',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Bakio',
-    //     description: 'Very consistent, popular beachbreak. Can produce excellent waves with some barrel sections, depending on sandbar formations which change constantly.',
-    //     images: 'https://lh3.googleusercontent.com/proxy/pMvoHHbbeM7DkP5QEEwCICwUG3x0-QdvtjeTEkA6_i-X-w8sF0MMA9oWJPFHQAbAxKK4s-0BzuGAEIO6az-XKDkeAWJKvCCWJpc75eQLVxmMFzzGEKxqtfQJVQ3gtwtIzScfoSzxgpfyaJT0kwWyg1dgPBxxbr2WpcG49y3yedSjf2iqtrkWXSkLNaliD8GHq5G30lIL8r4fxpLy7SnMe9GxIFfKZJp9sDtMY1AoSJw-8-Ev',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-5',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Plentzia',
-    //     description: 'Unconsistent lefthand rivermouth with some quality days.  Always very crowded. ',
-    //     images: 'https://surfmocion.com/wp-content/uploads/2015/09/plentzia_Juanma-Billala-12-1.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-2',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Meñakoz',
-    //     description: 'World-class, highly dangerous big-wave spot. One of the most powerful regularly-surfed waves in Europe. Starts breaking properly at about 12 foot. Hazards include razor-sharp rocks, very strong rips, shifting peaks, two-wave hold-downs, broken boards and broken bones.',
-    //     images: 'https://willyuribe.files.wordpress.com/2011/11/wusph_0175.jpg?w=584',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 310,
-    //     windDirections: 170,
-    //     swellRange: '2-6',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 5,
-    //     level: ' Pros',
-    //     tide: ' Hight tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Sopelana',
-    //     description: 'Very consistent beachbreak with several peaks. Good semi-permanent high-tide peak at western end of beach. Works on small to medium swells.',
-    //     images: 'https://www.moanasurfhostel.com/adminsurfhostel/wp-content/uploads/MG_0189-compressor.jpeg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-2',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'La salvaje',
-    //     description: 'Consistent beach near sopelana, always very crowded. Can produce good sandbanks and hold bigger swell than Sopelana',
-    //     images: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/e6/11/94/img-20160923-wa0008-largejpg.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'La galea',
-    //     description: 'Premier big wave spot and home of the annual Big Wave World Tour event.',
-    //     images: 'https://fotos02.deia.eus/2020/12/05/1024x341/surf.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '3-7+',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Empty',
-    //     quality: 5,
-    //     level: ' Pros',
-    //     tide: ' All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'La arena',
-    //     description: 'Long beach with several peaks, depending on sandbars. Works on most tides. Very consistent.',
-    //     images: 'https://lh3.googleusercontent.com/nl1EDzpbZG5KJUOuYkxw4Wxletn_BQrhnqRscew_AGI=w1300-h667-no',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Laredo',
-    //     description: 'Large circular bay with several beachbreak peaks. Good peak between middle and western end at high tide. Works on large winter swells, offshore on W and OK on NW winds.',
-    //     images: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2018/09/29744736_10211397644284433_2960710722623373962_o.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 240,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Berria',
-    //     description: 'Quite long beach with several peaks, depending on sandbars and state of tide. Needs at least a medium swell to work. Moderately consistent.',
-    //     images: 'https://www.watsaysurfschool.com/wp-content/uploads/2020/08/hacer-surf-en-berria.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'El brusco',
-    //     description: 'Excellent-quality hollow beachbreak with A-frame peaks. Needs fair sized swell to work. Best at high tide. The stronger the offshore wind the better.',
-    //     images: 'https://margruesa.com/wp-content/uploads/2015/12/el-brusco-pacotwo_MG_0660.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'High tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Ris',
-    //     description: 'Playa de Ris in Cantabria is a reasonably exposed beach break that has fairly consistent surf, although summer tends to be mostly flat. The best wind direction is from the southeast. Tends to receive a mix of groundswells and windswells and the ideal swell direction is from the northwest. The beach break offers both left and right hand waves. Best around high tide. Likely to be crowded if working. Crowds may reach hazard levels at this break - consider wearing a lid.',
-    //     images: 'http://www.masmar.net/var/masmar/storage/images/guias/playas/cantabria/playa-de-ris-noja/playa-de-ris-noja2/179140-1-esl-ES/Playa-de-Ris-Noja.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-2',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Langre',
-    //     description: 'Average beachbreak sheltered from strong SW and moderate W winds. Needs a reasonable swell to work. Low to mid tide only.',
-    //     images: 'https://iniciativavecinalralm.org/wp-content/uploads/2020/08/langre-playa.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Santa Marina',
-    //     description: 'World-class righthand reefbreak, breaking off the island of Santa Marina. Freight-train walls and barrel sections. Works from about 5 foot upwards. Best on the rare combination of a large swell and a E or NE wind, usually only a few times a year. OK on all tides but dangerous rocks in front of take-off at low tide.',
-    //     images: 'http://www.escueladesurflaislasantamarina.es/wp/wp-content/uploads/2015/12/Surfista-Nano-Riego-Foto-Rafael-Gonzalez-Riancho.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand and rocks',
-    //     swellDirections: 310,
-    //     windDirections: 150,
-    //     swellRange: '1-6',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 5,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Somo',
-    //     description: 'Consistent beachbreak with good peaks, working during most tides. Best on small to medium swells.',
-    //     images: 'https://i0.wp.com/www.todosurf.com/wp-content/uploads/2019/08/Playas-de-Somo-y-Loredo-1.jpeg?fit=1280%2C551&ssl=1',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'El sardinero',
-    //     description: 'East-facing average-quality beachbreak. Works best in big storms with W or NW winds.',
-    //     images: 'https://live.staticflickr.com/4111/5170312291_a398aaa20e_b.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 315,
-    //     windDirections: 270,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'La vaca',
-    //     description: 'Heavy big wave spot near Santander, only for very expirienced surfers',
-    //     images: 'https://wipeoutsurfmag.com/wp-content/uploads/2016/11/la-vaca..jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Slab',
-    //     seaBed: 'Rocks',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '2-7',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Empty',
-    //     quality: 5,
-    //     level: ' Pros',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Liencres',
-    //     description: 'Excellent beachbreak with a series of peaks, depending on tide and sandbars. Very consistent.',
-    //     images: 'https://www.surfcantabria.com/media/k2/items/cache/e83a79315cc06d4fda91a5651489679d_XL.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3.5,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Los locos',
-    //     description: 'Excellent, consistent, west-facing beachbreak. Works during most tides and is sheltered from summer NE sea breezes by high cliffs.',
-    //     images: 'https://www.surf-forecast.com/system/images/16610/large/Los-Locos.jpg?1470123425',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 90,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Playa de gerra',
-    //     description: 'Good consistent beachbreak, works on most tides. Long stretch of beach with various peaks, depending on sandbars.',
-    //     images: 'https://santanderalacarta.com/files/2016/06/playa_gerra_cantabria-1024x679.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Andrin',
-    //     description: 'Playa de Andrin in Asturias is an exposed beach break that has very reliable surf and works all around the year. Offshore winds are from the south. Groundswells and windswells are equally likely and the best swell direction is from the northwest. The beach breaks offer lefts and rights. ',
-    //     images: 'http://quemalavida.com/wp-content/uploads/2016/06/surf-asturias-4.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Playa de Vega',
-    //     description: 'Long beach with several possible peaks picking up all available swell. More consistent than surrounding spots due to it’s NNW orientation. Handles the summer NE winds.',
-    //     images: 'https://www.ruralia.com/uploads/imagecache/imagecache_portapapeles//uploads/s34wsx9amefgkp9gyyg8.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Rodiles',
-    //     description: 'The best wave in Asturias. A world-class rivermouth lefthander similar to Mundaka but slightly shorter and handles less size. Two hours either side of low, preferably on the push. Needs a moderate swell to get going, usually best in winter.',
-    //     images: 'http://galaxypro.s3.amazonaws.com/spot-media/322/322-rodiles-spain.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'El mongol',
-    //     description: 'Average-quality pointbreak, picks up a limited amount of swell but surfable during most tides. SW wind OK.',
-    //     images: 'https://lh3.googleusercontent.com/-2-ogS1TzXk8/WHvPuo96SDI/AAAAAAAAQF8/ej9jDCkhPM4/el%25252Bmongol%25252Babriendo%25252Bperfecto....jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Pointbreak',
-    //     seaBed: 'Sand and rocks',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-4',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Mid to high tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Salinas',
-    //     description: 'Stretching from Playa El Espartal to Salinas, this is one of the most popular surfing beaches in Asturias. Fast, barrelling, consistent beachbreak peaks, working during all tides. Smaller towards western end. Some shelter from summer NE sea breeze.',
-    //     images: 'https://www.upsurfboard.com/wp-content/uploads/2019/04/Salinas.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Full',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Tapia de casariego',
-    //     description: 'Good-quality, consistent beachbreak with semi-permanent, hollow lefthander, fed by a stream. Best mid to low tide, outgoing. Some shelter from NE sea breezes in summer, but it is a year-round wave.',
-    //     images: 'https://as.com/deportes_accion/imagenes/2018/04/03/surf/1522746635_851948_1522747572_noticia_normal.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: 'Foz',
-    //     description: 'Excellent quality rivermouth left only breaks on the biggest swells of the year. It’s fast, hollow and shallow and doesnt hold above about 8 ft.Low tide only.',
-    //     images: 'https://www.upsurfboard.com/wp-content/uploads/2019/04/Foz.jpg',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 4,
-    //     level: 'Experienced surfers',
-    //     tide: 'Low tide',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
+    {
+        title: 'La zurriola',
+        description: 'Consistent, medium-quality beachbreak that can have good peaks depending on the sandbars. A lefthander peels towards the pier at low tide. Best on small swells; anything over about 5 closes out.',
+        images: [{
+            url: 'https://www.surfsearchspot.com/wp-content/uploads/2016/05/Surf-en-La-Zurriola-bY-Jonxa-4-1024x627.jpg',
+            title: '@Jonxa'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.326980, -1.973315]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-2',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+        isAccepted: true
+    },
+    {
+        title: 'Zarautz',
+        description: 'Very consistent, good quality, beachbreak. Doesn’t need much swell to work, although W swells struggle to get in here. A long beach with several peaks, mostly performance orientated. Highly competitive in the water with a very high level of surfing.',
+        images: [{
+            url: 'https://totalsurfcamp.com/sites/default/files/surfcamps/%5Btitle-raw%5D/playa-de-zarautz-pais-vasco.jpg',
+            title: '@totalsurfcamps'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [3.288517, -2.165908]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Orrua - Roka Puta',
+        description: 'Orrua in Pais Vasco is an exposed reef break that has fairly consistent surf. Autumn and winter are the favoured times of year for waves. The best wind direction is from the south southeast. Windswells and groundswells in equal measure and the best swell direction is from the northwest. No beach break here and a right hand reef break too.. Best around low tide. When the surf is up, crowds are likely Beware of rocks / rips and pollution.',
+        images: [{
+            url: 'https://2.bp.blogspot.com/-7BCk9YcEmLI/W6c0PTkonlI/AAAAAAABmnM/Gkn689bSVlgOvXW4mLoUQkk-fQlSKx-mQCLcBGAs/s1600/orrua.jpg',
+            title: '@Surf30'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.307003, -2.239742]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 310,
+        windDirections: 160,
+        swellRange: '1-7',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Deba',
+        description: 'Deba in Pais Vasco is an exposed beach and reef break that does not work very often with no particular seasonal pattern. The best wind direction is from the south. Tends to receive a mix of groundswells and windswells and the best swell direction is from the northwest',
+        images: [{
+            url: 'https://lh3.googleusercontent.com/-RpzlmkrIjrU/Wm8tq1XvqWI/AAAAAAAATnk/MxHaQZZvAIErxOH2E7WvLJuyqpXKgB6lgCHMYCw/sorgin%252Betxe%252Bdeba%252Bdesde%252Bfoto%252Bdenisainz%252Bla%252Bcarretera.jpg',
+            title: '@sorginetxe'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.302454, -2.345494]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand and rocks',
+        swellDirections: 310,
+        windDirections: 170,
+        swellRange: '1-6',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'High tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Laga',
+        description: 'Consistent, good to excellent beachbreak, sometimes producing barrels. OK on most tides although changes with sandbars.',
+        images: [{
+            url: 'https://cf.bstatic.com/images/hotel/max500/203/203748124.jpg',
+            title: '@navasurfcamps'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.409725, -2.654813]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-5',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 3,
+        level: 'All surfers',
+        tide: ' All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Mundaka',
+        description: 'Mundaka is a dream lefthand barrel and possibly the best rivermouth wave in the world. A long triangular sandbank catches the stronger NW swells, creating a long flawless tube with rides of up to 150-200 meters possible. From the peak, the wave sucks up hard, making for steep challenging take-offs straight into a sick barrel section. The ensuing long, fast wall, allows a few turns if you are going close to warp speed.',
+        images: [{
+            url: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2019/07/la-barra-mundaka.jpg',
+            title: '@mitxelAndreu'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.408518, -2.696122]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-5',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'Low tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Bakio',
+        description: 'Very consistent, popular beachbreak. Can produce excellent waves with some barrel sections, depending on sandbar formations which change constantly.',
+        images: [{
+            url: 'https://totalsurfcamp.com/sites/default/files/surfcamps/%5Btitle-raw%5D/playa-de-zarautz-pais-vasco.jpg',
+            title: '@willYuribe'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [3.430592, -2.804647]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-5',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Meñakoz',
+        description: 'World-class, highly dangerous big-wave spot. One of the most powerful regularly-surfed waves in Europe. Starts breaking properly at about 12 foot. Hazards include razor-sharp rocks, very strong rips, shifting peaks, two-wave hold-downs, broken boards and broken bones.',
+        images: [{
+            url: 'https://willyuribe.files.wordpress.com/2011/11/wusph_0175.jpg?w=584',
+            title: '@willYuribe'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.396902, -2.986398]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 310,
+        windDirections: 170,
+        swellRange: '2-6',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 5,
+        level: 'Pros',
+        tide: ' Hight tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Sopelana',
+        description: 'Very consistent beachbreak with several peaks. Good semi-permanent high-tide peak at western end of beach. Works on small to medium swells.',
+        images: [{
+            url: 'https://www.moanasurfhostel.com/adminsurfhostel/wp-content/uploads/MG_0189-compressor.jpeg',
+            title: '@monasurfHostel'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.388973, -2.994543]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-2',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'La salvaje',
+        description: 'Consistent beach near sopelana, always very crowded. Can produce good sandbanks and hold bigger swell than Sopelana',
+        images: [{
+            url: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/e6/11/94/img-20160923-wa0008-largejpg.jpg',
+            title: '@tripadvisor'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [3.383840, -3.004064]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'La galea',
+        description: 'Premier big wave spot and home of the annual Big Wave World Tour event.',
+        images: [{
+            url: 'http://quemalavida.com/wp-content/uploads/2015/11/natxo-gonzalez-surf-la-galea.jpg',
+            title: '@PellonCano'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.371057, -3.037474]
+         },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Rocks',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '3-7+',
+        bestSeason: 'Autumn',
+        crowd: 'Empty',
+        quality: 5,
+        level: 'Pros',
+        tide: ' All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Laredo',
+        description: 'Large circular bay with several beachbreak peaks. Good peak between middle and western end at high tide. Works on large winter swells, offshore on W and OK on NW winds.',
+        images: [{
+            url: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2018/09/29744736_10211397644284433_2960710722623373962_o.jpg',
+            title: '@MitxelAndreu'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.421914, -3.441456]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 240,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'El brusco',
+        description: 'Excellent-quality hollow beachbreak with A-frame peaks. Needs fair sized swell to work. Best at high tide. The stronger the offshore wind the better.',
+        images: [{
+            url: 'https://margruesa.com/wp-content/uploads/2015/12/el-brusco-pacotwo_MG_0660.jpg',
+            title: '@PacoTwo'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.468762, -3.480934]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'High tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Santa Marina',
+        description: 'World-class righthand reefbreak, breaking off the island of Santa Marina. Freight-train walls and barrel sections. Works from about 5 foot upwards. Best on the rare combination of a large swell and a E or NE wind, usually only a few times a year. OK on all tides but dangerous rocks in front of take-off at low tide.',
+        images: [{
+            url: 'http://www.escueladesurflaislasantamarina.es/wp/wp-content/uploads/2015/12/Surfista-Nano-Riego-Foto-Rafael-Gonzalez-Riancho.jpg',
+            title: '@RafaelGonzalezRiancho'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.470124, -3.731743]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand and rocks',
+        swellDirections: 310,
+        windDirections: 150,
+        swellRange: '1-6',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'La vaca',
+        description: 'Heavy big wave spot near Santander, only for very expirienced surfers',
+        images: [{
+            url: 'https://wipeoutsurfmag.com/wp-content/uploads/2016/11/la-vaca..jpg',
+            title: '@willyUribe'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.484932, -3.836463]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Slab',
+        seaBed: 'Rocks',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '2-7',
+        bestSeason: 'Autumn',
+        crowd: 'Empty',
+        quality: 5,
+        level: 'Pros',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Liencres',
+        description: 'Excellent beachbreak with a series of peaks, depending on tide and sandbars. Very consistent.',
+        images: [{
+            url: 'https://www.surfcantabria.com/media/k2/items/cache/e83a79315cc06d4fda91a5651489679d_XL.jpg',
+            title: '@surfCanctabria'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.454111, -3.960366]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 3.5,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Los locos',
+        description: 'Excellent, consistent, west-facing beachbreak. Works during most tides and is sheltered from summer NE sea breezes by high cliffs.',
+        images: [{
+            url: 'https://www.surf-forecast.com/system/images/16610/large/Los-Locos.jpg?1470123425',
+            title: '@Beltran'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.438809, -4.047228]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 90,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Andrin',
+        description: 'Playa de Andrin in Asturias is an exposed beach break that has very reliable surf and works all around the year. Offshore winds are from the south. Groundswells and windswells are equally likely and the best swell direction is from the northwest. The beach breaks offer lefts and rights. ',
+        images: [{
+            url: 'http://quemalavida.com/wp-content/uploads/2016/06/surf-asturias-4.jpg',
+            title: '@quemalavida'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.410490, -4.708070]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Rodiles',
+        description: 'The best wave in Asturias. A world-class rivermouth lefthander similar to Mundaka but slightly shorter and handles less size. Two hours either side of low, preferably on the push. Needs a moderate swell to get going, usually best in winter.',
+        images: [{
+            url: 'http://galaxypro.s3.amazonaws.com/spot-media/322/322-rodiles-spain.jpg',
+            title: '@RodilesSurf'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [3.534743, -5.385300]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Low tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'El mongol',
+        description: 'Average-quality pointbreak, picks up a limited amount of swell but surfable during most tides. SW wind OK.',
+        images: [{
+            url: 'https://lh3.googleusercontent.com/-2-ogS1TzXk8/WHvPuo96SDI/AAAAAAAAQF8/ej9jDCkhPM4/el%25252Bmongol%25252Babriendo%25252Bperfecto....jpg',
+            title: '@surfSearchSport'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.543254, -5.646720]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Pointbreak',
+        seaBed: 'Sand and rocks',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-4',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Mid to high tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Salinas',
+        description: 'Stretching from Playa El Espartal to Salinas, this is one of the most popular surfing beaches in Asturias. Fast, barrelling, consistent beachbreak peaks, working during all tides. Smaller towards western end. Some shelter from summer NE sea breeze.',
+        images: [{
+            url: 'https://www.upsurfboard.com/wp-content/uploads/2019/04/Salinas.jpg',
+            title: '@upSurfBoards'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [3.581043, -5.951642]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Full',
+        quality: 3,
+        level: 'All surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
+    {
+        title: 'Foz',
+        description: 'Excellent quality rivermouth left only breaks on the biggest swells of the year. It’s fast, hollow and shallow and doesnt hold above about 8 ft.Low tide only.',
+        images: [{
+            url: 'https://www.upsurfboard.com/wp-content/uploads/2019/04/Foz.jpg',
+            title: '@WillyUribe'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [43.572509, -7.241930]
+        },
+        region: 'Spain',
+        continent: 'Europe',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 310,
+        windDirections: 180,
+        swellRange: '1-3',
+        bestSeason: 'Autumn',
+        crowd: 'Fairly crowded',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'Low tide',
+        createdBy: '603d1af4e72dca32acd44dfa', 
+    isAccepted: true
+    },
     {
         title: 'Pantin',
         description: 'The most popular surf spot in Galicia, home to an annual pro contest. Ultra consistent, Pantin hoovers up W-NW swell and can hold quite a bit of size. Both left and right peaks can line up and spitting barrels are common. Better low to mid but surfable on all tides. Strong rips with paddling channel at northern end.',
@@ -1551,66 +1259,14 @@ const waves = [
         createdBy: '603d1af4e72dca32acd44dfa',
         isAccepted: true
     }
-    // {
-    //     title: '',
-    //     description: '',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
-    // {
-    //     title: '',
-    //     description: '',
-    //     images: [{
-    //         url: '',
-    //         title: ''
-    //     }],
-    //     location: {
-    //         type: 'Point',
-    //         coordinates: []
-    //     },
-    //     region: 'Spain',
-    //     continent: 'Europe',
-    //     type: 'Beachbreak',
-    //     seaBed: 'Sand',
-    //     swellDirections: 310,
-    //     windDirections: 180,
-    //     swellRange: '1-3',
-    //     bestSeason: 'Autumn',
-    //     crowd: 'Fairly crowded',
-    //     quality: 3,
-    //     level: 'All surfers',
-    //     tide: 'All tides',
-    //     createdBy: '603d1af4e72dca32acd44dfa', 
-    //isAccepted: true
-    // },
+
 
 
 
 ];
 
-// then(()=>{
-//to do drop
-db.sequelize.sync({ force: true })
+
+
 Waves
     .create(waves)
     .then(allWavesCreated => {
@@ -1618,4 +1274,3 @@ Waves
         mongoose.connection.close();
     })
     .catch(err => console.log('Hubo un error,', err))
-//})

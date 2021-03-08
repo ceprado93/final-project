@@ -1,8 +1,8 @@
 import { keyframes } from 'styled-components';
 
 export const COLORS = {
-  gray64: 'blue',
-  hovercolor: 'cyan'
+  gray64: '#2763BF ',
+  hovercolor: '#DEC33A'
 };
 
 export const easyMove = keyframes`

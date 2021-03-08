@@ -5,7 +5,6 @@
     background-size: cover;
     background-position: 100% 40%;
     margin-bottom: 100px;
-    color: white;
 }
 
 .first-section h1{
@@ -28,6 +27,8 @@
 
 .searchBtn{
     padding: 5px 50px;
+    margin-bottom: 100px;
+    margin-top: 20px;
 }
 
 .wave-link{
@@ -39,10 +40,13 @@
 .second-section h2{
     display: flex;
     justify-content: center;
+    margin-bottom: 60px;
+    font-size: 3em;
 }
 
 .second-section img{
     object-fit: cover;
     object-position: center 70%;
     margin-bottom: 20px;
+   
 }
