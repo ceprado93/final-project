@@ -12,7 +12,7 @@ import './Navigation.css'
 const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
 
     const authService = new AuthService()
-
+    document.addEventListener('scroll', (e)=> scrollNav(e))
     const logoutUser = () => {
 
         authService
@@ -23,14 +23,12 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
 // to do
 let changeClass
 function scrollNav(e){
-const scrollTop = window.pageYOffset
-console.log(window.pageYOffset, e.target)
-
-
-{scrollTop >= 100 ? changeClass = true : changeClass=false}
+    const scrollTop = window.pageYOffset
+    console.log(window.pageYOffset)
+    
 }
     return (
-        <Navbar variant="light" expand="md" className={changeClass? "navb filled":"navb"} fixed="top" onScroll={(e)=>scrollNav(e)}>
+        <Navbar variant="light" expand="md" className={changeClass? "navb filled":"navb"} fixed="top" >
             <Link to="/" >
                 <Navbar.Brand> <img
                     alt="logo"

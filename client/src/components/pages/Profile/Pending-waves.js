@@ -54,7 +54,7 @@ class PendingWaves
                                         <Button onClick={() => this.deleteWave()}>Delete</Button>
                                         <Button onClick={ ()=> this.acceptWave()}> Accept wave</Button>
                                     </ButtonGroup>
-                                    {/* to do */}
+                                 
                                 </Col>
 
                                 <Col md={6}>

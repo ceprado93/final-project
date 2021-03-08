@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
 router.get('/:region/details', (req, res) => {
 
     Wave
-        //to do
-        .find({ region: req.params })
+        .find({ region: req.params.region })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })

@@ -17,8 +17,8 @@ const userSchema = new Schema({
     description: String,
     avatar: {
         type: String,
-        default: '/images/logo_small_icon_only.png'
-    },//TO DO
+        default: 'https://www.minervastrategies.com/wp-content/uploads/2016/03/default-avatar.jpg'
+    },
     role: {
         type: String,
         default: 'user',

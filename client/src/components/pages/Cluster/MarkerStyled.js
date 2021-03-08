@@ -23,4 +23,5 @@ const MarkerStyled = styled.div`
   }
 `;
 
+
 export default MarkerStyled;

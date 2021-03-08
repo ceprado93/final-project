@@ -81,18 +81,5 @@ router.get('/admin-profile', checkRole('admin'), (req, res) => {
         )
         .catch(() => res.status(403).json({ message: 'Unauthorized' }))
 })
-// to do
-// router.post('/admin-profile', checkRole('admin'), (req, res) => {
-
-// const {wave_id, comment_id} =req.body
-//     const promise1 = Wave.findByIdAndUpdate(wave_id)
-//     const promise2 = Comment.findByIdAndUpdate(comment_id)
-
-//     Promise
-//         .any(promise1,promise2)
-//         .then(response=> res.json(response.data)
-//         )
-//         .catch(() => res.status(403).json({ message: 'Unauthorized' }))
-// })
 
 module.exports = router
