@@ -25,10 +25,9 @@ class Comments extends Component {
     loadComments() {
 
         this.CommentService
-            .getComments()
+            .getCommentsWave(this.props.wave_id)
             .then(response => {
-                const filteredArr = response.data.filter(elm => elm.wave === this.props.wave_id)
-                this.setState({ comments: filteredArr })
+                this.setState({ comments: response.data })
             })
             .catch(err => console.log(err))
     }

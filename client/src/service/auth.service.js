@@ -1,4 +1,5 @@
 import axios from 'axios'
+import WaveDetails from '../components/pages/Wave-details/Wave-details'
 
 class AuthService {
 
@@ -13,8 +14,9 @@ class AuthService {
     signup = userData => this.api.post('/signup', userData)
     logout = () => this.api.post('/logout')
     isLoggedIn = () => this.api.get('/loggedin')
-    isAdmin = () => this.api.get('/admin-profile')
+    verifyChanges = () => this.api.get('/admin-profile')
     addChanges = changes => this.api.post('/admin-profile', changes)
+    addFavourites = (waveid, userData)=> this.api.put(`/favourite/${waveid}`, userData)
 }
 
 export default AuthService 

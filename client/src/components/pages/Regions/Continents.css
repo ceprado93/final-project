@@ -18,6 +18,11 @@
 .continents{
     font-size: 50px;
     text-align: center;
+    letter-spacing: .1em;
+
+}
+.continents a{
+    color:rgb(37, 36, 36);
 }
 .continents img{
     width: 5%;
@@ -27,4 +32,30 @@
 .continents-group{
     margin-top: 80px;
     margin-bottom: 400px;
+}
+.continent-hero{
+    background-image: url('https://wavelengthmag.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-10-at-11.49.21.png');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 40%;
+    margin-bottom: 40px;
+}
+.buttons-continent{
+    display: flex;
+    margin:0 auto;
+    position: relative;
+    top: 100%;
+    width: 30%;
+    margin-top: 20px;
+}
+.continent-title{
+    
+    display: flex;
+    justify-content: center;
+    color:white;
+    padding-top: 220px;
+    padding-left: 100px;
+    font-size: 4em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
 }

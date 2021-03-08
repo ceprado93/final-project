@@ -42,7 +42,7 @@ class Login extends Component {
                 <Row>
 
 <                       Col>
-                        <h1>Log in</h1>
+                        
 
                         <Jumbotron className="jumbo-login">
                         <Form onSubmit={e => this.handleSubmit(e)}>

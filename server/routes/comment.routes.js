@@ -12,6 +12,14 @@ router.get('/', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Comment', err }))
 })
 
+router.get('/:waveid/comment', (req, res) => {
+
+    Comment
+        .find({ wave: req.params.waveid })        
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Comment', err }))
+})
+
 router.get('/users', (req, res) => {
 
     User

@@ -69,17 +69,23 @@ router.get('/loggedin', (req, res) => req.isAuthenticated() ? res.json(req.user)
 
 router.get('/admin-profile', checkRole('admin'), (req, res) => {
 
-    // const promise1 = Wave.find()
-    // const promise2 = Comment.find()
+    const promise1 = Wave.find({isAccepted:false})
+    const promise2 = Comment.find({isAccepted:false})
 
-    Wave
-        .find()
-        .then(response => {
-            console.log(hola)
-            res.json(response)
-        }
-        )
+    Promise
+        .all([promise1,promise2])
+        .then(response => {res.json(response)})
         .catch(() => res.status(403).json({ message: 'Unauthorized' }))
 })
+
+router.put('/favourite/:waveid',(req,res)=>{
+  
+        User
+        .findByIdAndUpdate(req.user._id, { $push: { favourites: req.params.waveid } })
+        .then(response  => res.json(response))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ code: 500, message: 'Error fetching user', err })})
+    })
 
 module.exports = router

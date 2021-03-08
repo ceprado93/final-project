@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import waveService from './../../../service/wave.service'
-
 import supercluster from 'points-cluster';
 import Marker from './Marker';
 import ClusterMarker from './ClusterMarker';
@@ -38,7 +37,10 @@ class MyMap extends Component {
         const markersData = [...response.data].map((elm, index) => ({
           id: index,
           lat: elm.location.coordinates[0],
-          lng: elm.location.coordinates[1]
+          lng: elm.location.coordinates[1],
+          wave_id:elm._id,
+          waveName:elm.title
+          
         }))
         return markersData
       })
@@ -90,14 +92,9 @@ class MyMap extends Component {
       .catch(err => console.log(err))
   }
 
-
-handleClick(){
-  alert('hola')
-}
-
   render() {
     return (
-      <div style={{ height: '800px', width: '1100px' }}>
+      <div style={{ height: '800px', width: '1100px',marginBottom:100 }}>
         <GoogleMapReact
           id="map"
           yesIWantToUseGoogleMapApiInternals
@@ -112,7 +109,7 @@ handleClick(){
             if (item.numPoints === 1) {
               return (
                 <Marker
-                onMarkerClick={()=>this.handleClick()}
+                {...item}
                   key={item.id}
                   lat={item.points[0].lat}
                   lng={item.points[0].lng}

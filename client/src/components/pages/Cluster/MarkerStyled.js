@@ -15,11 +15,13 @@ const MarkerStyled = styled.div`
   background-color: ${COLORS.gray64};
   background-size: cover;
   background-position: center;
-  transition: transform 0.3s;
+  transition: transform 0.1s;
   animation: ${easyMove} 0.3s;
   &:hover {
-    transform: scale(1.4);
+    border-radius:0%;
+    transform: scale(5);
     background-color:${COLORS.hovercolor}
+
   }
 `;
 

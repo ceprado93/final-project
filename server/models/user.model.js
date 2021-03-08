@@ -24,7 +24,12 @@ const userSchema = new Schema({
         default: 'user',
         enum: ['user', 'admin'],
     },
-}, {
+    favourites:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Wave'
+    }]
+}, 
+{
     timestamps: true
 });
 const User = mongoose.model("User", userSchema)

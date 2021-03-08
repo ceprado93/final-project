@@ -5,15 +5,15 @@
     width: 100%;
     top: 0;
     background-color: transparent;
-    border-bottom: 1px solid white;
-    transition: all 1s;
+    transition: all .1s;
 } 
 
 .navb.filled {
     background-color: white;
+    color:rgb(37, 36, 36);
 }
 /* // to do */
-.link-color{
-    color:white;
+#navbar span.link-color{
+    color: white;
     text-decoration: none;
 }

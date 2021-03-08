@@ -43,7 +43,7 @@ class Signup extends Component {
 
                     <Col>
 
-                        <h1>Sign up</h1>
+                      
 
                         <Jumbotron className="jumbo-signup">
                         <Form className="form-signup"onSubmit={e => this.handleSubmit(e)}>

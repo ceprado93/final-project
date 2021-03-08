@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { Container, Row, Col, Modal, ButtonGroup, Button } from 'react-bootstrap'
-
+import AuthService from './../../../service/auth.service'
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
@@ -17,6 +17,8 @@ class WaveDetails extends Component {
             showForm: false
         }
         this.waveService = new WaveService()
+        this.authService = new AuthService()
+
     }
 
 
@@ -32,6 +34,14 @@ class WaveDetails extends Component {
 
     togglemodalForm(value) {
         this.setState({ showForm: value })
+    }
+    addFavourite(){
+        const waveid = this.props.match.params.id
+        this.authService
+        .addFavourites(waveid,this.props.loggedUser)
+        .then(response => console.log(response))
+        .catch(err => console.log(err))
+
     }
 
     render() {
@@ -52,7 +62,8 @@ class WaveDetails extends Component {
                                     <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
                                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                                         <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
-                                        <Link to="/waves" className="btn btn-dark">Back to {this.state.wave?.region}</Link>
+                                        <Link to="/waves" className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
+                                        <Button variant="dark" onClick={()=>this.addFavourite()} > Add to favourites  🤍</Button>
                                     </ButtonGroup>
                                     {/* to do */}
                                 </Col>

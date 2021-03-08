@@ -6,7 +6,7 @@ class CommentService {
             withCredentials: true
         })
     }
-    getComments = () => this.api.get('/')
+    getCommentsWave = (waveid) => this.api.get(`/${waveid}/comment`)
     saveComment = commentDetails => this.api.post('/new', commentDetails)
     editComment = (commentId, commentDetails) => this.api.put(`/edit/${commentId}`, commentDetails)
     deleteComment = (commentId) => this.api.delete(`/delete/${commentId}`)
