@@ -11,6 +11,7 @@ class CommentService {
     editComment = (commentId, commentDetails) => this.api.put(`/edit/${commentId}`, commentDetails)
     deleteComment = (commentId) => this.api.delete(`/delete/${commentId}`)
     getUsers = () => this.api.get('/users')
+    acceptComment = commentId => this.api.put(`/accept/${commentId}`,) 
 }
 
 export default CommentService 

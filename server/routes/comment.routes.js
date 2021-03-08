@@ -39,6 +39,17 @@ router.put('/edit/:comment_id', checkLoggedIn, (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Comment', err }))
 })
+router.put('/accept/:commentdetails', (req, res) => {
+
+    const id = req.params.commentdetails
+    const isAccepted = true
+    Comment
+        .findByIdAndUpdate(id, {isAccepted})
+        .then(response => {
+            res.json(response)
+        })
+        .catch(err => res.status(500).json({ code: 500, message: 'Error editing Comment', err }))
+})
 
 router.delete('/delete/:comment_id',checkLoggedIn, (req, res) => {
 

@@ -53,7 +53,7 @@ class Waves extends Component {
 
             <>
 
-                <Container as="section">
+                <Container as="section"style={{ marginTop: 100 }}>
                     <h1>The waves</h1>
 
                     {this.state.lat && <MyMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} ></MyMap>}

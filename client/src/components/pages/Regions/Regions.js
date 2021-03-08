@@ -33,7 +33,8 @@ class Regions extends Component {
         this.waveService
             .getRegion()
             .then(response => {
-                const reg = response.data.map(elm => elm.region)
+                const filterReg = response.data.filter(elm=>elm.continent===this.props.match.params.continent)
+                const reg = filterReg.map(elm => elm.region)
                 reg.map(elm => newRegion.push(elm))
                 const filteredSet = new Set(newRegion)
                 const filteredArr = [...filteredSet]
@@ -50,8 +51,8 @@ class Regions extends Component {
     render() {
         return (
             <>
-                <Container as="section">
-                    <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
+                <Container as="section"style={{ marginTop: 100 }}>
+                    <ButtonGroup size="mb">
                         <Button variant="dark" onClick={() => this.setState({ showMap: true, showList: false })}> Map</Button>
                         <Button variant="outline-dark" onClick={() => this.setState({ showMap: false, showList: true })}>List</Button>
                     </ButtonGroup>

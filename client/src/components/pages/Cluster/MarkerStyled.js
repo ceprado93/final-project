@@ -18,7 +18,7 @@ const MarkerStyled = styled.div`
   transition: transform 0.3s;
   animation: ${easyMove} 0.3s;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
     background-color:${COLORS.hovercolor}
   }
 `;

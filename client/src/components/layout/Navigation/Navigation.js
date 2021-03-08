@@ -4,6 +4,11 @@ import { NavLink, Link } from 'react-router-dom'
 import AuthService from './../../../service/auth.service'
 import './Navigation.css'
 
+
+
+
+
+
 const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
 
     const authService = new AuthService()
@@ -15,10 +20,18 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
             .then(() => storeUser(undefined))
             .catch(err => console.log(err))
     }
+// to do
+let changeClass
+function scrollNav(e){
+const scrollTop = window.pageYOffset
+console.log(window.pageYOffset, e.target)
 
+
+{scrollTop >= 100 ? changeClass = true : changeClass=false}
+}
     return (
-        <Navbar variant="light" expand="md" className="navb" fixed="top">
-            <Link to="/">
+        <Navbar variant="light" expand="md" className={changeClass? "navb filled":"navb"} fixed="top" onScroll={(e)=>scrollNav(e)}>
+            <Link to="/" >
                 <Navbar.Brand> <img
                     alt="logo"
                     src={logo}
@@ -44,7 +57,7 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                             isAdmin === 'admin' ?
                                 <>
                                     <NavDropdown title="Private" id="basic-nav-dropdown">
-                                        <NavDropdown.Item > <Link to="/profile">Profile</Link></NavDropdown.Item>
+                                        <NavDropdown.Item > <Link to="/profile" className="link-color">Profile</Link></NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item ><Link to="/admin-page">Admin page</Link></NavDropdown.Item>
                                     </NavDropdown>

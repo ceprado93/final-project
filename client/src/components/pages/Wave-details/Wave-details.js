@@ -37,7 +37,7 @@ class WaveDetails extends Component {
     render() {
         return (
             <>
-                <Container as="section">
+                <Container as="section"style={{ marginTop: 100 }}>
 
                     {this.state.wave
 

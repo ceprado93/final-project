@@ -1,6 +1,10 @@
 import { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import waveservice from '../../../service/wave.service'
+import PendingWaves from './Pending-waves'
+import CommentService from './../../../service/comment.service'
+import PendingComments from './PendingComments'
+import { List } from 'immutable'
 
 class AdminPage extends Component {
     constructor(props) {
@@ -11,11 +15,13 @@ class AdminPage extends Component {
         }
 
         this.Waveservice = new waveservice()
+        this.CommentService = new CommentService()
 
     }
 
     componentDidMount() {
         this.loadWaves()
+        this.loadComments()
 
     }
 
@@ -24,36 +30,35 @@ class AdminPage extends Component {
             .getWaves()
             .then(response => {
                 const pendingWaves = response.data.filter(elm => !elm.isAccepted)
+                console.log(pendingWaves)
                 this.setState({ waves: pendingWaves })
             })
             .catch(err => console.log(err))
     }
+    loadComments() {
 
-    acceptWave(e) {
-        console.log(e)
-        const wave = this.state.waves.filter(elm => elm.title === e.target.innerText)
-        console.log(wave)
-        wave[0].isAccepted = true
-        console.log(wave[0]._id)
-        const waveId = wave[0]._id
-        this.Waveservice
-            .acceptWave(waveId)
-            .then(() => {
-                this.loadWaves()
+        this.CommentService
+            .getComments()
+            .then(response => {
+                const filteredArr = response.data.filter(elm =>  !elm.isAccepted)
+                this.setState({ comments: filteredArr })
             })
             .catch(err => console.log(err))
     }
 
+ 
 
     render() {
         return (
-            <Container>
-
-                {this.props.isAdmin && <h1>¡Holaaaaaaaaaaaa!</h1>}
+            <Container style={{ marginTop: 100 }}>
                 <h1>Pending waves</h1>
                 <ul>
-                    {this.state.waves?.map(elm => <li key={elm._id}><button onClick={e => this.acceptWave(e)}> {elm.title}</button>
-                    </li>)}
+                    {this.state.waves?.map(elm => <PendingWaves key={elm._id}{...elm} refreshWaves={() => this.loadWaves()}/>)}
+                </ul>
+                <hr></hr>
+                <h1>Pending comments</h1>
+                <ul>
+                    {this.state.comments?.map(elm => <PendingComments key={elm._id}{...elm} refreshComments={() => this.loadComments()}/>)}
                 </ul>
 
             </Container >

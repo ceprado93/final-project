@@ -19,7 +19,7 @@ const waves = [
         continent: 'Africa',
         type: 'Slab',
         seaBed: 'Rocks',
-        swellDirections: 2700,
+        swellDirections: 270,
         windDirections: 150,
         swellRange: '1-4',
         bestSeason: 'Autumn',

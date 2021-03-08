@@ -47,11 +47,13 @@ class MyMap extends Component {
   }
 
   getClusters = () => this.getWaves().then(markers => {
+   
     const clusters = supercluster(markers, {
       minZoom: 0,
       maxZoom: 16,
       radius: 60,
     });
+    
     return clusters(this.state.mapOptions);
   })
 
@@ -86,9 +88,12 @@ class MyMap extends Component {
       .getWaves()
       .then(response => this.setState({ waves: response.data, ready: true }))
       .catch(err => console.log(err))
-
-
   }
+
+
+handleClick(){
+  alert('hola')
+}
 
   render() {
     return (
@@ -107,6 +112,7 @@ class MyMap extends Component {
             if (item.numPoints === 1) {
               return (
                 <Marker
+                onMarkerClick={()=>this.handleClick()}
                   key={item.id}
                   lat={item.points[0].lat}
                   lng={item.points[0].lng}

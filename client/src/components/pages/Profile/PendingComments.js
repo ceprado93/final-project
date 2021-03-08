@@ -1,10 +1,10 @@
-import { Card, Col, Button } from 'react-bootstrap'
+import { Card, Col, Button, ButtonGroup } from 'react-bootstrap'
 import CommentService from '../../../service/comment.service'
 import { Component } from 'react'
-import './Comments.css'
+import './../Comments/Comments.css'
 
 
-class CommentCard extends Component {
+class PendingComment extends Component {
 
     constructor() {
         super()
@@ -31,14 +31,24 @@ class CommentCard extends Component {
     handleDelete() {
         this.CommentService
             .deleteComment(this.props._id)
-            .then(() => this.props.refreshList())
+            .then(() => this.props.refreshComments())
             .catch(err => console.log(err))
 
     }
+    acceptComment() {
+        const commentId = this.props._id
+        this.CommentService
+            .acceptComment(commentId)
+            .then(() => {
+                this.props.refreshComments()
+            })
+            .catch(err => console.log(err))
+    }
+
     render() {
         return (
 
-            <Col md={{span: 8, offset: 2 }}>
+            <Col md={12}>
                 <Card className="comment-card">
                     {/* to do */}
                     {/* <Card.Img variant="top" src={images[0].url} /> */}
@@ -46,8 +56,10 @@ class CommentCard extends Component {
                         <h3>Title:{this.props.title}</h3>
                         <p>Description:{this.props.description}</p>
                         <p>Written by:{this.state.user}</p>
-                        {this.props?.userId === this.props.writtenBy && <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>}
-
+                        <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
+                        <Button variant="dark"onClick={() => this.handleDelete()}>Delete</Button>
+                        <Button variant="outline-dark" onClick={ ()=> this.acceptComment()}> Accept comment</Button>
+                        </ButtonGroup>
                     </Card.Body>
                 </Card>
             </Col>
@@ -55,4 +67,4 @@ class CommentCard extends Component {
     }
 }
 
-export default CommentCard 
+export default PendingComment 

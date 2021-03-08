@@ -18,7 +18,7 @@ class Marker extends React.PureComponent {
           ? <MarkerInGroupStyled>
               <Spy scale="0.55" />
             </MarkerInGroupStyled>
-          : <MarkerStyled>
+          : <MarkerStyled onClick={this.props.onMarkerClick}>
               <Spy scale="0.55" />
               
             </MarkerStyled>}

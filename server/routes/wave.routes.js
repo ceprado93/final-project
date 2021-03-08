@@ -59,7 +59,6 @@ router.post('/new', checkLoggedIn, (req, res) => {
 })
 
 router.put('/edit', (req, res) => {
-    // to do
     const { title, id, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body
     const location = {
         type: 'Point',
@@ -76,14 +75,11 @@ router.put('/edit', (req, res) => {
 })
 
 router.put('/accept/:wavedetails', (req, res) => {
-    // to do
-    console.log(req.params.wavedetails)
     const id = req.params.wavedetails
     const isAccepted = true
     Wave
-        .findByIdAndUpdate(id, isAccepted)
+        .findByIdAndUpdate(id, {isAccepted})
         .then(response => {
-            console.log('holaaaaaaaaa')
             res.json(response)
         })
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Wave', err }))
