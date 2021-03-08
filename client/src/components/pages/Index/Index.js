@@ -9,7 +9,7 @@ const IndexPage = () => {
             <section className="first-section">
                 <Container >
                     <h1>WAVE MAPS</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
                     <Row className="wave-link">
                         <Link to="/continents" className="btn btn-outline-light btn-lg searchBtn">Search</Link>
                     </Row>
@@ -25,11 +25,11 @@ const IndexPage = () => {
                     <Carousel.Item>
                         <img height={600}
                             className="d-block w-100 h-200"
-                            src="https://www.singlequiver.com/enelpico/wp-content/uploads/2019/07/la-barra-mundaka.jpg"
+                            src="https://www.surkawa.com/blog/wp-content/uploads/2017/01/la-ola-perfecta-jon-aspuru-entrevista.jpg"
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn">Europe</Link>
+                            <Link to={{ pathname: '/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn carouselBtn" >Europe</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -40,29 +40,29 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} className="btn btn-outline-light btn-lg searchBtn" >Africa</Link>
+                            <Link to={{ pathname: '/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} className=" carouselBtn btn btn-outline-light btn-lg searchBtn" >Africa</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img height={600}
                             className="d-block w-100"
-                            src="https://surftravelsblog.files.wordpress.com/2016/07/lakeys-sumbawa.jpg?w=661"
+                            src="https://www.surfholidays.com/assets/images/blog/2016-05-26-desert-point-lombok-indo-3-jpg"
                             alt="Second slide"
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} className="btn btn-outline-light btn-lg searchBtn">Asia</Link>
+                            <Link to={{ pathname: '/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Asia</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img height={600}
                             className="d-block w-100"
-                            src="https://www.gostudyaus.es/wp-content/uploads/2019/04/superbank_goldcoast.jpg"
+                            src="https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/12/21091328/The_Reef_Sloane_Tombstones_Lineup.jpg"
                             alt="Second slide"
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn">Australia and NZ</Link>
+                            <Link to={{ pathname: '/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Australia and NZ</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -73,29 +73,31 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} className="btn btn-outline-light btn-lg searchBtn" >Pacific</Link>
+                            <Link to={{ pathname: '/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >Pacific</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img height={600}
                             className="d-block w-100"
-                            src="https://i.pinimg.com/736x/bd/ff/ae/bdffae234296f2dca75aaa2ff11e4d5d--rincon-surf-beach-waves.jpg"
+                            src="http://earthdayalliance.com/wordpress/wp-content/uploads/2020/03/001227_BURKARD_20350.jpg"
                             alt="Third slide"
                         />
 
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/America', state: { lat: 9.795061, lng: - 83.979147, zoom: 2 } }} className="btn btn-outline-light btn-lg searchBtn" >America</Link>
+                            <Link to={{ pathname: '/America', state: { lat: 9.795061, lng: - 83.979147, zoom: 2 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >America</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
             </section>
 
-            <section className="third-button">
+            <section className="third-section">
                 <h2>Comuninity</h2>
-                <p>lots of benefits when you join in</p>
-                <p>If you already have an account, log in here</p>
-                <p>subscribe</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div className="linkbtn">
+                    <Link to="/login" className=" btn btn-dark btn-lg searchBtn">Log in</Link>
+                    <Link to="/signup" className=" btn btn-outline-dark btn-lg searchBtn">Sign up</Link>
+                </div>
             </section>
 
         </>

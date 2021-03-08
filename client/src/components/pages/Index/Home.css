@@ -20,6 +20,8 @@
     justify-content: center;
     font-weight: 500;
     font-size: 1em;
+    margin: 10px auto;
+    width: 40%;
 }
 .first-section small{
     position: relative;
@@ -28,6 +30,10 @@
 
 .searchBtn{
     padding: 5px 50px;
+}
+
+.carouselBtn{
+    margin-bottom: 300px;
 }
 
 .wave-link{
@@ -45,4 +51,21 @@
     object-fit: cover;
     object-position: center 70%;
     margin-bottom: 20px;
+}
+
+.third-section{
+    margin: 100px auto;
+    width: 40%;
+    
+}
+
+.third-section h2, p{
+    display: flex;
+    justify-content: center;
+}
+
+.linkbtn{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 15px;
 }
