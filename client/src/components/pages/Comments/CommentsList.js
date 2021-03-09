@@ -38,7 +38,7 @@ class Comments extends Component {
                     <h3>Comments</h3>
                     <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()} />
                     {this.state.comments?.map(elm => <CommentCard userId={this.props.commentUser} refreshList={() => this.loadComments()} key={elm._id}{...elm} />)}
-                
+
                 </Container>
 
             </>

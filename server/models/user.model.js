@@ -25,14 +25,14 @@ const userSchema = new Schema({
         default: 'user',
         enum: ['user', 'admin'],
     },
-    favourites:[{
+    favourites: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Wave'
     }]
-}, 
-{
-    timestamps: true
-})
+},
+    {
+        timestamps: true
+    })
 
 const User = mongoose.model("User", userSchema)
 module.exports = User

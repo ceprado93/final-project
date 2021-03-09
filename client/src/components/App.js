@@ -10,14 +10,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedUser: undefined,
-      isAdmin: undefined
+      loggedUser: undefined
     }
     this.authService = new AuthService()
   }
 
   storeUser(loggedUser) {
-    this.setState({ loggedUser, isAdmin: loggedUser?.role }, () => console.log('Usuario modificado:', this.state.loggedUser))
+    this.setState({ loggedUser}, () => console.log('Usuario modificado:', this.state.loggedUser))
   }
 
   fetchUser() {
@@ -34,9 +33,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navigation storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.isAdmin} />
+        <Navigation storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.loggedUser?.role} />
         <main>
-          <Routes storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.isAdmin} />
+          <Routes storeUser={user => this.storeUser(user)} loggedUser={this.state.loggedUser} isAdmin={this.state.loggedUser?.role} />
         </main>
         <Footer />
       </>

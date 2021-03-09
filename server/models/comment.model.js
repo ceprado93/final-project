@@ -12,14 +12,14 @@ const commentSchema = new Schema({
     },
     description: String,
     title: String,
-    isAccepted:{
-        type:Boolean,
-        default:false
+    isAccepted: {
+        type: Boolean,
+        default: false
     }
-}, 
-{
-    timestamps: true
-})
+},
+    {
+        timestamps: true
+    })
 
 const Comment = mongoose.model("Comment", commentSchema)
 module.exports = Comment

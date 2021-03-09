@@ -10,6 +10,7 @@
     font-weight: 300;
     margin-bottom: 10px;
 }
-.new-wave-btn {
-    margin-bottom: 20px;
+.all-waves{
+display: flex;
+flex-direction: column;
 }

@@ -40,12 +40,12 @@ export class GoogleMap extends React.PureComponent {
     this.setState({
       clusters: this.state.mapOptions.bounds
         ? this.getClusters(props).map(({ wx, wy, numPoints, points }) => ({
-            lat: wy,
-            lng: wx,
-            numPoints,
-            id: `${numPoints}_${points[0].id}`,
-            points,
-          }))
+          lat: wy,
+          lng: wx,
+          numPoints,
+          id: `${numPoints}_${points[0].id}`,
+          points,
+        }))
         : [],
     });
   };

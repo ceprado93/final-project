@@ -502,7 +502,7 @@ const waves = [
         quality: 3,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
+        createdBy: '603d1af4e72dca32acd44dfa',
         isAccepted: true
     },
     {
@@ -528,8 +528,8 @@ const waves = [
         quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Orrua - Roka Puta',
@@ -554,8 +554,8 @@ const waves = [
         quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Deba',
@@ -580,8 +580,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'High tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Laga',
@@ -606,8 +606,8 @@ const waves = [
         quality: 3,
         level: 'All surfers',
         tide: ' All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Mundaka',
@@ -632,8 +632,8 @@ const waves = [
         quality: 5,
         level: 'Experienced surfers',
         tide: 'Low tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Bakio',
@@ -658,8 +658,8 @@ const waves = [
         quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Meñakoz',
@@ -684,8 +684,8 @@ const waves = [
         quality: 5,
         level: 'Pros',
         tide: ' Hight tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Sopelana',
@@ -710,8 +710,8 @@ const waves = [
         quality: 3,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'La salvaje',
@@ -736,8 +736,8 @@ const waves = [
         quality: 3,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'La galea',
@@ -749,7 +749,7 @@ const waves = [
         location: {
             type: 'Point',
             coordinates: [43.371057, -3.037474]
-         },
+        },
         region: 'Spain',
         continent: 'Europe',
         type: 'Pointbreak',
@@ -762,8 +762,8 @@ const waves = [
         quality: 5,
         level: 'Pros',
         tide: ' All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Laredo',
@@ -788,8 +788,8 @@ const waves = [
         quality: 4,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'El brusco',
@@ -814,8 +814,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'High tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Santa Marina',
@@ -840,8 +840,8 @@ const waves = [
         quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'La vaca',
@@ -866,8 +866,8 @@ const waves = [
         quality: 5,
         level: 'Pros',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Liencres',
@@ -892,8 +892,8 @@ const waves = [
         quality: 3.5,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Los locos',
@@ -918,8 +918,8 @@ const waves = [
         quality: 4,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Andrin',
@@ -944,8 +944,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Rodiles',
@@ -970,8 +970,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'Low tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'El mongol',
@@ -996,8 +996,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'Mid to high tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Salinas',
@@ -1022,8 +1022,8 @@ const waves = [
         quality: 3,
         level: 'All surfers',
         tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Foz',
@@ -1048,8 +1048,8 @@ const waves = [
         quality: 4,
         level: 'Experienced surfers',
         tide: 'Low tide',
-        createdBy: '603d1af4e72dca32acd44dfa', 
-    isAccepted: true
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
     },
     {
         title: 'Pantin',

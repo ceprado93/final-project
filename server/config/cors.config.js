@@ -1,7 +1,6 @@
 const cors = require('cors')
 
 const whitelist = [process.env.DOMAIN]
-// to do
 
 const corsOptions = {
     origin: (origin, cb) => {

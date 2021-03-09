@@ -15,15 +15,25 @@ router.get('/:region/details', (req, res) => {
 
     Wave
         .find({ region: req.params.region })
+        .sort({ title: 1 })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
 
-router.get('/region', (req, res) => {
-
+router.get('/:continent/info', (req, res) => {
+console.log('adios')
     Wave
-        .find()
+        .find({ continent: req.params.continent })
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
+})
+
+router.get('/:region', (req, res) => {
+console.log('hola')
+    Wave
+        .find({ continent: req.params.region })
         .select('region continent')
+        .sort({ region: 1 })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
@@ -65,7 +75,7 @@ router.put('/edit', (req, res) => {
         url: imageUrl,
         title: imageAuthor
     }
-    
+
     Wave
         .findByIdAndUpdate(id, { title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
         .then(response => res.json(response))
@@ -74,11 +84,10 @@ router.put('/edit', (req, res) => {
 
 router.put('/accept/:wavedetails', (req, res) => {
 
-    const id = req.params.wavedetails
-    const isAccepted = true
+    const id = req.params.wavedetails, isAccepted = true
 
     Wave
-        .findByIdAndUpdate(id, {isAccepted})
+        .findByIdAndUpdate(id, { isAccepted })
         .then(response => {
             res.json(response)
         })

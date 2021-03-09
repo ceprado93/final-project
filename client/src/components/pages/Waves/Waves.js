@@ -44,18 +44,21 @@ class Waves extends Component {
     render() {
         return (
 
-            <>
-
-                <Container as="section">
+            <div className="all-waves">
+                <section className="header">
                     <h1>The waves</h1>
-
-                    {this.state.lat && <MyMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} ></MyMap>}
-                    {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
-                    {this.state.waves.length ? <WavesList waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
+                </section>
+                <Container as="section">
+                    <section className="region-map" style={{ width: "1000px", height: "1100px" }}>
+                        {this.state.lat && <MyMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} region={this.props.match.params.region} ></MyMap>}
+                    </section>
+                    <section className="region-btn">
+                        {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
+                        {this.state.waves.length ? <WavesList className="waves-list" waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
+                    </section>
                 </Container>
 
-
-                <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)} size='xl'>
                     <Modal.Header closeButton>
                         <Modal.Title>New wave</Modal.Title>
                     </Modal.Header>
@@ -63,9 +66,7 @@ class Waves extends Component {
                         <WaveForm closeModal={() => this.togglemodalForm(false)} modalType="New" refreshList={() => this.loadWaves()} />
                     </Modal.Body>
                 </Modal>
-
-            </>
-
+            </div>
         )
     }
 }

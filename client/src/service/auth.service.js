@@ -15,7 +15,7 @@ class AuthService {
     isLoggedIn = () => this.api.get('/loggedin')
     verifyChanges = () => this.api.get('/admin-profile')
     addChanges = changes => this.api.post('/admin-profile', changes)
-    addFavourites = (waveid, userData)=> this.api.put(`/favourite/${waveid}`, userData)
+    addFavourites = (waveid, userData) => this.api.put(`/favourite/${waveid}`, userData)
 }
 
-export default AuthService 
+export default AuthService

@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import AuthService from '../../../service/auth.service'
-import {Modal, Form, Button} from 'react-bootstrap'
+import { Modal, Form, Button } from 'react-bootstrap'
 
 class AuthModal extends Component {
 
@@ -33,26 +33,26 @@ class AuthModal extends Component {
     }
     render() {
         return (
-        <>
-        <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+            <>
+                <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
                     <Modal.Header closeButton>
                         <Modal.Title>New user</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    <Form onSubmit={e => this.handleSubmit(e)}>
-                    <Form.Group>
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="text" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
-                    </Form.Group>
-                    <Button variant="dark" block type="submit">Crear montaña rusa</Button>
-                </Form>                    
-                </Modal.Body>
+                        <Form onSubmit={e => this.handleSubmit(e)}>
+                            <Form.Group>
+                                <Form.Label>Username</Form.Label>
+                                <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="text" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
+                            </Form.Group>
+                            <Button variant="dark" block type="submit">Crear montaña rusa</Button>
+                        </Form>
+                    </Modal.Body>
                 </Modal>
-        </>
+            </>
         )
     }
 }

@@ -10,8 +10,9 @@ class WaveService {
     }
 
     getWaves = () => this.api.get('/')
-    getRegion = () => this.api.get('/region')
+    getRegion = continent => this.api.get(`/${continent}`)
     getRegionalWaves = regionalWave => this.api.get(`/${regionalWave}/details`)
+    getContinents = continent => this.api.get(`/${continent}/info`)
     getWave = waveId => this.api.get(`/details/${waveId}`)
     saveWave = waveDetails => this.api.post('/new', waveDetails)
     editWave = waveDetails => this.api.put(`/edit`, waveDetails)
@@ -20,4 +21,4 @@ class WaveService {
 
 }
 
-export default WaveService 
+export default WaveService

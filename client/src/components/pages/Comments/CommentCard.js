@@ -37,7 +37,7 @@ class CommentCard extends Component {
     render() {
         return (
 
-            <Col md={{span: 8, offset: 2 }}>
+            <Col md={{ span: 8, offset: 2 }}>
                 <Card className="comment-card">
                     <Card.Body>
                         <h3>Title:{this.props.title}</h3>
@@ -51,4 +51,4 @@ class CommentCard extends Component {
     }
 }
 
-export default CommentCard 
+export default CommentCard

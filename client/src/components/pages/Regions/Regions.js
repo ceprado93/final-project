@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap'
+import { Container, Row, Col, ButtonGroup, Button, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
@@ -29,10 +29,9 @@ class Regions extends Component {
         const newRegion = []
 
         this.waveService
-            .getRegion()
+            .getRegion(this.props.match.params.continent)
             .then(response => {
-                const filterReg = response.data.filter(elm=>elm.continent===this.props.match.params.continent)
-                const reg = filterReg.map(elm => elm.region)
+                const reg = response.data.map(elm => elm.region)
                 reg.map(elm => newRegion.push(elm))
                 const filteredSet = new Set(newRegion)
                 const filteredArr = [...filteredSet]
@@ -48,21 +47,21 @@ class Regions extends Component {
     render() {
         return (
             <>
-                <Container as="section"style={{ marginTop: 100 }}>
+                <Container as="section" style={{ marginTop: 100 }}>
                     <ButtonGroup size="mb">
                         <Button variant="dark" onClick={() => this.setState({ showMap: true, showList: false })}> Map</Button>
                         <Button variant="outline-dark" onClick={() => this.setState({ showMap: false, showList: true })}>List</Button>
                     </ButtonGroup>
-                    {this.state.showMap && <MyMap lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} zoom={this.props.history.location.state.zoom} />}
+                    {this.state.showMap && <MyMap lat={this.props.history.location.state.lat} lng={this.props.history.location.state.lng} continent={this.props.match.params.continent} zoom={this.props.history.location.state.zoom} />}
                     {this.state.region
 
                         ?
                         <Row style={{ display: this.state.showList ? 'block' : 'none' }} >
                             <hr />
-                            <Col md={{ span: 6 }}>
-                                <ul>
-                                    {this.state.region.map((elm, idx) => <li key={idx}> <Link to={`/waves/${elm}`} {...this.props} >{elm}</Link></li>)}
-                                </ul>
+                            <Col>
+                                <ListGroup variant="flush">
+                                    {this.state.region.map((elm, idx) => <ListGroup.Item className="continents" key={idx}> <Link to={`/waves/${elm}`} {...this.props} >{elm}</Link></ListGroup.Item>)}
+                                </ListGroup>
                             </Col>
                         </Row>
 

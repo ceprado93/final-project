@@ -5,6 +5,9 @@ import supercluster from 'points-cluster';
 import Marker from './Marker';
 import ClusterMarker from './ClusterMarker';
 import mapStyles from './mapStyles.json';
+import SearchBar from '../../shared/SearchBar/SearchBar';
+import Geocode from "react-geocode"
+
 
 const MAP = {
   options: {
@@ -12,7 +15,6 @@ const MAP = {
     maxZoom: 19,
   },
 }
-
 
 class MyMap extends Component {
   constructor(props) {
@@ -32,30 +34,59 @@ class MyMap extends Component {
 
   getWaves = () => {
 
-    return this.waveService.getWaves()
-      .then(response => {
-        const markersData = [...response.data].map((elm, index) => ({
-          id: index,
-          lat: elm.location.coordinates[0],
-          lng: elm.location.coordinates[1],
-          wave_id:elm._id,
-          waveName:elm.title
-          
-        }))
-        return markersData
-      })
-      .catch(err => [])
+    if (this.props.continent) {
+      return this.waveService.getContinents(this.props.continent)
+        .then(response => {
+          const markersData = [...response.data].map((elm, index) => ({
+            id: index,
+            lat: elm.location.coordinates[0],
+            lng: elm.location.coordinates[1],
+            wave_id: elm._id,
+            waveName: elm.title
 
+          }))
+          return markersData
+        })
+        .catch(err => [])
+    } else if (this.props.region) {
+      return this.waveService.getRegionalWaves(this.props.region)
+        .then(response => {
+          const markersData = [...response.data].map((elm, index) => ({
+            id: index,
+            lat: elm.location.coordinates[0],
+            lng: elm.location.coordinates[1],
+            wave_id: elm._id,
+            waveName: elm.title
+
+          }))
+          return markersData
+        })
+        .catch(err => [])
+    } else {
+      return this.waveService.getWaves()
+        .then(response => {
+          const markersData = [...response.data].map((elm, index) => ({
+            id: index,
+            lat: elm.location.coordinates[0],
+            lng: elm.location.coordinates[1],
+            wave_id: elm._id,
+            waveName: elm.title
+
+          }))
+          return markersData
+        })
+        .catch(err => [])
+    }
   }
 
   getClusters = () => this.getWaves().then(markers => {
-   
+
     const clusters = supercluster(markers, {
       minZoom: 0,
       maxZoom: 16,
       radius: 60,
     });
-    
+
     return clusters(this.state.mapOptions);
   })
 
@@ -73,43 +104,53 @@ class MyMap extends Component {
         clusters: this.state.mapOptions.bounds
           ? mappedClusters
           : [],
-      });
+      })
     })
-
-  };
+  }
 
   handleMapChange = ({ center, zoom, bounds }) => {
-    this.setValues()
     this.setState({ mapOptions: { center, zoom, bounds, }, }, () => { this.createClusters(this.props) });
-  };
+  }
 
+  searchPlace(place) {
 
-  setValues() {
+    Geocode.setApiKey("AIzaSyDWox-Ew5Z4Wm2OMqZSFRhM-IIwzPtxRgU")
 
-    this.waveService
-      .getWaves()
-      .then(response => this.setState({ waves: response.data, ready: true }))
-      .catch(err => console.log(err))
+    Geocode
+      .fromAddress(place.title)
+      .then((response) => {
+        const { lat, lng } = response.results[0].geometry.location
+        this.setState(
+          { mapOptions: { center: { lat, lng }, zoom: 7, bounds: { nw: { lat: lat - 3, lng: lng + 3 }, ne: { lat: lat + 3, lng: lng + 3 }, sw: { lat: lat - 3, lng: lng - 3 }, se: { lat: lat + 1, lng: lng - 1 } } } },
+          () => this.handleMapChange({ center: this.state.mapOptions.center, zoom: this.state.mapOptions.zoom, bounds: this.state.mapOptions.bounds }))
+      },
+        (error) => {
+          console.error(error)
+        }
+      )
   }
 
   render() {
     return (
-      <div style={{ height: '800px', width: '1100px',marginBottom:100 }}>
+      <div style={{ height: '800px', width: '100%', marginBottom: 100 }}>
+        <SearchBar searchPlace={place => this.searchPlace(place)} />
         <GoogleMapReact
           id="map"
           yesIWantToUseGoogleMapApiInternals
           bootstrapURLKeys={{ key: 'AIzaSyDWox-Ew5Z4Wm2OMqZSFRhM-IIwzPtxRgU' }}
           defaultCenter={this.state.mapOptions.center}
+          center={this.state.mapOptions.center}
           defaultZoom={this.state.mapOptions.zoom}
+          zoom={this.state.mapOptions.zoom}
           options={MAP.options}
           onChange={(e) => this.handleMapChange(e)}
-        // options={MAP.options}
+
         >
           {this.state.clusters.map(item => {
             if (item.numPoints === 1) {
               return (
                 <Marker
-                {...item}
+                  {...item}
                   key={item.id}
                   lat={item.points[0].lat}
                   lng={item.points[0].lng}
@@ -134,7 +175,7 @@ class MyMap extends Component {
 
         </GoogleMapReact>
 
-  
+
 
       </div>
     );

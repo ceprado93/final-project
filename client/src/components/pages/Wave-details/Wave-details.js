@@ -35,18 +35,18 @@ class WaveDetails extends Component {
         this.setState({ showForm: value })
     }
 
-    addFavourite(){
+    addFavourite() {
         const waveid = this.props.match.params.id
         this.authService
-        .addFavourites(waveid,this.props.loggedUser)
-        .then(response => console.log(response))
-        .catch(err => console.log(err))
+            .addFavourites(waveid, this.props.loggedUser)
+            .then(response => console.log(response))
+            .catch(err => console.log(err))
     }
 
     render() {
         return (
             <>
-                <Container as="section"style={{ marginTop: 100 }}>
+                <Container as="section" style={{ marginTop: 100 }}>
 
                     {this.state.wave
 
@@ -62,7 +62,7 @@ class WaveDetails extends Component {
                                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                                         <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
                                         <Link to="/waves" className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
-                                        <Button variant="dark" onClick={()=>this.addFavourite()} > Add to favourites  🤍</Button>
+                                        <Button variant="dark" onClick={() => this.addFavourite()} > Add to favourites  🤍</Button>
                                     </ButtonGroup>
                                     {/* to do */}
                                 </Col>
@@ -79,7 +79,7 @@ class WaveDetails extends Component {
                                 <Col><Comments wave_id={this.state.wave._id} commentUser={this.props.loggedUser?._id}></Comments></Col>
                             </Row>
 
-                            <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                            <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)} size='xl'>
                                 <Modal.Header closeButton>
                                     <Modal.Title>Edit wave</Modal.Title>
                                 </Modal.Header>

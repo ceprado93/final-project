@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Comment = require('../models/comment.model')
 const User = require('../models/user.model')
-const {checkLoggedIn} = require('./../middlewares')
+const { checkLoggedIn } = require('./../middlewares')
 
 router.get('/', (req, res) => {
 
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 router.get('/:waveid/comment', (req, res) => {
 
     Comment
-        .find({ wave: req.params.waveid })        
+        .find({ wave: req.params.waveid })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Comment', err }))
 })
@@ -29,7 +29,7 @@ router.get('/users', (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching User', err }))
 })
 
-router.post('/new', checkLoggedIn,(req, res) => {
+router.post('/new', checkLoggedIn, (req, res) => {
 
     const { wave, description, title } = req.body, writtenBy = req.user.id
 
@@ -49,18 +49,17 @@ router.put('/edit/:comment_id', checkLoggedIn, (req, res) => {
 
 router.put('/accept/:commentdetails', (req, res) => {
 
-    const id = req.params.commentdetails
-    const isAccepted = true
-    
+    const id = req.params.commentdetails, isAccepted = true
+
     Comment
-        .findByIdAndUpdate(id, {isAccepted})
+        .findByIdAndUpdate(id, { isAccepted })
         .then(response => {
             res.json(response)
         })
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Comment', err }))
 })
 
-router.delete('/delete/:comment_id',checkLoggedIn, (req, res) => {
+router.delete('/delete/:comment_id', checkLoggedIn, (req, res) => {
 
     Comment
         .findByIdAndRemove(req.params.comment_id)

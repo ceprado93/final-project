@@ -57,8 +57,8 @@ class PendingComment extends Component {
                         <p>Description:{this.props.description}</p>
                         <p>Written by:{this.state.user}</p>
                         <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
-                        <Button variant="dark"onClick={() => this.handleDelete()}>Delete</Button>
-                        <Button variant="outline-dark" onClick={ ()=> this.acceptComment()}> Accept comment</Button>
+                            <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>
+                            <Button variant="outline-dark" onClick={() => this.acceptComment()}> Accept comment</Button>
                         </ButtonGroup>
                     </Card.Body>
                 </Card>
@@ -67,4 +67,4 @@ class PendingComment extends Component {
     }
 }
 
-export default PendingComment 
+export default PendingComment
