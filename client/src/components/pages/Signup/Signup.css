@@ -1,23 +1,24 @@
 .signup{
     width: 100%;
-    height: 1000px;
-    background-image: url('https://www.oliverstravels.com/blog/wp-content/uploads/2019/04/Surf-header.jpg');
-    background-size: cover;
-    background-position: 30% 20%;
+    height: 900px;
+    background-image: url('https://ilovetheseaside.com/wp-content/uploads/2016/01/nsj-4-1025x683.jpg');
+    background-size:cover;
+    background-position: 10% 50%;
 }
-
 .form-signup{
     padding: 10px;
 }
 .label-signup{
     font-size: 30px;
+    letter-spacing: .2em;
 }
 .jumbo-signup{
-    margin:80px auto;
-    width: 60%;
-    
+    margin:160px auto;
+    width: 60%;  
 }
 .sign-button{
     margin-top: 50px;
     padding: 15px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
 }

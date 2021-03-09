@@ -3,7 +3,6 @@ import CommentService from '../../../service/comment.service'
 import { Component } from 'react'
 import './Comments.css'
 
-
 class CommentCard extends Component {
 
     constructor() {
@@ -40,14 +39,11 @@ class CommentCard extends Component {
 
             <Col md={{span: 8, offset: 2 }}>
                 <Card className="comment-card">
-                    {/* to do */}
-                    {/* <Card.Img variant="top" src={images[0].url} /> */}
                     <Card.Body>
                         <h3>Title:{this.props.title}</h3>
                         <p>Description:{this.props.description}</p>
                         <p>Written by:{this.state.user}</p>
                         {this.props?.userId === this.props.writtenBy && <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>}
-
                     </Card.Body>
                 </Card>
             </Col>

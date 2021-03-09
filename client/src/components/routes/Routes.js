@@ -1,5 +1,4 @@
 import { Switch, Route, Redirect } from 'react-router-dom'
-
 import IndexPage from '../pages/Index/Index'
 import Signup from '../pages/Signup/Signup'
 import Login from '../pages/Login/Login'

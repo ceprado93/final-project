@@ -33,7 +33,6 @@ class Signup extends Component {
             .catch(err => console.log({ err }))
     }
 
-
     render() {
         return (
     <section className="signup">
@@ -43,9 +42,8 @@ class Signup extends Component {
 
                     <Col>
 
-                      
-
                         <Jumbotron className="jumbo-signup">
+
                         <Form className="form-signup"onSubmit={e => this.handleSubmit(e)}>
                             <Form.Group>
                                 <Form.Label className="label-signup">Username</Form.Label>
@@ -58,7 +56,8 @@ class Signup extends Component {
 
                             <Button variant="outline-dark" block type="submit" className="sign-button">Sign up</Button>
                         </Form>
-</Jumbotron>
+                        </Jumbotron>
+
                     </Col>
 
                 </Row>
@@ -68,8 +67,6 @@ class Signup extends Component {
         )
     }
 }
-
-
 
 export default Signup
 

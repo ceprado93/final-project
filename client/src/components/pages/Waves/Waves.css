@@ -1,19 +1,15 @@
 .wave-card {
     margin-bottom: 40px;
 }
-
 .wave-card img {
     height: 200px;
     object-fit: cover;
 }
-
-
 .wave-card h3 {
     font-size: 1.2em;
     font-weight: 300;
     margin-bottom: 10px;
 }
-
 .new-wave-btn {
     margin-bottom: 20px;
 }

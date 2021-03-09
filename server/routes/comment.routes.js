@@ -33,7 +33,6 @@ router.post('/new', checkLoggedIn,(req, res) => {
 
     const { wave, description, title } = req.body, writtenBy = req.user.id
 
-
     Comment
         .create({ wave, description, title, writtenBy })
         .then(response => res.json(response))
@@ -47,10 +46,12 @@ router.put('/edit/:comment_id', checkLoggedIn, (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error editing Comment', err }))
 })
+
 router.put('/accept/:commentdetails', (req, res) => {
 
     const id = req.params.commentdetails
     const isAccepted = true
+    
     Comment
         .findByIdAndUpdate(id, {isAccepted})
         .then(response => {

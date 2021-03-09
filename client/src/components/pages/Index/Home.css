@@ -7,13 +7,14 @@
     background-position: 100% 40%;
     margin-bottom: 100px;
 }
-
 .first-section h1{
     padding-top: 150px;
     display: flex;
     justify-content: center;
     font-weight: 500;
     font-size: 6em;
+    letter-spacing: .2em;
+    color:white;
 }
 .first-section p{
     display: flex;
@@ -21,53 +22,51 @@
     font-weight: 500;
     font-size: 1em;
     margin: 10px auto;
-    width: 40%;
+    width: 45%;
+    color:white;
+    letter-spacing: .1em;
 }
 .first-section small{
     position: relative;
     top: 100%;
 }
-
 .searchBtn{
     padding: 5px 50px;
     margin-bottom: 100px;
     margin-top: 20px;
+    letter-spacing: .1em;
 }
-
 .carouselBtn{
     margin-bottom: 300px;
+    letter-spacing: .2em;
+    padding: 5px 50px;
 }
-
 .wave-link{
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
-
 .second-section h2{
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
     font-size: 3em;
+    letter-spacing: .1em;
 }
-
 .second-section img{
     object-fit: cover;
     object-position: center 70%;
     margin-bottom: 20px;
 }
-
 .third-section{
     margin: 100px auto;
-    width: 40%;
-    
+    width: 40%;   
 }
-
 .third-section h2, p{
     display: flex;
     justify-content: center;
+    letter-spacing: .1em;
 }
-
 .linkbtn{
    display: flex;
    justify-content: space-evenly;

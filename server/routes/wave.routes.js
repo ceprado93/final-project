@@ -3,7 +3,6 @@ const router = express.Router()
 const Wave = require('../models/wave.model')
 const { checkMongoId, checkLoggedIn } = require('./../middlewares')
 
-
 router.get('/', (req, res) => {
 
     Wave
@@ -19,8 +18,6 @@ router.get('/:region/details', (req, res) => {
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Wave', err }))
 })
-
-
 
 router.get('/region', (req, res) => {
 
@@ -58,6 +55,7 @@ router.post('/new', checkLoggedIn, (req, res) => {
 })
 
 router.put('/edit', (req, res) => {
+
     const { title, id, description, region, continent, latitude, longitude, imageUrl, imageAuthor, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide } = req.body
     const location = {
         type: 'Point',
@@ -67,6 +65,7 @@ router.put('/edit', (req, res) => {
         url: imageUrl,
         title: imageAuthor
     }
+    
     Wave
         .findByIdAndUpdate(id, { title, description, region, continent, type, seaBed, swellDirections, windDirections, swellRange, bestSeason, crowd, quality, level, tide, location, images })
         .then(response => res.json(response))
@@ -74,8 +73,10 @@ router.put('/edit', (req, res) => {
 })
 
 router.put('/accept/:wavedetails', (req, res) => {
+
     const id = req.params.wavedetails
     const isAccepted = true
+
     Wave
         .findByIdAndUpdate(id, {isAccepted})
         .then(response => {

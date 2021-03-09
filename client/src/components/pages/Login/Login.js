@@ -33,7 +33,6 @@ class Login extends Component {
             .catch(err => console.log({ err }))
     }
 
-
     render() {
         return (
             <section className="login">
@@ -41,9 +40,8 @@ class Login extends Component {
 
                 <Row>
 
-<                       Col>
+                    <Col>
                         
-
                         <Jumbotron className="jumbo-login">
                         <Form onSubmit={e => this.handleSubmit(e)}>
                             <Form.Group>
@@ -55,9 +53,10 @@ class Login extends Component {
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
                             </Form.Group>
 
-                            <Button variant="outline-dark" block type="submit" className="sign-button">Log in</Button>
+                            <Button variant="outline-dark" block type="submit" className="log-button">Log in</Button>
                         </Form>
                         </Jumbotron>
+                        
                     </Col>
 
                 </Row>

@@ -2,12 +2,10 @@
     margin: 40px 0;
     width: 100%;
 }
-
 .comment-card img {
     height: 150px;
     object-fit: cover;
 }
-
 .comment-card h3 {
     font-size: 1.2em;
     font-weight: 300;
