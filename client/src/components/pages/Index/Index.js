@@ -21,8 +21,8 @@ const IndexPage = () => {
 
             <section className="second-section">
                 <h2>OUR WAVES</h2>
-                <Carousel style={{ height: 600 }} >
-                    <Carousel.Item>
+                <Carousel style={{ height: 600 }} slide='true' >
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100 h-200"
                             src="https://www.surkawa.com/blog/wp-content/uploads/2017/01/la-ola-perfecta-jon-aspuru-entrevista.jpg"
@@ -32,7 +32,7 @@ const IndexPage = () => {
                             <Link to={{ pathname: '/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn carouselBtn" >Europe</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100"
                             src="https://images.squarespace-cdn.com/content/v1/527c03e4e4b03247a686bb74/1463006042573-IFOIIUNKCG3VUP1TT0T7/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fmUlfgh0PDRwdBlKSZS7d3uXFJOxHRx9nL7VEpwjp7Evlv90AApd9Yk_mbh9SCYVMOqpeNLcJ80NK65_fV7S1UYWlBJirb5kIoml_M6l_hD-TWfngdmVtRt4YaIDL0rNceDIgQJrH6xrLDqB5rjhOSA/seascapes004.JPG?format=1500w"
@@ -43,7 +43,7 @@ const IndexPage = () => {
                             <Link to={{ pathname: '/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} className=" carouselBtn btn btn-outline-light btn-lg searchBtn" >Africa</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100"
                             src="https://www.surfholidays.com/assets/images/blog/2016-05-26-desert-point-lombok-indo-3-jpg"
@@ -54,7 +54,7 @@ const IndexPage = () => {
                             <Link to={{ pathname: '/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Asia</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100"
                             src="https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/12/21091328/The_Reef_Sloane_Tombstones_Lineup.jpg"
@@ -65,7 +65,7 @@ const IndexPage = () => {
                             <Link to={{ pathname: '/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Australia and NZ</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100"
                             src="https://margruesa.com/wp-content/uploads/2013/06/13-P-Pipeline-peak-Oahu-Hi-1975-jeff-divine-divine-.jpg"
@@ -76,7 +76,7 @@ const IndexPage = () => {
                             <Link to={{ pathname: '/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >Pacific</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100"
                             src="http://earthdayalliance.com/wordpress/wp-content/uploads/2020/03/001227_BURKARD_20350.jpg"
