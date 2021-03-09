@@ -5,8 +5,6 @@ import Footer from './layout/Footer/Footer'
 import Navigation from './layout/Navigation/Navigation'
 import AuthService from '../service/auth.service'
 
-
-
 class App extends Component {
 
   constructor() {
@@ -31,7 +29,6 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchUser()
-    // this.findAdmin()
   }
 
   render() {

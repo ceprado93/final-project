@@ -1,5 +1,4 @@
 import axios from 'axios'
-import WaveDetails from '../components/pages/Wave-details/Wave-details'
 
 class AuthService {
 

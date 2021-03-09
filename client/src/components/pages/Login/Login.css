@@ -3,21 +3,22 @@
     height: 1000px;
     background-image: url('https://images.airstory.co/v1/prod/i15075628177321bfbb-f729-488e-8b67-495b39f243c2/shutterstock_429189436.jpg');
     background-size: cover;
-    background-position: 30% 20%;
+    background-position: 10% 50%;
 }
-
 .form-login{
     padding: 10px;
 }
 .label-login{
     font-size: 30px;
+    letter-spacing: .2em;
 }
 .jumbo-login{
-    margin:80px auto;
+    margin:160px auto;
     width: 60%;
-
 }
 .log-button{
     margin-top: 50px;
     padding: 15px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
 }

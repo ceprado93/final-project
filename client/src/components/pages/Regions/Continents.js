@@ -15,8 +15,6 @@ class Continents extends Component {
         }
     }
 
-
-
     render() {
         return (
             <>

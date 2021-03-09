@@ -39,7 +39,6 @@ class CommentForm extends Component {
             .catch(err => console.log(err))
     }
 
-
     render() {
         return (
             <Container>
@@ -49,18 +48,17 @@ class CommentForm extends Component {
                         <Form.Label>Title</Form.Label>
                         <Form.Control type="text" name="title" value={this.state.title} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
+
                     <Form.Group>
                         <Form.Label>Description</Form.Label>
                         <Form.Control type="text" name="description" value={this.state.description} onChange={e => this.handleInputChange(e)} />
                     </Form.Group>
-
                     <Button variant="dark" block type="submit">New Comment</Button>
                 </Form>
+
             </Container>
         )
     }
 }
-
-
 
 export default CommentForm

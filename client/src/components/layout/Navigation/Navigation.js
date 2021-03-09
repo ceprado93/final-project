@@ -20,12 +20,11 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
             .then(() => storeUser(undefined))
             .catch(err => console.log(err))
     }
-// to do
 
 function scrollNav(e){
     const scrollTop = window.pageYOffset
     console.log(window.pageYOffset)
-    if(scrollTop > 70)  setChangeClass(true) 
+    if(scrollTop > 65)  setChangeClass(true) 
     else if(scrollTop === 0) setChangeClass(false)
 }
     return (
@@ -47,12 +46,9 @@ function scrollNav(e){
                     <NavLink to="/continents" >
                         <Nav.Link as="span"className={changeClass? "navb filled":"link-color"}>Search</Nav.Link>
                     </NavLink>
-
                     {
                         loggedUser
                             ?
-
-
                             isAdmin === 'admin' ?
                                 <>
                                     <NavDropdown title="Private" id="basic-nav-dropdown">
@@ -70,9 +66,7 @@ function scrollNav(e){
                                     </NavLink>
                                     <Nav.Link as="span" className={changeClass? "navb filled":"link-color"}onClick={() => logoutUser()}>Log out</Nav.Link>
 
-
                                 </>
-
                             :
                             <>
                                 <NavLink to="/login">
@@ -84,7 +78,6 @@ function scrollNav(e){
 
                             </>
                     }
-
                 </Nav>
             </Navbar.Collapse>
         </Navbar >

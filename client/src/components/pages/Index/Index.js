@@ -1,5 +1,4 @@
 import { Container, Row, Carousel, CarouselItem } from 'react-bootstrap'
-// import Spinner from './../../shared/Spinner/Spinner'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
@@ -7,15 +6,14 @@ const IndexPage = () => {
     return (
         <>
             <section className="first-section">
+
                 <Container >
                     <h1>WAVE MAPS</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu</p>
+                    <p>Welcome to our website where you can find the best waves in the world, and share new ones with others.</p>
                     <Row className="wave-link">
-                        <Link to="/continents" className="btn btn-outline-light btn-lg searchBtn">Search</Link>
+                        <Link to="/continents" className="btn btn-outline-light btn-lg searchBtn">Let's surf!</Link>
                     </Row>
-
                 </Container>
-
                 <small> Photo: Brent Bielmann</small>
             </section>
 
@@ -83,7 +81,6 @@ const IndexPage = () => {
                             alt="Third slide"
                         />
 
-
                         <Carousel.Caption>
                             <Link to={{ pathname: '/America', state: { lat: 9.795061, lng: - 83.979147, zoom: 2 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >America</Link>
                         </Carousel.Caption>
@@ -92,8 +89,8 @@ const IndexPage = () => {
             </section>
 
             <section className="third-section">
-                <h2>Comuninity</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>Community</h2>
+                <p>Not registered yet? What are you waiting for? Join our community now!</p>
                 <div className="linkbtn">
                     <Link to="/login" className=" btn btn-dark btn-lg searchBtn">Log in</Link>
                     <Link to="/signup" className=" btn btn-outline-dark btn-lg searchBtn">Sign up</Link>

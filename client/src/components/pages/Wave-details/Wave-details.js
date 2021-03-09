@@ -21,7 +21,6 @@ class WaveDetails extends Component {
 
     }
 
-
     componentDidMount() {
 
         const wave_id = this.props.match.params.id
@@ -35,13 +34,13 @@ class WaveDetails extends Component {
     togglemodalForm(value) {
         this.setState({ showForm: value })
     }
+
     addFavourite(){
         const waveid = this.props.match.params.id
         this.authService
         .addFavourites(waveid,this.props.loggedUser)
         .then(response => console.log(response))
         .catch(err => console.log(err))
-
     }
 
     render() {
@@ -96,6 +95,5 @@ class WaveDetails extends Component {
         )
     }
 }
-
 
 export default WaveDetails

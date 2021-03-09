@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 module.exports = {
     customMiddleware: (req, res, next) => next(),
     checkLoggedIn: (req, res, next) => req.isAuthenticated() ? next() : res.status(401).json({ errorMsg: 'Log in to continue' }),

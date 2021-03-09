@@ -6,10 +6,6 @@ import WaveForm from './../Wave-form/Wave-form'
 import './Waves.css'
 import Map from './../Map/Map'
 import MyMap from './../Cluster/MyMap'
-
-
-
-
 import WavesService from './../../../service/wave.service'
 
 class Waves extends Component {
@@ -27,7 +23,6 @@ class Waves extends Component {
         this.wavesService = new WavesService()
     }
 
-
     componentDidMount() {
         this.loadWaves()
     }
@@ -42,11 +37,9 @@ class Waves extends Component {
             .catch(err => console.log(err))
     }
 
-
     togglemodalForm(value) {
         this.setState({ showForm: value })
     }
-
 
     render() {
         return (

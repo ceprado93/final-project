@@ -27,6 +27,4 @@ router.delete('/delete/:id',(req,res)=>{
     .catch(err => res.status(500).json({ code: 500, message: 'Error fetching user', err }))
 })
 
-
-
 module.exports = router

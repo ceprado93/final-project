@@ -3,6 +3,7 @@ import AuthService from '../../../service/auth.service'
 import {Modal, Form, Button} from 'react-bootstrap'
 
 class AuthModal extends Component {
+
     constructor() {
         super()
         this.state = {
@@ -30,8 +31,8 @@ class AuthModal extends Component {
             })
             .catch(err => console.log(err))
     }
-render() {
-    return (
+    render() {
+        return (
         <>
         <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
                     <Modal.Header closeButton>
@@ -51,16 +52,6 @@ render() {
                 </Form>                    
                 </Modal.Body>
                 </Modal>
-        {/* <Modal show={show} onHide={handleClose} animation={false}>
-           <Modal.Header closeButton>
-                <Modal.Title></Modal.Title>
-           </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    <Button variant="primary" onClick={handleClose}>Save Changes</Button>
-                </Modal.Footer>
-        </Modal> */}
         </>
         )
     }

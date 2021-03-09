@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap'
-
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
@@ -24,7 +23,6 @@ class Regions extends Component {
 
     componentDidMount() {
         this.getRegion()
-
     }
 
     getRegion() {
@@ -46,7 +44,6 @@ class Regions extends Component {
             })
             .catch(err => console.log(err))
     }
-
 
     render() {
         return (
@@ -76,6 +73,5 @@ class Regions extends Component {
         )
     }
 }
-
 
 export default Regions
