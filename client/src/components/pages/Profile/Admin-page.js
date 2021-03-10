@@ -2,9 +2,8 @@ import { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import AuthService from '../../../service/auth.service'
 import PendingWaves from './Pending-waves'
-import CommentService from './../../../service/comment.service'
 import PendingComments from './PendingComments'
-import { List } from 'immutable'
+import './Admin-profile.css'
 
 class AdminPage extends Component {
     constructor(props) {
@@ -35,18 +34,23 @@ class AdminPage extends Component {
 
     render() {
         return (
-            <Container style={{ marginTop: 100 }}>
-                <h1>Pending waves</h1>
-                <ul>
-                    {this.state.waves?.map(elm => <PendingWaves key={elm._id}{...elm} refreshWaves={() => this.load()} />)}
-                </ul>
-                <hr></hr>
-                <h1>Pending comments</h1>
-                <ul>
-                    {this.state.comments?.map(elm => <PendingComments key={elm._id}{...elm} refreshComments={() => this.load()} />)}
-                </ul>
+            <>
+                <section className="admin-header">
+                    <h1>Admin page</h1>
+                </section>
+                <Container style={{ marginTop: 100 }}>
+                    <h1 style={{ letterSpacing: '0.1em' }}>Pending waves</h1>
+                    <ul>
+                        {this.state.waves?.map(elm => <PendingWaves key={elm._id}{...elm} refreshWaves={() => this.load()} />)}
+                    </ul>
+                    <hr></hr>
+                    <h1 style={{ letterSpacing: '0.1em' }}>Pending comments</h1>
+                    <ul>
+                        {this.state.comments?.map(elm => <PendingComments key={elm._id}{...elm} refreshComments={() => this.load()} />)}
+                    </ul>
 
-            </Container >
+                </Container >
+            </>
         )
 
     }

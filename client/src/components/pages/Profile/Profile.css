@@ -1,0 +1,40 @@
+.profile-head{
+    margin-top: 0;
+    width: 100%;
+    height: 450px;
+    background-image: url('https://cdn1.theinertia.com/wp-content/gallery/dylan-brayshaw/5-the-playground.jpg');
+    background-size: cover;
+    background-position: 100% 50%;
+    margin-bottom: 100px;
+}
+
+.profile-head h1{
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 4em;
+    letter-spacing: .2em;
+    color:white;
+    text-transform: uppercase;
+
+}
+
+.user-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.user-box img{
+    border-radius: 50%;
+    width: 40%;
+    margin-bottom: 15px;
+}
+
+.profilewaves{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}

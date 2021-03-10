@@ -35,35 +35,40 @@ class Signup extends Component {
 
     render() {
         return (
-            <section className="signup">
-                <Container>
+            <>
+                <section className="signup">
+                    <h1>Sign up</h1>
+                </section>
+                <section>
+                    <Container>
 
-                    <Row>
+                        <Row>
 
-                        <Col>
+                            <Col>
 
-                            <Jumbotron className="jumbo-signup">
+                                <Jumbotron className="jumbo-signup">
 
-                                <Form className="form-signup" onSubmit={e => this.handleSubmit(e)}>
-                                    <Form.Group>
-                                        <Form.Label className="label-signup">Username</Form.Label>
-                                        <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label className="label-signup">Password</Form.Label>
-                                        <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
-                                    </Form.Group>
+                                    <Form className="form-signup" onSubmit={e => this.handleSubmit(e)}>
+                                        <Form.Group>
+                                            <Form.Label className="label-signup">Username</Form.Label>
+                                            <Form.Control type="text" name="username" value={this.state.username} onChange={e => this.handleInputChange(e)} />
+                                        </Form.Group>
+                                        <Form.Group>
+                                            <Form.Label className="label-signup">Password</Form.Label>
+                                            <Form.Control type="password" name="password" value={this.state.password} onChange={e => this.handleInputChange(e)} />
+                                        </Form.Group>
 
-                                    <Button variant="outline-dark" block type="submit" className="sign-button">Sign up</Button>
-                                </Form>
-                            </Jumbotron>
+                                        <Button variant="outline-dark" block type="submit" className="sign-button">Sign up</Button>
+                                    </Form>
+                                </Jumbotron>
 
-                        </Col>
+                            </Col>
 
-                    </Row>
+                        </Row>
 
-                </Container>
-            </section>
+                    </Container>
+                </section>
+            </>
         )
     }
 }

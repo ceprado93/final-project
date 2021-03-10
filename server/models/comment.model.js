@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+const Wave = require('../models/wave.model')
+
 const Schema = mongoose.Schema
 
 const commentSchema = new Schema({

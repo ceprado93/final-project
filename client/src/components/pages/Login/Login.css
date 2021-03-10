@@ -1,10 +1,23 @@
 .login{
+     margin-top: 0;
     width: 100%;
-    height: 1000px;
-    background-image: url('https://images.airstory.co/v1/prod/i15075628177321bfbb-f729-488e-8b67-495b39f243c2/shutterstock_429189436.jpg');
+    height: 450px;
+    background-image: url('https://cdn1.theinertia.com/wp-content/gallery/dylan-brayshaw/11-burleigh-lineup-from-land.jpg');
     background-size: cover;
-    background-position: 10% 50%;
+    background-position: 100% 50%;
+    margin-bottom: 100px;
 }
+.login h1{
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 4em;
+    letter-spacing: .2em;
+    color:white;
+    text-transform: uppercase;
+}
+
 .form-login{
     padding: 10px;
 }
@@ -13,7 +26,7 @@
     letter-spacing: .2em;
 }
 .jumbo-login{
-    margin:160px auto;
+    margin:0 auto 160px auto;
     width: 60%;
 }
 .log-button{

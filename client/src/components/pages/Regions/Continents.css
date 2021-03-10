@@ -54,8 +54,55 @@
     justify-content: center;
     color:white;
     padding-top: 220px;
-    padding-left: 100px;
     font-size: 4em;
     letter-spacing: .15em;
     text-transform: uppercase;
+}
+
+.continent-hero-africa{
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5b68283525bf02623f282473/1535713080532-03AU50GLC4QNTUDPHIS0/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/QUIKSILVER+LANZAROTE+GINES+DIAZ01.jpg?format=1000w');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 95%;
+    margin-bottom: 40px;
+}
+
+.continent-hero-pacific{
+    background-image: url('https://as.com/deportes_accion/imagenes/2019/04/30/surf/1556616678_839082_1556617141_noticia_normal.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 40%;
+    margin-bottom: 40px;
+}
+
+.continent-hero-europe{
+    background-image: url('https://img.redbull.com/images/c_crop,x_0,y_0,h_5301,w_7952/c_fill,w_790,h_527/q_auto,f_auto/redbullcom/2020/5/4/rj0x6artbzgeumdggcpp/conor-maguire-rileys');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 40%;
+    margin-bottom: 40px;
+}
+
+.continent-hero-asia{
+    background-image: url('https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2017/10/PapuaNewGuinea_PerfectDay_Surfer58.6_ChrisPeel_Full.jpg?w=1920&ssl=1');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 60%;
+    margin-bottom: 40px;
+}
+
+.continent-hero-ausNz{
+    background-image: url('https://media.surfersjournal.com/wp-content/uploads/2018/03/23081801/Dion-A99Q9103-2460x1260.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 90%;
+    margin-bottom: 40px;
+}
+
+.continent-hero-america{
+    background-image: url('https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_864,q_60,w_1920/v1/clients/surfcityusa/PLEASE_CREDIT_JENNIFER_HERRONN_7__49b213d4-a723-46b9-8873-8c05261d2100.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 40%;
+    margin-bottom: 40px;
 }

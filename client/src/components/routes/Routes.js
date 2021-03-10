@@ -9,6 +9,8 @@ import WaveDetails from './../pages/Wave-details/Wave-details'
 import Continents from './../pages/Regions/Continents'
 import Regions from './../pages/Regions/Regions'
 import MyMap from '../pages/Cluster/MyMap'
+import Spinner from '../shared/Spinner/Spinner'
+
 
 
 const Routes = ({ storeUser, loggedUser, isAdmin }) => {
@@ -20,12 +22,17 @@ const Routes = ({ storeUser, loggedUser, isAdmin }) => {
                 <Route exact path="/gmap" render={() => <MyMap />} />
                 <Route exact path="/signup" render={props => <Signup storeUser={storeUser}  {...props} />} />
                 <Route exact path="/login" render={props => <Login storeUser={storeUser} {...props} />} />
-                <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
-                <Route exact path="/admin-page" render={() => isAdmin ? <AdminPage isAdmin={isAdmin} /> : <Redirect to="/" />} />
-                <Route exact path="/continents" render={() => <Continents />} />
                 <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} />} />
-                <Route exact path="/:continent" render={(props) => <Regions {...props} />} />
+                <Route exact path="/continents" render={() => <Continents />} />
+                <Route exact path="/subregion/:continent" render={(props) => <Regions {...props} />} />
                 <Route exact path="/details/:id" render={props => <WaveDetails {...props} loggedUser={loggedUser} />} />
+                {loggedUser === undefined ? <Spinner /> : (
+                    <>
+                        <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
+                        <Route exact path="/admin-page" render={() => isAdmin ? <AdminPage isAdmin={isAdmin} /> : <Redirect to="/" />} />
+                    </>)
+                }
+
             </Switch>
         </>
     )

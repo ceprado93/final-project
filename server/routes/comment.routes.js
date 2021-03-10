@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Comment = require('../models/comment.model')
 const User = require('../models/user.model')
+const Wave = require('../models/wave.model')
 const { checkLoggedIn } = require('./../middlewares')
 
 router.get('/', (req, res) => {
@@ -16,6 +17,15 @@ router.get('/:waveid/comment', (req, res) => {
 
     Comment
         .find({ wave: req.params.waveid })
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Comment', err }))
+})
+
+router.get('/:userId/mycomment', (req, res) => {
+
+    Comment
+        .find({ writtenBy: req.params.userId })
+        .populate('wave', { 'title': 1, '_id': 0 })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching Comment', err }))
 })

@@ -1,43 +1,114 @@
 import { Component } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import WaveService from './../../../service/wave.service'
+import { Container, Row, Col, Card, Carousel, Accordion, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import './Profile.css'
+import AuthService from './../../../service/auth.service'
 import CommentService from './../../../service/comment.service'
+import WaveService from './../../../service/wave.service'
 
 class Profile extends Component {
     constructor() {
         super()
         this.state = {
             waves: [],
-            comments: []
+            comments: undefined
         }
-        this.waveService = new WaveService()
+        this.authService = new AuthService()
         this.commentService = new CommentService()
+        this.waveService = new WaveService()
     }
+
     componentDidMount() {
         this.load()
     }
+
     load() {
-        const promise1 = this.waveService.getWaves()
-        const promise2 = this.commentService.getComments()
+        const promise1 = this.authService.getFavourites(this.props.loggedUser._id)
+        const promise2 = this.commentService.getUserComments(this.props.loggedUser._id)
         Promise
             .all([promise1, promise2])
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response[1].data)
+                this.setState({
+                    waves: response[0].data.favourites,
+                    comments: response[1].data
+                })
+            })
             .catch(err => console.log(err))
+    }
+
+    handleDelete() {
+        this.CommentService
+            .deleteComment(this.props._id)
+            .then(() => this.props.refreshList())
+            .catch(err => console.log(err))
+
     }
 
     render() {
         return (
-            <Container style={{ marginTop: 100 }}>
-                <h1>Welcome, {this.props.loggedUser.username}!</h1>
-                <Row>
-                    <Col md={4}>
-                        <img src={this.props.loggedUser.avatar} />
-                        <h3>{this.props.loggedUser.username}</h3>
-                    </Col>
-                    <Col md={4}>wefwe</Col>
-                    <Col md={4}>ffewf</Col>
-                </Row>
-            </Container>
+            <>
+                <section className="profile-head">
+
+                    <Container >
+                        <h1>Profile</h1>
+                    </Container>
+                </section>
+                <Container style={{ marginTop: 100 }}>
+                    <Row>
+                        <Col md={5}>
+                            <div className='user-box' >
+                                <img src={this.props.loggedUser.avatar} />
+                                <h3>{this.props.loggedUser.username}</h3>
+
+                            </div>
+                        </Col>
+
+                        <Col md={6}>
+                            <h2 style={{ letterSpacing: '0.1em' }}>My comments</h2>
+                            <ul style={{ paddingLeft: 0 }}>
+                                {this.state.comments?.map(elm => {
+                                    return elm.isAccepted ? <Accordion key={elm._id} as={Col} defaultActiveKey="0" size='xl' style={{ paddingLeft: 0 }}>
+                                        <Card>
+                                            <Accordion.Toggle as={Card.Header} eventKey="1">
+                                                <strong>{elm.title}</strong>
+                                            </Accordion.Toggle>
+                                            <Accordion.Collapse eventKey="1">
+                                                <Card.Body>
+                                                    <p>{elm.description}</p>
+                                                    <p>{elm.wave.title}</p>
+                                                    <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>
+                                                </Card.Body>
+                                            </Accordion.Collapse>
+                                        </Card>
+                                    </Accordion> : <div>no comments</div>
+                                })}
+                            </ul>
+                        </Col>
+
+                    </Row>
+                    <hr></hr>
+                    <h2 style={{ display: 'flex', justifyContent: 'center', margin: '20px', letterSpacing: '.1em' }}>My waves</h2>
+                    <Row>
+
+                        <Col md={{ span: 10, offset: 1 }}>
+                            <Carousel style={{ height: 600, marginBottom: 100 }} slide='true' >
+                                {this.state.waves?.map(elm =>
+                                    <Carousel.Item interval={3000}>
+                                        <img height={600}
+                                            className=" profilewaves"
+                                            src={elm.images[0].url}
+                                            alt="First slide"
+                                        />
+                                        <Carousel.Caption>
+                                            <Link to={`/details/${elm._id}`} className="btn btn-outline-light btn-lg searchBtn carouselBtn" >{elm.title}</Link>
+                                        </Carousel.Caption>
+                                    </Carousel.Item>)}
+                            </Carousel>
+                        </Col>
+                    </Row>
+                </Container >
+            </>
         )
     }
 }

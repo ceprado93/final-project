@@ -14,8 +14,7 @@ class SearchBar extends Component {
         this.setState({ [name]: value })
     }
     handleSubmit(e) {
-        e.stopPropagation()
-        alert('soy searchbar')
+        e.preventDefault()
         const place = this.state
         this.props.searchPlace(place)
         this.setState({ title: '' })

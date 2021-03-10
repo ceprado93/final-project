@@ -6,6 +6,8 @@ import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
 import Comments from '../Comments/CommentsList'
 import WaveForm from '../Wave-form/Wave-form'
+import './Wave-details.css'
+import downArrow from './arrow.png'
 
 
 class WaveDetails extends Component {
@@ -29,6 +31,7 @@ class WaveDetails extends Component {
             .getWave(wave_id)
             .then(response => this.setState({ wave: response.data }))
             .catch(err => console.log(err))
+        window.scrollTo(0, 0)
     }
 
     togglemodalForm(value) {
@@ -43,9 +46,17 @@ class WaveDetails extends Component {
             .catch(err => console.log(err))
     }
 
+    scrollDown() {
+        window.scrollTo(0, 600)
+    }
+
     render() {
         return (
             <>
+                <section className="wave-det-header" style={{ backgroundImage: `url(${this.state.wave?.images[0].url})` }}>
+                    <h1>{this.state.wave?.title}</h1>
+                    <img src={downArrow} onClick={() => this.scrollDown()} />
+                </section>
                 <Container as="section" style={{ marginTop: 100 }}>
 
                     {this.state.wave
@@ -61,7 +72,7 @@ class WaveDetails extends Component {
                                     <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
                                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                                         <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
-                                        <Link to="/waves" className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
+                                        <Link to={`/waves/${this.state.wave?.region}`} className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
                                         <Button variant="dark" onClick={() => this.addFavourite()} > Add to favourites  🤍</Button>
                                     </ButtonGroup>
                                     {/* to do */}
