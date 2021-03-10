@@ -85,4 +85,17 @@ router.put('/favourite/:waveid', (req, res) => {
         })
 })
 
+router.get('/favourite/:userId', (req, res) => {
+
+    User
+        .findById(req.params.userId)
+        .select('favourites')
+        .populate("favourites")
+        .then(response => res.json(response))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ code: 500, message: 'Error fetching Wave', err })
+        })
+})
+
 module.exports = router

@@ -1,4 +1,4 @@
-import { Container, Row, Carousel, CarouselItem } from 'react-bootstrap'
+import { Container, Row, Col, Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
@@ -8,8 +8,13 @@ const IndexPage = () => {
             <section className="first-section">
 
                 <Container >
-                    <h1>WAVE MAPS</h1>
-                    <p>Welcome to our website where you can find the best waves in the world, and share new ones with others.</p>
+                    <Row>
+                        <Col >
+                            <h1>WAVE MAPS</h1>
+                            <p>Welcome to our website where you can find the best waves in the world, and share new ones with others.</p>
+                        </Col>
+
+                    </Row>
                     <Row className="wave-link">
                         <Link to="/continents" className="btn btn-outline-light btn-lg searchBtn">Let's surf!</Link>
                     </Row>

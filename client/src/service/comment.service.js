@@ -10,6 +10,7 @@ class CommentService {
     }
 
     getCommentsWave = (waveid) => this.api.get(`/${waveid}/comment`)
+    getUserComments = (userId) => this.api.get(`/${userId}/mycomment`)
     saveComment = commentDetails => this.api.post('/new', commentDetails)
     editComment = (commentId, commentDetails) => this.api.put(`/edit/${commentId}`, commentDetails)
     deleteComment = (commentId) => this.api.delete(`/delete/${commentId}`)

@@ -40,8 +40,8 @@ class CommentCard extends Component {
             <Col md={{ span: 8, offset: 2 }}>
                 <Card className="comment-card">
                     <Card.Body>
-                        <h3>Title:{this.props.title}</h3>
-                        <p>Description:{this.props.description}</p>
+                        <h3><strong>{this.props.title}</strong></h3>
+                        <p>{this.props.description}</p>
                         <p>Written by:{this.state.user}</p>
                         {this.props?.userId === this.props.writtenBy && <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>}
                     </Card.Body>

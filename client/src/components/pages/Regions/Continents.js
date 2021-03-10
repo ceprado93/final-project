@@ -34,12 +34,12 @@ class Continents extends Component {
                         <Row >
                             <Col>
                                 <ListGroup variant="flush">
-                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }}>Europe</Link></ListGroup.Item>
-                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} >Africa</Link></ListGroup.Item>
-                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} >Asia</Link></ListGroup.Item>
-                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }}>Australia and NZ</Link></ListGroup.Item>
-                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} >Pacific</Link></ListGroup.Item>
-                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/America', state: { lat: 9.795061, lng: - 83.979147, zoom: 2 } }} >America</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/subregion/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }}>Europe</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/subregion/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} >Africa</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/subregion/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} >Asia</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"><Link to={{ pathname: '/subregion/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }}>Australia and NZ</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/subregion/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} >Pacific</Link></ListGroup.Item>
+                                    <ListGroup.Item className="continents"> <Link to={{ pathname: '/subregion/America', state: { lat: 9.795061, lng: - 83.979147, zoom: 2 } }} >America</Link></ListGroup.Item>
                                 </ListGroup>
 
 

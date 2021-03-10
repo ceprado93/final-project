@@ -1,5 +1,6 @@
 import { Component } from 'react'
-import { Container, Button, Modal } from 'react-bootstrap'
+import { Container, Button, Modal, ButtonGroup } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import WavesList from './WavesList'
 import Spinner from '../../shared/Spinner/Spinner'
 import WaveForm from './../Wave-form/Wave-form'
@@ -43,17 +44,20 @@ class Waves extends Component {
 
     render() {
         return (
+            <>
 
-            <div className="all-waves">
-                <section className="header">
-                    <h1>The waves</h1>
+                <section className={this.state.waves[0]?.continent === 'Africa' ? "continent-hero-africa" : (this.state.waves[0]?.continent === 'Europe' ? "continent-hero-europe" : (this.state.waves[0]?.continent === 'America' ? "continent-hero-america" : (this.state.waves[0]?.continent === 'AustraliaNZ' ? "continent-hero-ausNz" : (this.state.waves[0]?.continent === 'Asia' ? "continent-hero-asia" : 'continent-hero-pacific'))))}>
+                    <h1 className="continent-title">{this.props.match.params.region}</h1>
                 </section>
                 <Container as="section">
+                    <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
+                        <Link to={`/subregion/${this.state.waves[0]?.continent}`} className="btn btn-dark">Back to {this.state.waves[0]?.continent}</Link>
+                        {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="outline-dark" className="new-waves-btn">New wave</Button>}
+                    </ButtonGroup>
                     <section className="region-map" style={{ width: "1000px", height: "1100px" }}>
                         {this.state.lat && <MyMap lat={this.state.lat} lng={this.state.lng} zoom={this.state.zoom} region={this.props.match.params.region} ></MyMap>}
                     </section>
                     <section className="region-btn">
-                        {this.props.loggedUser && <Button onClick={() => this.togglemodalForm(true)} variant="dark" className="new-waves-btn">New wave</Button>}
                         {this.state.waves.length ? <WavesList className="waves-list" waves={this.state.waves} loggedUser={this.props.loggedUser} /> : <Spinner />}
                     </section>
                 </Container>
@@ -66,7 +70,7 @@ class Waves extends Component {
                         <WaveForm closeModal={() => this.togglemodalForm(false)} modalType="New" refreshList={() => this.loadWaves()} />
                     </Modal.Body>
                 </Modal>
-            </div>
+            </>
         )
     }
 }

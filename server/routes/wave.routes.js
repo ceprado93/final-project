@@ -21,7 +21,6 @@ router.get('/:region/details', (req, res) => {
 })
 
 router.get('/:continent/info', (req, res) => {
-console.log('adios')
     Wave
         .find({ continent: req.params.continent })
         .then(response => res.json(response))
@@ -29,7 +28,7 @@ console.log('adios')
 })
 
 router.get('/:region', (req, res) => {
-console.log('hola')
+
     Wave
         .find({ continent: req.params.region })
         .select('region continent')

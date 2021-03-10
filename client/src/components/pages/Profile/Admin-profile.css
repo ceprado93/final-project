@@ -1,14 +1,14 @@
-.signup{
-    margin-top: 0;
+.admin-header{
+     margin-top: 0;
     width: 100%;
     height: 450px;
     background-image: url('https://images.squarespace-cdn.com/content/v1/527c03e4e4b03247a686bb74/1463005188259-52Z4SR43U9FB71TKZW0M/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fHWpUEmQZkX684UWF7bhg2s1tH3TUBUgs5FK2W-hN0JRwF_QBJuH0x9guRLGuMooVOqpeNLcJ80NK65_fV7S1UeSloboQlFULU4aOvxza8gWUHsENWeX2-w0UNaKCYuH3Oq_vtWBDZJvNtdC1q8b-uw/wavesport016.JPG?format=1500w');
     background-size: cover;
-    background-position: 100% 40%;
+    background-position: 100% 30%;
     margin-bottom: 100px;
 }
 
-.signup h1{
+.admin-header h1{
     padding-top: 150px;
     display: flex;
     justify-content: center;
@@ -17,22 +17,5 @@
     letter-spacing: .2em;
     color:white;
     text-transform: uppercase;
-}
 
-.form-signup{
-    padding: 10px;
-}
-.label-signup{
-    font-size: 30px;
-    letter-spacing: .2em;
-}
-.jumbo-signup{
-    margin:0 auto 160px auto;
-    width: 60%;  
-}
-.sign-button{
-    margin-top: 50px;
-    padding: 15px;
-    letter-spacing: .15em;
-    text-transform: uppercase;
 }

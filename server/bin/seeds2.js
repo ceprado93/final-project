@@ -6,23 +6,75 @@ mongoose.connect(`${dbName}`);
 const waves = [
 
     {
-        title: 'Sandspit',
-        description: 'A rare, Kirra-style righthand barrel over an extremely shallow sand bottom, created by the Army Corps of Engineers when the breakwater was built to protect Santa Barbara Harbor. The wave is hard-hitting and dredging, beginning with a huge backwash coming out at an angle to the wave from the breakwater. Gets very crowded and very dangerous – expert surfers with tuberiding experience only. Needs big W swells and low tide. Tom Curren got the all-time longest California tuberide here.',
+        title: 'Mavericks',
+        description: 'Mavericks in San Mateo is an exposed reef break that has consistent surf. Winter is the best time of year for surfing here. Works best in offshore winds from the east. Tends to receive distant groundswells and the ideal swell direction is from the west northwest. Primarily a right hand reef break, although a left is also possible.. Sometimes crowded. Beware of rips, rocks and sharks. ',
         images: [{
-            url: 'https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2016/08/Woodworth_Sandspit_SantaBarbara_POTD.jpg?resize=1200%2C600&ssl=1',
-            title: 'Woody Woodworth'
+            url: 'https://www.singlequiver.com/enelpico/wp-content/uploads/2019/10/mavericks-surf.jpg',
+            title: 'Ryan Craig'
         }],
         location: {
             type: 'Point',
-            coordinates: [34.405249, -119.687428]
+            coordinates: [37.492816, -122.500312]
+        },
+        region: 'North America',
+        continent: 'America',
+        type: 'Slab',
+        seaBed: 'Reef',
+        swellDirections: 310,
+        windDirections: 90,
+        swellRange: '3-7+',
+        bestSeason: 'Winter',
+        crowd: 'Full',
+        quality: 5,
+        level: 'Pros',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
+    },
+    {
+        title: 'Rincon',
+        description: 'World-famous, consistent, and classic. A long, perfect righthand point, usually very lined-up with several tube sections. Rides are possible from the very top of the point (above the rivermouth) all the way to the highway, but the swell has to be big enough and of the proper direction (W-NW) not to section off. Rincon can be good at all tides, but low provides the most hollow sections. The inner cove is generally a mushier, softer wave popular with longboarders, but it too can be screaming fast on the right day.',
+        images: [{
+            url: 'http://www.travelgrom.com/wp-content/uploads/Rincon.jpg',
+            title: 'Todd Glasser'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [34.372518, -119.477499]
+        },
+        region: 'North America',
+        continent: 'America',
+        type: 'Pointbreak',
+
+        swellDirections: 310,
+        windDirections: 50,
+        swellRange: '1-3',
+        bestSeason: 'Winter',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
+    },
+    {
+        title: 'Steamer Lane',
+        description: 'Straight out from the access stairs and extending out and west towards the channel are several reefs, collectively called Middle Peak, then subdivided into First, Second, and Third reefs. Best during N-NW swells, each reef works at a different size, but each boast heavy elevator drops followed by a softer righthand shoulder. The lefts, however, are usually steeper and hollower, but they can leave you caught inside by the next set coming in off the Slot or the Point. Middle Peak handles any size, although it becomes more challenging to read the line-up as the peaks shift around, keeping the pack on the move.',
+        images: [{
+            url: 'http://galaxypro.s3.amazonaws.com/spot-media/270/steamerlane-970x970.jpg',
+            title: '@Craig'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [36.950320, - 122.025957]
         },
         region: 'North America',
         continent: 'America',
         type: 'Pointbreak',
         seaBed: 'Sand',
-        swellDirections: 210,
-        windDirections: 80,
-        swellRange: '1-2',
+        swellDirections: 240,
+        windDirections: 40,
+        swellRange: '1-4',
         bestSeason: 'Winter',
         crowd: 'Full',
         quality: 4,
@@ -32,104 +84,52 @@ const waves = [
         isAccepted: true
     },
     {
-        title: 'Salina cruz',
-        description: 'The Salina Cruz area on the coast of Oaxaca is a mixed bag of points, sandy beach breaks, and jetty spots on an undeveloped sandy coastline. It’s a remote area and there will be little or no crowds. Many of the surf spots are best accessed by boat. Surf camps and local surf guides are a popular way to explore the area. Salina Cruz works best on a direct south-southwest swell.',
+        title: 'Lowers',
+        description: 'An often stellar cobblestone peak, Lowers provides occasional hollow, zippering lefts, but is more known for its long, fast, bowling rights. Best with SW swells up to double-overhead. Can be good at any tide.',
         images: [{
-            url: 'https://www.surferrule.com/wp-content/uploads/2019/07/puntaconejoo.jpg',
-            title: 'The inertia'
+            url: 'https://fulcrumsurf.com/wp-content/uploads/2015/07/Lowers.jpg',
+            title: 'Jeremiah Klein'
         }],
         location: {
             type: 'Point',
-            coordinates: [16.135472, -95.247397]
+            coordinates: [33.382052, -117.588556]
         },
-        region: 'Central America',
+        region: 'North America',
         continent: 'America',
-        type: 'Pointbreak',
+        type: 'Beachbreak',
         seaBed: 'Sand',
         swellDirections: 210,
-        windDirections: 30,
-        swellRange: '1-3',
-        bestSeason: 'Autumn',
+        windDirections: 50,
+        swellRange: '0.5-3',
+        bestSeason: 'Winter',
         crowd: 'Full',
-        quality: 4,
-        level: 'Experienced surfers',
-        tide: 'Low to mid tides',
+        quality: 5,
+        level: 'All surfers',
+        tide: 'All tides',
         createdBy: '603d1af4e72dca32acd44dfa',
         isAccepted: true
     },
     {
-        title: 'El pelado',
-        description: 'Perfect and strong wave with amazing tubes.Very sensitive to south or southwest swells, can break with a strong north too. Low tide is best. This site is located 14 kms. from General Villamil Playas taking the road to Engabao until you find a dirt detour on the left side.',
+        title: 'Outer banks',
+        description: 'This famous break in front of the tallest lighthouse in the US (recently moved a few hundred feet back from the surf) is constantly changing from the heavy erosion at Cape Hatteras. Picks up most swells, NE being the best to line up the longer lefts. The ends of the battered jetties can get dredgy, but it all depends on where the sand is. Barrels one week, mushy the next. All tides, but best on low incoming.',
         images: [{
-            url: 'https://www.surf-forecast.com/system/images/10986/large/El-Pelado.jpg?1403674198',
-            title: 'Andes Fernandez'
+            url: 'https://www.wetsuitwearhouse.com/blog/wp-content/uploads/2019/02/S-Turns-Rodanthe-NC.jpg',
+            title: 'Surfline'
         }],
         location: {
             type: 'Point',
-            coordinates: [-2.630553, -80.448143]
+            coordinates: [35.296931, -75.510629]
         },
-        region: 'South America',
+        region: 'North America',
         continent: 'America',
-        type: 'Pointbreak',
+        type: 'Beachbreak',
         seaBed: 'Sand',
-        swellDirections: 210,
-        windDirections: 20,
+        swellDirections: 90,
+        windDirections: 270,
         swellRange: '1-3',
-        bestSeason: 'Spring',
-        crowd: 'Fairly crowded',
-        quality: 4,
-        level: 'Experienced surfers',
-        tide: 'Low to mid tides',
-        createdBy: '603d1af4e72dca32acd44dfa',
-        isAccepted: true
-    },
-    {
-        title: 'Indijup',
-        description: 'The point at Injidup needs a sizeable SW or moderate W swell to wrap around before the lumbering lefts get going. Steep, open faces, interrupted by ill-tempered slabs of rock, bringing down sections and messing with the flow to the channel. Tidally sensitive and protected from S winds its often fat and far less appealing than the car park reefs.',
-        images: [{
-            url: 'https://i.ytimg.com/vi/P4x2V4sPBNI/maxresdefault.jpg',
-            title: 'max res'
-        }],
-        location: {
-            type: 'Point',
-            coordinates: [-33.699376, 114.987853]
-        },
-        region: 'West OZ',
-        continent: 'AustraliaNZ',
-        type: 'Pointbreak',
-        seaBed: 'Sand and rocks',
-        swellDirections: 250,
-        windDirections: 130,
-        swellRange: '1-3',
-        bestSeason: 'Spring',
-        crowd: 'Fairly crowded',
-        quality: 4,
-        level: 'Experienced surfers',
-        tide: 'Mid tides',
-        createdBy: '603d1af4e72dca32acd44dfa',
-        isAccepted: true
-    },
-    {
-        title: 'Crescent Head',
-        description: 'Solid wave, offers protection in southerly winds',
-        images: [{
-            url: 'http://www.visitingnsw.com/wp-content/uploads/2016/05/Crescent_Head_Surfing.jpg',
-            title: 'Visit NSW'
-        }],
-        location: {
-            type: 'Point',
-            coordinates: [-31.185750, 152.982818]
-        },
-        region: 'East OZ',
-        continent: 'AustraliaNZ',
-        type: 'Pointbreak',
-        seaBed: 'Sand',
-        swellDirections: 160,
-        windDirections: 240,
-        swellRange: '1-3',
-        bestSeason: 'Autumn',
-        crowd: 'Fairly crowded',
-        quality: 4,
+        bestSeason: 'Winter',
+        crowd: 'Full',
+        quality: 5,
         level: 'Experienced surfers',
         tide: 'All tides',
         createdBy: '603d1af4e72dca32acd44dfa',
@@ -137,25 +137,25 @@ const waves = [
     },
 
     {
-        title: 'Angourie Point',
-        description: 'Angourie Point on the North Coast is an exposed point break that has quite reliable surf Offshore winds are from the southwest. Waves just as likely from local windswells as from distant groundswells and the best swell direction is from the east northeast. Sometimes crowded. Take care of rocks, sharks and locals.',
+        title: 'Puerto Escondido',
+        description: 'Swells hit the Puerto Escondido sandbars at Zicatela Beach in such a way that the waves jack up in size, which is often emphasised by a backwash. Magazine photos of this place are misleading - the waves close-out often and the paddle-out can be severe. Usually the rights break best. The wave is fickle, and will often be blown out by 11am. There’s large numbers of skilled surfers in the water hoping for the bomb that stays open long enough to escape. Despite all this, it’s still a year-round Mecca for big barrel hunters!',
         images: [{
-            url: 'https://assets.atdw-online.com.au/images/73a5de47e4e35aec03b507925f81fbb0.jpeg?rect=154,0,2048,1536&w=745&h=559&',
-            title: 'Visit NSW'
+            url: 'https://olasperu.com/multimedia/publicaciones/59f08fb95e968.jpg',
+            title: 'Edwin Morales'
         }],
         location: {
             type: 'Point',
-            coordinates: [-29.482971, 153.368299]
+            coordinates: [15.848466, -97.054697]
         },
-        region: 'East OZ',
-        continent: 'AustraliaNZ',
-        type: 'Pointbreak',
+        region: 'Central America',
+        continent: 'America',
+        type: 'Beachbreak',
         seaBed: 'Sand',
-        swellDirections: 80,
-        windDirections: 200,
-        swellRange: '1-3',
-        bestSeason: 'Autumn',
-        crowd: 'Fairly crowded',
+        swellDirections: 210,
+        windDirections: 30,
+        swellRange: '1-6+',
+        bestSeason: 'Summer',
+        crowd: 'Full',
         quality: 4,
         level: 'Experienced surfers',
         tide: 'All tides',
@@ -163,24 +163,102 @@ const waves = [
         isAccepted: true
     },
     {
-        title: 'Lennox Head',
-        description: 'In February 1962, two Kiwis stumbled upon Lennox Head, now generally regarded as Australia’s finest righthand point. The first photos were published in Surfing World in 1966, followed by a sealed road in 1972, and since then surfers have flocked to the break, including hard-core riders from the surrounding countryside that keep a long pintail under the house for big Lennox days. Few waves compare for speed, barrel sections, length of ride and an ability to handle the biggest NE-S swells. While a NE swell meeting a SW wind is considered primo, Lennox will also bend a S to its will, hitting a number of launch sites along the half kilometre headland. Along that rocky ride, expect full-throttle, ruler-edged walls to gusset multiple times and envelop those fast and canny enough to hold the right line. Holds proper size when the prospect of leaping off the rocks looks suicidal and the current running down the point is likely to challenge the strongest paddlers.',
+        title: 'Bocas del toro - Bluff',
+        description: 'Furthest north from Bocas del Toro, is the consistent stretch of beach known as Bluff. Hollow & powerful waves break super close to the shore, plenty of which close out. Pick the right ones for a quick barrel at this spot that is ideally suited to bodyboards.',
         images: [{
-            url: 'https://www.lowpressure.co.uk/surftravelplanner/images/Far%20North%20Coast.jpg',
-            title: 'Storm surfers'
+            url: 'https://lp-cms-production.imgix.net/2019-06/df2ae2ab319c52431ebcb91ea2f1f25a-playa-bluff.jpg',
+            title: 'Nacho Cosio'
         }],
         location: {
             type: 'Point',
-            coordinates: [-28.806510, 153.605621]
+            coordinates: [9.396509, -82.242656]
         },
-        region: 'East OZ',
-        continent: 'AustraliaNZ',
+        region: 'Central America',
+        continent: 'America',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 40,
+        windDirections: 230,
+        swellRange: '1-2',
+        bestSeason: 'Winter',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
+    },
+    {
+        title: 'Roca bruja',
+        description: 'Next door,along the 6km of Playa Naranjo is another world-class wave. This hollow beachbreak faces a huge rock called Roca Bruja meaning Witches Rock, which was deposited in the sea by an angry volcano 50k’s (30mi) away. Ultra-fast, zippy walls streak down the sand, needing higher tides to prevent the close-outs. Most surfers coagulate just south of the rivermouth, but there are always more peaks to the south. North of the rivermouth is usually smaller. The only effective way to reach these spots is by boat from Playa del Coco or by 4X4, but like most national parks, there’s no accommodation so camping is the only possibility.',
+        images: [{
+            url: 'https://vozdeguanacaste.com/wp-content/uploads/2018/01/playa_naranjo.jpg',
+            title: 'Playa negra fotos'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [10.792251, -85.678153]
+        },
+        region: 'Central America',
+        continent: 'America',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 210,
+        windDirections: 30,
+        swellRange: '1-3',
+        bestSeason: 'Summer',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
+    },
+    {
+        title: 'Popoyo',
+        description: 'When talking about Popoyo it’s important to realise that it is 2 waves with very different personalities a bit like beauty and the beast. Beauty is the alluring symmetry of the reef and sand slab off Play Sardinas that peaks up and peels off predictably at a nice pace for vertical whacks and the odd crumbly cover-up. Better at low incoming tide, the peak will hold up to double overhead and and a considerable crowd as well. The Beast is The Outer Reef, with a capital T, found 400m offshore and is only really an option for the very bravest and skilled big wave riders. Looks deceptively perfect from distance but close inspection reveals shallow rocks, boils and riverine currents sculpting heaving, bloodthirsty barrels with a do or die end section. Easily handles 20ft faces at this higher tide spot and it gets scarier by the minute on the drop, which doesn’t deter the local hellmen that have it wired.',
+        images: [{
+            url: 'http://i.cdn-surfline.com/travel/summer-resort-guide/resorts/popoyo/popoyo_surf_lodge_nicaragua_wavehunters_image-7.jpg',
+            title: 'Surfline'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [11.455353, -86.109852]
+        },
+        region: 'Central America',
+        continent: 'America',
+        type: 'Beachbreak',
+        seaBed: 'Sand',
+        swellDirections: 210,
+        windDirections: 30,
+        swellRange: '1-5',
+        bestSeason: 'Summer',
+        crowd: 'Full',
+        quality: 4,
+        level: 'Experienced surfers',
+        tide: 'All tides',
+        createdBy: '603d1af4e72dca32acd44dfa',
+        isAccepted: true
+    },
+    {
+        title: 'Cabo blanco',
+        description: 'On a big N swell, world-class Cabo Blanco will wake up. It’s an excellent barrelling reefbreak that explodes dangerously close to exposed, board-chewing rocks with plenty of fast tubes. The take-offs are usually late, straight into a spacious cavern, then race off past the elbow of the reef and down towards the pier 100m away.',
+        images: [{
+            url: 'https://margruesa.com/wp-content/uploads/2019/01/cabo-blanco-surf-peru.jpg',
+            title: 'Enrique Rodriguez'
+        }],
+        location: {
+            type: 'Point',
+            coordinates: [-4.249956, -81.232234]
+        },
+        region: 'South America',
+        continent: 'America',
         type: 'Pointbreak',
         seaBed: 'Sand',
-        swellDirections: 140,
-        windDirections: 240,
-        swellRange: '1-4',
-        bestSeason: 'Autumn',
+        swellDirections: 330,
+        windDirections: 160,
+        swellRange: '1-3',
+        bestSeason: 'Winter',
         crowd: 'Fairly crowded',
         quality: 5,
         level: 'Experienced surfers',
@@ -188,32 +266,6 @@ const waves = [
         createdBy: '603d1af4e72dca32acd44dfa',
         isAccepted: true
     },
-    {
-        title: 'The pass',
-        description: 'The Pass on the North Coast is a quite exposed point break that has consistent surf The best wind direction is from the southeast. Tends to receive a mix of groundswells and windswells and the ideal swell direction is from the east northeast. Good surf at all stages of the tide. Often Crowded. Watch out for rips, rocks, man-made danger (buoys etc...) and locals.',
-        images: [{
-            url: 'https://i.pinimg.com/originals/48/1a/09/481a09246ceb71c4742d14b66f22a1bc.jpg',
-            title: 'Byron'
-        }],
-        location: {
-            type: 'Point',
-            coordinates: [-28.636447, 153.627842]
-        },
-        region: 'East OZ',
-        continent: 'AustraliaNZ',
-        type: 'Pointbreak',
-        seaBed: 'Sand',
-        swellDirections: 100,
-        windDirections: 180,
-        swellRange: '1-3',
-        bestSeason: 'Autumn',
-        crowd: 'Full',
-        quality: 4,
-        level: 'All surfers',
-        tide: 'All tides',
-        createdBy: '603d1af4e72dca32acd44dfa',
-        isAccepted: true
-    }
 
 ];
 

@@ -16,6 +16,8 @@ class AuthService {
     verifyChanges = () => this.api.get('/admin-profile')
     addChanges = changes => this.api.post('/admin-profile', changes)
     addFavourites = (waveid, userData) => this.api.put(`/favourite/${waveid}`, userData)
+    getFavourites = userId => this.api.get(`/favourite/${userId}`)
+
 }
 
 export default AuthService
