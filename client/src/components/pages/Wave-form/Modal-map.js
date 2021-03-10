@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import mapStyles from './../Cluster/mapStyles.json';
 import SearchBar from '../../shared/SearchBar/SearchBar';
 import Geocode from "react-geocode"
+import Marker from './../Cluster/Marker'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -77,11 +78,12 @@ class ModalMap extends Component {
                     onClick={(e) => this.drawMarker(e)}
 
                 >
-                    {this.state.point.lat && <AnyReactComponent
+                    {this.state.point.lat && <Marker
 
                         lat={this.state.point.lat}
                         lng={this.state.point.lng}
                         text='Your wave'
+                        
                     />}
 
 
