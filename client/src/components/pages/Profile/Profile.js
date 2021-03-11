@@ -58,14 +58,14 @@ class Profile extends Component {
                     <Row>
                         <Col md={5}>
                             <div className='user-box' >
-                                <img src={this.props.loggedUser.avatar} />
+                                <img src={this.props.loggedUser.avatar} alt="avatar"/>
                                 <h3>{this.props.loggedUser.username}</h3>
 
                             </div>
                         </Col>
 
                         <Col md={6}>
-                            <h2 style={{ letterSpacing: '0.1em' }}>My comments</h2>
+                            <h2 style={{ letterSpacing: '0.1em', marginBottom: 40 }}>My comments</h2>
                             <ul style={{ paddingLeft: 0 }}>
                                 {this.state.comments?.map(elm => {
                                     return elm.isAccepted ? <Accordion key={elm._id} as={Col} defaultActiveKey="0" size='xl' style={{ paddingLeft: 0 }}>
@@ -81,14 +81,14 @@ class Profile extends Component {
                                                 </Card.Body>
                                             </Accordion.Collapse>
                                         </Card>
-                                    </Accordion> : <div>no comments</div>
+                                    </Accordion> : <div style={{ marginBottom: 20}}> Comment waiting to be approved<hr/></div>
                                 })}
                             </ul>
                         </Col>
 
                     </Row>
                     <hr></hr>
-                    <h2 style={{ display: 'flex', justifyContent: 'center', margin: '20px', letterSpacing: '.1em' }}>My waves</h2>
+                    <h2 style={{ display: 'flex', justifyContent: 'center', margin: '40px', letterSpacing: '.1em' }}>My waves</h2>
                     <Row>
 
                         <Col md={{ span: 10, offset: 1 }}>

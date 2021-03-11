@@ -23,6 +23,7 @@
 }
 .continents a{
     color:rgb(37, 36, 36);
+    text-transform: uppercase;
 }
 .continents img{
     width: 5%;

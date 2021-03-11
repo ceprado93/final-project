@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Container, Row, Col, Button, ButtonGroup, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Container, Row, Col, Button, ButtonGroup, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Map from './../Map/Map'
 import MyMap from './../Cluster/MyMap'

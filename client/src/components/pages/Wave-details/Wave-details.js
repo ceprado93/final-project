@@ -55,9 +55,9 @@ class WaveDetails extends Component {
             <>
                 <section className="wave-det-header" style={{ backgroundImage: `url(${this.state.wave?.images[0].url})` }}>
                     <h1>{this.state.wave?.title}</h1>
-                    <img src={downArrow} onClick={() => this.scrollDown()} />
+                    <img src={downArrow} onClick={() => this.scrollDown()} alt="arrow"/>
                 </section>
-                <Container as="section" style={{ marginTop: 100 }}>
+                <Container as="section" style={{ marginTop: 100, marginBottom:100 }}>
 
                     {this.state.wave
 

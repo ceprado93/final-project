@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Container, Button, Modal } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import CommentCard from './CommentCard'
 import CommentForm from './CommentForm'
 import CommentService from '../../../service/comment.service'

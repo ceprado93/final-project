@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import WaveService from '../../../service/wave.service'
-import { Form, Button, Container, Modal, Col, Accordion, Card } from 'react-bootstrap'
+import { Form, Button, Container, Col, Accordion, Card } from 'react-bootstrap'
 import LocationForm from './Location-form'
 import ModalMap from './Modal-map'
 
