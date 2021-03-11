@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import WaveService from '../../../service/wave.service'
-import { Form, Button, Container, Modal } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import ModalMap from './Modal-map'
 
 class LocationForm extends Component {

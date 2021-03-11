@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import mapStyles from './../Cluster/mapStyles.json';
-import SearchBar from '../../shared/SearchBar/SearchBar';
 import Geocode from "react-geocode"
 import Marker from './../Cluster/Marker'
 
