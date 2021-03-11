@@ -2,6 +2,7 @@ import { Component } from 'react'
 import AuthService from '../../../service/auth.service'
 import { Form, Button, Container, Row, Col, Jumbotron } from 'react-bootstrap'
 import './Signup.css'
+import Alert from './../../shared/Alert/Alert'
 
 class Signup extends Component {
 
@@ -9,9 +10,14 @@ class Signup extends Component {
         super()
         this.state = {
             username: '',
-            password: ''
-        }
+            password: '',
+            alert: {
+                show: false,
+                title:'',
+                text: ''
 
+            }
+        }
         this.authService = new AuthService()
     }
 
@@ -30,8 +36,9 @@ class Signup extends Component {
                 this.props.storeUser(response.data)
                 this.props.history.push('/')
             })
-            .catch(err => console.log({ err }))
+            .catch(err => this.setState({ alert: { show:true, title:'Error', text: err.response.data.message } }))
     }
+    handleAlert = (show, title, text) => this.setState({ alert: { show,title, text } })
 
     render() {
         return (
@@ -67,6 +74,8 @@ class Signup extends Component {
                         </Row>
 
                     </Container>
+                    <Alert handleAlert={this.handleAlert} show={this.state.alert.show} title={this.state.alert.title}text={this.state.alert.text} />
+
                 </section>
             </>
         )

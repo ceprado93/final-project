@@ -1,15 +1,15 @@
 .first-section{
     margin-top: 0;
     width: 100%;
-    height: 650px;
+    height: 800px;
     background-image: url('https://images.squarespace-cdn.com/content/v1/527c03e4e4b03247a686bb74/1495663912038-GL0LA6795260JW76QPPR/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/B84I5421-2A.JPG?format=1500w');
     background-size: cover;
-    background-position: 100% 40%;
+    background-position: 100% 30%;
     margin-bottom: 100px;
     
 }
 .first-section h1{
-    padding-top: 150px;
+    padding-top: 200px;
     display: flex;
     justify-content: center;
     text-align: center;

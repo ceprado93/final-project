@@ -1,5 +1,7 @@
 .comment-card {
-    margin: 40px 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 0;
     width: 100%;
 }
 .comment-card img {

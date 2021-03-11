@@ -23,16 +23,14 @@ class PendingWaves
 
         this.waveService
             .acceptWave(waveId)
-            .then(() => {
-                this.props.refreshWaves()
-            })
+            .then(() => this.props.refreshWaves())
             .catch(err => console.log(err))
     }
     deleteWave() {
 
         this.waveService
             .deleteWave(this.props._id)
-            .then(response => console.log(response))
+            .then(() => this.props.refreshWaves())
             .catch(err => console.log(err))
     }
 
@@ -51,8 +49,8 @@ class PendingWaves
                                 <p><strong>Swell Range:</strong> {this.props.swellRange} m | <strong>Quality</strong> {this.props.quality}</p>
                                 <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                                     <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
-                                    <Button onClick={() => this.deleteWave()}>Delete</Button>
-                                    <Button onClick={() => this.acceptWave()}> Accept wave</Button>
+                                    <Button variant="outline-dark"onClick={() => this.deleteWave()}>Delete</Button>
+                                    <Button variant="dark"onClick={() => this.acceptWave()}> Accept wave</Button>
                                 </ButtonGroup>
 
                             </Col>

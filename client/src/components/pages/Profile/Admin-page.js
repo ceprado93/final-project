@@ -38,7 +38,7 @@ class AdminPage extends Component {
                 <section className="admin-header">
                     <h1>Admin page</h1>
                 </section>
-                <Container style={{ marginTop: 100 }}>
+                <Container style={{ marginTop: 100 ,marginBottom:100}}>
                     <h1 style={{ letterSpacing: '0.1em' }}>Pending waves</h1>
                     <ul>
                         {this.state.waves?.map(elm => <PendingWaves key={elm._id}{...elm} refreshWaves={() => this.load()} />)}
