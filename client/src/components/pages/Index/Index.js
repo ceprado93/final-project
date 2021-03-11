@@ -28,7 +28,7 @@ const IndexPage = () => {
                     <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100 h-200"
-                            src="https://www.surkawa.com/blog/wp-content/uploads/2017/01/la-ola-perfecta-jon-aspuru-entrevista.jpg"
+                            src="https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2018/11/13135629/Mundaka-Goodtoepic-OscarDiego-1560x1039.jpg"
                             alt="First slide"
                         />
                         <Carousel.Caption>

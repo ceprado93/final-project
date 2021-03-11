@@ -1,7 +1,11 @@
+body{
+        scroll-behavior: smooth;
+
+}
 .wave-det-header{
     margin-top: 0;
     width: 100%;
-    height: 700px;
+    height: 850px;
     background-size: cover;
     background-position: 100% 40%;
     margin-bottom: 100px;
@@ -16,6 +20,7 @@
     letter-spacing: .2em;
     color:white;
     text-transform: uppercase;
+    
 }
 
 .wave-det-header img{
@@ -25,3 +30,12 @@
     margin: 0 auto;
     
 }
+
+.not-active{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+

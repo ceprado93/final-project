@@ -77,23 +77,23 @@
 }
 
 .continent-hero-europe{
-    background-image: url('https://img.redbull.com/images/c_crop,x_0,y_0,h_5301,w_7952/c_fill,w_790,h_527/q_auto,f_auto/redbullcom/2020/5/4/rj0x6artbzgeumdggcpp/conor-maguire-rileys');
-    height: 400px;
-    background-size: cover;
-    background-position: 100% 40%;
-    margin-bottom: 40px;
-}
-
-.continent-hero-asia{
-    background-image: url('https://i0.heartyhosting.com/www.surfer.com/wp-content/uploads/2017/10/PapuaNewGuinea_PerfectDay_Surfer58.6_ChrisPeel_Full.jpg?w=1920&ssl=1');
+    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2020/01/15151455/HELIO.jpg');
     height: 400px;
     background-size: cover;
     background-position: 100% 60%;
     margin-bottom: 40px;
 }
 
+.continent-hero-asia{
+    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/07/11200359/kandui.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: 100% 50%;
+    margin-bottom: 40px;
+}
+
 .continent-hero-ausNz{
-    background-image: url('https://media.surfersjournal.com/wp-content/uploads/2018/03/23081801/Dion-A99Q9103-2460x1260.jpg');
+    background-image: url('https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/04/02115205/rambo-estrada-new-zealand-7R306989-1560x1039.jpg');
     height: 400px;
     background-size: cover;
     background-position: 100% 90%;
@@ -101,9 +101,9 @@
 }
 
 .continent-hero-america{
-    background-image: url('https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_864,q_60,w_1920/v1/clients/surfcityusa/PLEASE_CREDIT_JENNIFER_HERRONN_7__49b213d4-a723-46b9-8873-8c05261d2100.jpg');
+    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2020/09/22133650/GtoE_TLM332841.jpg');
     height: 400px;
     background-size: cover;
-    background-position: 100% 40%;
+    background-position: 100% 13%;
     margin-bottom: 40px;
 }

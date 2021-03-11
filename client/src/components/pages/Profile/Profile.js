@@ -28,7 +28,7 @@ class Profile extends Component {
         Promise
             .all([promise1, promise2])
             .then(response => {
-                console.log(response[1].data)
+
                 this.setState({
                     waves: response[0].data.favourites,
                     comments: response[1].data
@@ -37,10 +37,11 @@ class Profile extends Component {
             .catch(err => console.log(err))
     }
 
-    handleDelete() {
-        this.CommentService
-            .deleteComment(this.props._id)
-            .then(() => this.props.refreshList())
+    handleDelete(e) {
+
+        this.commentService
+            .deleteComment(e.target.name)
+            .then(() => this.load())
             .catch(err => console.log(err))
 
     }
@@ -58,7 +59,7 @@ class Profile extends Component {
                     <Row>
                         <Col md={5}>
                             <div className='user-box' >
-                                <img src={this.props.loggedUser.avatar} alt="avatar"/>
+                                <img src={this.props.loggedUser.avatar} alt="avatar" />
                                 <h3>{this.props.loggedUser.username}</h3>
 
                             </div>
@@ -77,11 +78,11 @@ class Profile extends Component {
                                                 <Card.Body>
                                                     <p>{elm.description}</p>
                                                     <p>{elm.wave.title}</p>
-                                                    <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>
+                                                    <Button name={elm._id} variant="dark" onClick={(e) => this.handleDelete(e)}>Delete</Button>
                                                 </Card.Body>
                                             </Accordion.Collapse>
                                         </Card>
-                                    </Accordion> : <div style={{ marginBottom: 20}}> Comment waiting to be approved<hr/></div>
+                                    </Accordion> : <div style={{ marginBottom: 20 }}> Comment waiting to be approved<hr /></div>
                                 })}
                             </ul>
                         </Col>

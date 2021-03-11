@@ -7,7 +7,7 @@ import Spinner from '../../shared/Spinner/Spinner'
 import Comments from '../Comments/CommentsList'
 import WaveForm from '../Wave-form/Wave-form'
 import './Wave-details.css'
-import downArrow from './arrow.png'
+import downArrow from './down-arrow.png'
 
 
 class WaveDetails extends Component {
@@ -16,7 +16,9 @@ class WaveDetails extends Component {
         super()
         this.state = {
             wave: undefined,
-            showForm: false
+            showForm: false,
+            move: false,
+            added: false,
         }
         this.waveService = new WaveService()
         this.authService = new AuthService()
@@ -42,12 +44,12 @@ class WaveDetails extends Component {
         const waveid = this.props.match.params.id
         this.authService
             .addFavourites(waveid, this.props.loggedUser)
-            .then(response => console.log(response))
+            .then(response => this.setState({ added: true }))
             .catch(err => console.log(err))
     }
 
     scrollDown() {
-        window.scrollTo(0, 600)
+        this.setState({ move: true }, () => window.scrollTo({ left: 0, top: 860, behavior: "smooth" }))
     }
 
     render() {
@@ -55,9 +57,9 @@ class WaveDetails extends Component {
             <>
                 <section className="wave-det-header" style={{ backgroundImage: `url(${this.state.wave?.images[0].url})` }}>
                     <h1>{this.state.wave?.title}</h1>
-                    <img src={downArrow} onClick={() => this.scrollDown()} alt="arrow"/>
+                    <img src={downArrow} onClick={() => this.scrollDown()} alt="arrow" />
                 </section>
-                <Container as="section" style={{ marginTop: 100, marginBottom:100 }}>
+                <Container className={this.state.move ? 'active' : 'not-active'} as="section" style={{ marginTop: 100, marginBottom: 100 }}>
 
                     {this.state.wave
 
@@ -66,15 +68,16 @@ class WaveDetails extends Component {
                             <Row>
                                 <Col md={{ span: 6 }}>
                                     <h1>{this.state.wave?.title}</h1>
-                                    <hr />
-                                    <p>{this.state.wave?.description}</p>
-                                    <hr />
-                                    <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m | <strong>Quality</strong> {this.state.wave?.quality}</p>
                                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                                         <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
                                         <Link to={`/waves/${this.state.wave?.region}`} className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
-                                        <Button variant="dark" onClick={() => this.addFavourite()} > Add to favourites  🤍</Button>
+                                        <Button variant="dark" onClick={() => this.addFavourite()} > Add to favourites {this.state.added && '🤍'}</Button>
                                     </ButtonGroup>
+                                    <hr />
+                                    <p>{this.state.wave?.description}</p>
+                                    <hr />
+                                    <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m </p>
+                                    <p><strong>Quality</strong> {this.state.wave?.quality}</p>
                                     {/* to do */}
                                 </Col>
 
