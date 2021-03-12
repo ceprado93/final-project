@@ -69,10 +69,10 @@
 }
 
 .continent-hero-pacific{
-    background-image: url('https://as.com/deportes_accion/imagenes/2019/04/30/surf/1556616678_839082_1556617141_noticia_normal.jpg');
+    background-image: url('https://images.squarespace-cdn.com/content/v1/527c03e4e4b03247a686bb74/1463006128178-SUUPGHANCW83ZJ75A2O6/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fgkxBWjjRb1N_UxbACPPq6hhC5MerhNR9r2hvFzptSmHlv90AApd9Yk_mbh9SCYVMOqpeNLcJ80NK65_fV7S1UY1L_xm-LacWRRw21s2AAbX4HuP_hcQFuNNgVoV7HpqYRwI9WTNiCkeSufsKtaOj1w/seascapes040.JPG?format=1500w');
     height: 400px;
     background-size: cover;
-    background-position: 100% 40%;
+    background-position: 100% 70%;
     margin-bottom: 40px;
 }
 
@@ -85,18 +85,18 @@
 }
 
 .continent-hero-asia{
-    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/07/11200359/kandui.jpg');
+    background-image: url('https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/05/04152017/image1-1560x1040.jpg');
     height: 400px;
     background-size: cover;
-    background-position: 100% 50%;
+    background-position: 100% 70%;
     margin-bottom: 40px;
 }
 
 .continent-hero-ausNz{
-    background-image: url('https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/04/02115205/rambo-estrada-new-zealand-7R306989-1560x1039.jpg');
+    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2020/05/17155515/IMG_7361.jpg');
     height: 400px;
     background-size: cover;
-    background-position: 100% 90%;
+    background-position: 100% 22%;
     margin-bottom: 40px;
 }
 
