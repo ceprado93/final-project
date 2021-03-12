@@ -41,7 +41,7 @@ class Waves extends Component {
                 const filteredArr = response.data
                 this.setState({ waves: filteredArr, lat: filteredArr[0].location.coordinates[0], lng: filteredArr[0].location.coordinates[1], zoom: 5 })
             })
-            .catch(err => this.setState({ alert: { show: true, title: 'Error', text: err.response.data.message } }))
+            .catch(err => console.log(err))
     }
 
     togglemodalForm(value) {
