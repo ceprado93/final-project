@@ -6,7 +6,8 @@ import AuthService from './../../../service/auth.service'
 import CommentService from './../../../service/comment.service'
 import WaveService from './../../../service/wave.service'
 import ProfileService from './../../../service/profile.service'
-import {transEs} from '../../shared/translate'
+// import {transEs} from '../../shared/translate'
+
 class Profile extends Component {
     constructor() {
         super()
@@ -44,15 +45,12 @@ class Profile extends Component {
         this.setState({ showForm: value })
     }
 
-
     handleDelete(e) {
 
         this.commentService
             .deleteComment(e.target.name)
             .then(() => this.load())
             .catch(err => console.log(err))
-
-
     }
 
     deleteAccount() {
@@ -106,7 +104,7 @@ class Profile extends Component {
                                     return elm.isAccepted ? <Accordion key={elm._id} as={Col} defaultActiveKey="0" size='xl' style={{ paddingLeft: 0 }}>
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="1">
-                                                <strong>{elm.title}</strong>
+                                                <strong>{elm.title}   ✔️</strong>
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="1">
                                                 <Card.Body>

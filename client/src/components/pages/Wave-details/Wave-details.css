@@ -16,8 +16,8 @@ body{
     display: flex;
     justify-content: center;
     font-weight: 500;
-    font-size: 7em;
-    letter-spacing: .2em;
+    font-size: 5em;
+    letter-spacing: .15em;
     color:white;
     text-transform: uppercase;
     

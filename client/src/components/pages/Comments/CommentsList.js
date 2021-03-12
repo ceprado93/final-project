@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import { Container } from 'react-bootstrap'
 import CommentCard from './CommentCard'
 import CommentForm from './CommentForm'
 import CommentService from '../../../service/comment.service'
@@ -33,12 +32,10 @@ class Comments extends Component {
     render() {
         return (
             <>
-              
-                    <h3 style={{marginTop:30,letterSpacing:'.1em'}}>Comments</h3>
-                    <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()} />
-                    {this.state.comments?.map(elm => { return elm.isAccepted && <CommentCard userId={this.props.commentUser} refreshList={() => this.loadComments()} key={elm._id}{...elm} /> })}
 
-          
+                <h3 style={{ marginTop: 30, letterSpacing: '.1em' }}>Comments</h3>
+                <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()} handleAlert={this.props.handleAlert} />
+                {this.state.comments?.map(elm => { return elm.isAccepted && <CommentCard userId={this.props.commentUser} refreshList={() => this.loadComments()} key={elm._id}{...elm} /> })}
 
             </>
         )

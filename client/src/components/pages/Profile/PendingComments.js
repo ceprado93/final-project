@@ -3,7 +3,6 @@ import CommentService from '../../../service/comment.service'
 import { Component } from 'react'
 import './../Comments/Comments.css'
 
-
 class PendingComment extends Component {
 
     constructor() {
@@ -50,11 +49,9 @@ class PendingComment extends Component {
 
             <Col md={12}>
                 <Card className="comment-card">
-                    {/* to do */}
-                    {/* <Card.Img variant="top" src={images[0].url} /> */}
                     <Card.Body>
-                        <h3>Title:{this.props.title}</h3>
-                        <p>Description:{this.props.description}</p>
+                        <h3>{this.props.title}</h3>
+                        <p>{this.props.description}</p>
                         <p>Written by:{this.state.user}</p>
                         <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
                             <Button variant="dark" onClick={() => this.handleDelete()}>Delete</Button>

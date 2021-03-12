@@ -61,7 +61,7 @@ const Navigation = ({ storeUser, loggedUser, isAdmin }) => {
                                 :
                                 <>
                                     <NavLink to="/profile">
-                                        <Nav.Link as="span" className={changeClass ? "navb filled" : "link-color"}>Profile</Nav.Link>
+                                        <Nav.Link as="span" className={changeClass ? "navb filled" : "link-color"}>Profile ({loggedUser.username})</Nav.Link>
                                     </NavLink>
                                     <Nav.Link as="span" className={changeClass ? "navb filled" : "link-color"} onClick={() => logoutUser()}>Log out</Nav.Link>
 

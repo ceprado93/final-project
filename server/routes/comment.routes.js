@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Comment = require('../models/comment.model')
 const User = require('../models/user.model')
-const Wave = require('../models/wave.model')
 const { checkLoggedIn } = require('./../middlewares')
 
 router.get('/', (req, res) => {

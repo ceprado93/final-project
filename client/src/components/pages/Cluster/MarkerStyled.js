@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { COLORS, easyMove } from './style-constants';
+import styled from 'styled-components'
+import { COLORS, easyMove } from './style-constants'
 
 const MarkerStyled = styled.div`
   display: flex;
@@ -19,11 +19,11 @@ const MarkerStyled = styled.div`
   animation: ${easyMove} 0.3s;
   &:hover {
     border-radius:0%;
-    transform: scale(5);
+    transform: scale(4);
     background-color:${COLORS.hovercolor}
 
   }
 `;
 
 
-export default MarkerStyled;
+export default MarkerStyled

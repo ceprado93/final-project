@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
 })
 
 router.put('/edit/:id', (req, res) => {
-const avatar = req.body.avatar
+    const avatar = req.body.avatar
 
     User
-        .findByIdAndUpdate(req.params.id, {avatar})
+        .findByIdAndUpdate(req.params.id, { avatar })
         .then(response => res.json(response))
         .catch(err => res.status(500).json({ code: 500, message: 'Error fetching user', err }))
 })

@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import { Container, Row, Col, Button, ButtonGroup, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Map from './../Map/Map'
 import MyMap from './../Cluster/MyMap'
 import './Continents.css'
 
@@ -26,7 +25,7 @@ class Continents extends Component {
                     <Button variant="dark" onClick={() => this.setState({ showMap: true, showList: false })}> Map</Button>
                     <Button variant="outline-dark" onClick={() => this.setState({ showMap: false, showList: true })}>List</Button>
                 </ButtonGroup>
-                <Container>
+                <Container style={{ marginTop: 50, marginBottom: 300 }}>
 
                     {this.state.showMap && <MyMap lat={26.907911} lng={-32.725575} zoom={1} />}
 

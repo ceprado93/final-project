@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { easyMove } from './style-constants';
+import styled from 'styled-components'
+import { easyMove } from './style-constants'
 
 const MarkerGroup = styled.div`
   display: flex;
@@ -10,4 +10,4 @@ const MarkerGroup = styled.div`
   background-color: #fff;
 `;
 
-export default MarkerGroup;
+export default MarkerGroup

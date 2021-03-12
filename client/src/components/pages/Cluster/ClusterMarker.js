@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { List } from 'immutable';
-import Marker from './Marker';
-import MarkerGroup from './MarkerGroup';
-import MarkerCounter from './MarkerCounter';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { List } from 'immutable'
+import Marker from './Marker'
+import MarkerGroup from './MarkerGroup'
+import MarkerCounter from './MarkerCounter'
 
 class ClusterMarker extends React.PureComponent {
   // eslint-disable-line react/prefer-stateless-function

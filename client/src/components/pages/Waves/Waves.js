@@ -9,7 +9,6 @@ import MyMap from './../Cluster/MyMap'
 import WavesService from './../../../service/wave.service'
 import Alert from './../../shared/Alert/Alert'
 
-
 class Waves extends Component {
 
     constructor() {
@@ -46,7 +45,7 @@ class Waves extends Component {
     }
 
     togglemodalForm(value) {
-       this.setState({ showForm: value })
+        this.setState({ showForm: value })
     }
     handleAlert = (show, title, text) => this.setState({ alert: { show, title, text } })
 

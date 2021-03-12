@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { COLORS } from './style-constants';
+import styled from 'styled-components'
+import { COLORS } from './style-constants'
 
 const MarkerCounter = styled.div`
   display: flex;
@@ -17,4 +17,4 @@ const MarkerCounter = styled.div`
   background-color: ${COLORS.gray64};
 `;
 
-export default MarkerCounter;
+export default MarkerCounter

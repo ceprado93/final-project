@@ -3,7 +3,6 @@ import { Container, Row, Col, ButtonGroup, Button, ListGroup } from 'react-boots
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
 import Spinner from '../../shared/Spinner/Spinner'
-import Map from './../Map/Map'
 import MyMap from './../Cluster/MyMap'
 
 
@@ -35,10 +34,8 @@ class Regions extends Component {
                 reg.map(elm => newRegion.push(elm))
                 const filteredSet = new Set(newRegion)
                 const filteredArr = [...filteredSet]
-                //to do
                 this.setState({
                     region: filteredArr,
-                    // numberOfWaves:this.state.region.length
                 })
             })
             .catch(err => console.log(err))

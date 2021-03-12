@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React, { Component } from 'react'
+import GoogleMapReact from 'google-map-react'
 import waveService from './../../../service/wave.service'
-import supercluster from 'points-cluster';
-import Marker from './Marker';
-import ClusterMarker from './ClusterMarker';
-import mapStyles from './mapStyles.json';
-import SearchBar from '../../shared/SearchBar/SearchBar';
+import supercluster from 'points-cluster'
+import Marker from './Marker'
+import ClusterMarker from './ClusterMarker'
+import mapStyles from './mapStyles.json'
+import SearchBar from '../../shared/SearchBar/SearchBar'
 import Geocode from "react-geocode"
 
 
@@ -166,19 +166,11 @@ class MyMap extends Component {
               />
             );
           })}
-          {/* //   {this.state.ready && this.state.waves.map(elm => <AnyReactComponent */}
-          {/* //     key={elm._id}
-        //     lat={elm.location.coordinates[0]}
-        //     lng={elm.location.coordinates[1]}
-        //     text={elm.title}
-        //   />)} */}
 
         </GoogleMapReact>
 
-
-
       </div>
-    );
+    )
   }
 }
 

@@ -24,7 +24,7 @@ const IndexPage = () => {
 
             <section className="second-section">
                 <h2>OUR WAVES</h2>
-                <Carousel style={{ height: 600 }} slide='true' >
+                <Carousel style={{ height: 600 }} slide={true} >
                     <Carousel.Item interval={3000}>
                         <img height={600}
                             className="d-block w-100 h-200"
@@ -32,7 +32,7 @@ const IndexPage = () => {
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn carouselBtn" >Europe</Link>
+                            <Link to={{ pathname: '/subregion/Europe', state: { lat: 52.310768, lng: 8.679055, zoom: 4 } }} className="btn btn-outline-light btn-lg searchBtn carouselBtn" >Europe</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
@@ -43,7 +43,7 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} className=" carouselBtn btn btn-outline-light btn-lg searchBtn" >Africa</Link>
+                            <Link to={{ pathname: '/subregion/Africa', state: { lat: 1.667755, lng: 21.262689, zoom: 3 } }} className=" carouselBtn btn btn-outline-light btn-lg searchBtn" >Africa</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
@@ -54,7 +54,7 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Asia</Link>
+                            <Link to={{ pathname: '/subregion/Asia', state: { lat: 22.908563, lng: 105.228742, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Asia</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
@@ -65,7 +65,7 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Australia and NZ</Link>
+                            <Link to={{ pathname: '/subregion/AustraliaNZ', state: { lat: -30.697441, lng: 142.698648, zoom: 4 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn">Australia and NZ</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>
@@ -76,7 +76,7 @@ const IndexPage = () => {
                         />
 
                         <Carousel.Caption>
-                            <Link to={{ pathname: '/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >Pacific</Link>
+                            <Link to={{ pathname: '/subregion/Pacific', state: { lat: 12.094258, lng: - 165.853220, zoom: 3 } }} className="carouselBtn btn btn-outline-light btn-lg searchBtn" >Pacific</Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item interval={3000}>

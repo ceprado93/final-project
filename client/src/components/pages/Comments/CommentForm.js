@@ -35,6 +35,8 @@ class CommentForm extends Component {
             .then((response) => {
                 this.props.refreshList()
                 this.setState({ title: '', description: '' })
+                this.props.handleAlert(true, 'New comment sent', 'Thank you for your opinion!')
+
             })
             .catch(err => console.log(err))
     }

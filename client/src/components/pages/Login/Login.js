@@ -4,7 +4,6 @@ import { Form, Button, Container, Row, Col, Jumbotron } from 'react-bootstrap'
 import './Login.css'
 import Alert from './../../shared/Alert/Alert'
 
-
 class Login extends Component {
 
     constructor() {
@@ -16,12 +15,9 @@ class Login extends Component {
                 show: false,
                 title: '',
                 text: ''
-
             }
         }
-
         this.authService = new AuthService()
-
     }
 
     handleInputChange(e) {
@@ -83,7 +79,5 @@ class Login extends Component {
         )
     }
 }
-
-
 
 export default Login

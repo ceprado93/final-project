@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import MarkerStyled from './MarkerStyled';
-import MarkerInGroupStyled from './MarkerInGroupStyled';
-import Spy from './Spy';
+import React from 'react'
+import PropTypes from 'prop-types'
+import MarkerStyled from './MarkerStyled'
+import MarkerInGroupStyled from './MarkerInGroupStyled'
+import Spy from './Spy'
 import { Link } from 'react-router-dom'
 
 class Marker extends React.PureComponent {
@@ -42,4 +42,4 @@ Marker.propTypes = {
   inGroup: PropTypes.bool,
 };
 
-export default Marker;
+export default Marker

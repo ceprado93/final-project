@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import mapStyles from './../Cluster/mapStyles.json';
-import Geocode from "react-geocode"
+import React, { Component } from 'react'
+import GoogleMapReact from 'google-map-react'
+import mapStyles from './../Cluster/mapStyles.json'
 import Marker from './../Cluster/Marker'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -35,25 +34,6 @@ class ModalMap extends Component {
         this.setState({ mapOptions: { center, zoom, bounds, }, });
     }
 
-    // searchPlace(place) {
-
-
-    //     Geocode.setApiKey("AIzaSyDWox-Ew5Z4Wm2OMqZSFRhM-IIwzPtxRgU")
-
-    //     Geocode
-    //         .fromAddress(place.title)
-    //         .then((response) => {
-    //             const { lat, lng } = response.results[0].geometry.location
-    //             this.setState(
-    //                 { mapOptions: { center: { lat, lng }, zoom: 7, bounds: { nw: { lat: lat - 3, lng: lng + 3 }, ne: { lat: lat + 3, lng: lng + 3 }, sw: { lat: lat - 3, lng: lng - 3 }, se: { lat: lat + 1, lng: lng - 1 } } } },
-    //                 () => this.handleMapChange({ center: this.state.mapOptions.center, zoom: this.state.mapOptions.zoom, bounds: this.state.mapOptions.bounds }))
-    //         },
-    //             (error) => {
-    //                 console.error(error)
-    //             }
-    //         )
-    // }
-
     drawMarker(e) {
         this.setState({ point: { lat: e.lat, lng: e.lng } }, () => { this.props.sendLocation(this.state.point) })
     }
@@ -61,8 +41,6 @@ class ModalMap extends Component {
     render() {
         return (
             <div style={{ height: '500px', width: '100%' }}>
-
-                {/* <SearchBar searchPlace={place => this.searchPlace(place)} /> */}
 
                 <GoogleMapReact
                     id="map"
@@ -82,29 +60,12 @@ class ModalMap extends Component {
                         lat={this.state.point.lat}
                         lng={this.state.point.lng}
                         text='Your wave'
-                        
+
                     />}
-
-
-                    {/*           
-                <Marker
-                {...item}
-                  key={item.id}
-                  lat={item.points[0].lat}
-                  lng={item.points[0].lng}
-                />
-              );
-            } */}
-
-                    {/* } */}
-
-
-
-
                 </GoogleMapReact>
 
             </div>
-        );
+        )
     }
 }
 

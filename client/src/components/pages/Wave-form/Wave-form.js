@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import WaveService from '../../../service/wave.service'
 import { Form, Button, Container, Col, Accordion, Card } from 'react-bootstrap'
-import LocationForm from './Location-form'
 import ModalMap from './Modal-map'
 
 class WaveForm extends Component {
@@ -30,7 +29,7 @@ class WaveForm extends Component {
             id: this.props.wave?._id || '',
             createdBy: this.props.loggedUser?._id || this.props.wave?.createdBy,
             changeText: false,
-            
+
         }
 
         this.waveService = new WaveService()
@@ -48,6 +47,7 @@ class WaveForm extends Component {
             .then(() => {
                 this.props.closeModal()
                 this.props.refreshList()
+                this.props.handleAlert(true, 'New petition sent', 'Thanks for helping us with some updates!')
             })
             .catch(err => console.log(err))
     }
@@ -55,7 +55,6 @@ class WaveForm extends Component {
     handleNew(e) {
 
         e.preventDefault()
-
         this.waveService
             .saveWave(this.state)
             .then(() => {
@@ -106,17 +105,17 @@ class WaveForm extends Component {
                     </Form.Row>
 
                     <Form.Row>
-                        <Accordion as={Col}defaultActiveKey="0" size='xl'>
+                        <Accordion as={Col} defaultActiveKey="0" size='xl'>
                             <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="1" onClick={()=>{this.state.changeText? this.showMap(false):this.showMap(true)}}>
-                                    {this.state.changeText? 'Close map':'Choose location'}
+                                <Accordion.Toggle as={Card.Header} eventKey="1" onClick={() => { this.state.changeText ? this.showMap(false) : this.showMap(true) }}>
+                                    {this.state.changeText ? 'Close map' : 'Choose location'}
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="1">
                                     <Card.Body> <ModalMap sendLocation={point => this.setLocation(point)}></ModalMap></Card.Body>
                                 </Accordion.Collapse>
                             </Card>
                         </Accordion>
-                      
+
                     </Form.Row>
                     <Form.Row>
 

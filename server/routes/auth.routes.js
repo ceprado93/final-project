@@ -84,6 +84,16 @@ router.put('/favourite/:waveid', (req, res) => {
             res.status(500).json({ code: 500, message: 'Error fetching user', err })
         })
 })
+router.put('/unfavourite/:waveid', (req, res) => {
+
+    User
+        .findByIdAndUpdate(req.user._id, { $pull: { favourites: req.params.waveid } })
+        .then(response => res.json(response))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ code: 500, message: 'Error fetching user', err })
+        })
+})
 
 router.get('/favourite/:userId', (req, res) => {
 

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { COLORS } from './style-constants';
+import styled from 'styled-components'
+import { COLORS } from './style-constants'
 
 const MarkerInGroupStyled = styled.div`
   display: flex;
@@ -19,4 +19,4 @@ const MarkerInGroupStyled = styled.div`
 `;
 
 
-export default MarkerInGroupStyled;
+export default MarkerInGroupStyled

@@ -25,14 +25,13 @@ const Routes = ({ storeUser, loggedUser, isAdmin, handleAlert }) => {
                 <Route exact path="/waves/:region" render={props => <Waves {...props} loggedUser={loggedUser} handleAlert={handleAlert} />} />
                 <Route exact path="/continents" render={() => <Continents />} />
                 <Route exact path="/subregion/:continent" render={(props) => <Regions {...props} />} />
-                <Route exact path="/details/:id" render={props => <WaveDetails {...props} loggedUser={loggedUser} />} />
+                <Route exact path="/details/:id" render={props => <WaveDetails {...props} loggedUser={loggedUser} handleAlert={handleAlert} />} />
                 {loggedUser === undefined ? <Spinner /> : (
                     <>
                         <Route exact path="/profile" render={() => loggedUser ? <Profile loggedUser={loggedUser} /> : <Redirect to="/" />} />
                         <Route exact path="/admin-page" render={() => isAdmin ? <AdminPage isAdmin={isAdmin} loggedUser={loggedUser} /> : <Redirect to="/" />} />
                     </>)
                 }
-
             </Switch>
         </>
     )

@@ -2,7 +2,7 @@ import { Toast } from "react-bootstrap"
 
 import logo from './../../layout/Navigation/logoblack.png'
 
-const Alert = ({ handleAlert, show, title , text }) => {
+const Alert = ({ handleAlert, show, title, text }) => {
 
     return (
         <Toast autohide show={show} onClose={() => handleAlert(false)} delay={4000} style={{ zIndex: 9999, position: 'fixed', bottom: 38, right: 17, width: 400 }}>
@@ -19,6 +19,5 @@ const Alert = ({ handleAlert, show, title , text }) => {
         </Toast>
     )
 }
-
 
 export default Alert

@@ -29,6 +29,8 @@
 
 .user-box img{
     border-radius: 50%;
+
+    border: 2px solid black;
     width: 40%;
     margin-bottom: 15px;
 }

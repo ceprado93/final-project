@@ -8,7 +8,6 @@ class WaveService {
             withCredentials: true
         })
     }
-
     getWaves = () => this.api.get('/')
     getRegion = continent => this.api.get(`/${continent}`)
     getRegionalWaves = regionalWave => this.api.get(`/${regionalWave}/details`)
@@ -18,7 +17,6 @@ class WaveService {
     editWave = waveDetails => this.api.put(`/edit`, waveDetails)
     acceptWave = waveId => this.api.put(`/accept/${waveId}`,)
     deleteWave = (waveId) => this.api.delete(`/delete/${waveId}`)
-
 }
 
 export default WaveService
