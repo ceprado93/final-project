@@ -33,13 +33,12 @@ class Comments extends Component {
     render() {
         return (
             <>
-                <Container as="section">
-
-                    <h3>Comments</h3>
+              
+                    <h3 style={{marginTop:30,letterSpacing:'.1em'}}>Comments</h3>
                     <CommentForm wave={this.props.wave_id} refreshList={() => this.loadComments()} />
                     {this.state.comments?.map(elm => { return elm.isAccepted && <CommentCard userId={this.props.commentUser} refreshList={() => this.loadComments()} key={elm._id}{...elm} /> })}
 
-                </Container>
+          
 
             </>
         )

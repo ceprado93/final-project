@@ -28,6 +28,7 @@ class WaveForm extends Component {
             level: this.props.wave?.level || '',
             tide: this.props.wave?.tide || '',
             id: this.props.wave?._id || '',
+            createdBy: this.props.loggedUser?._id || this.props.wave?.createdBy,
             changeText: false,
             
         }
@@ -56,10 +57,11 @@ class WaveForm extends Component {
         e.preventDefault()
 
         this.waveService
-            .editWave(this.state)
+            .saveWave(this.state)
             .then(() => {
                 this.props.closeModal()
                 this.props.refreshList()
+                this.props.handleAlert(true, 'New petition sent', 'Thank you for helping us with new waves!')
             })
             .catch(err => console.log(err))
     }

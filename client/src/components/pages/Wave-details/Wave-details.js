@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Container, Row, Col, Modal, ButtonGroup, Button } from 'react-bootstrap'
+import { Container, Row, Col, Modal, ButtonGroup, Button, Accordion, Table, Card } from 'react-bootstrap'
 import AuthService from './../../../service/auth.service'
 import { Link } from 'react-router-dom'
 import WaveService from '../../../service/wave.service'
@@ -55,6 +55,8 @@ class WaveDetails extends Component {
     render() {
         return (
             <>
+                { this.state.wave?.isAccepted ?
+                <>
                 <section className="wave-det-header" style={{ backgroundImage: `url(${this.state.wave?.images[0].url})` }}>
                     <h1>{this.state.wave?.title}</h1>
                     <img src={downArrow} onClick={() => this.scrollDown()} alt="arrow" />
@@ -69,16 +71,15 @@ class WaveDetails extends Component {
                                 <Col md={{ span: 6 }}>
                                     <h1>{this.state.wave?.title}</h1>
                                     <ButtonGroup size="mb" style={{ marginBottom: 20 }}>
-                                        <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>
+                                        {this.props.loggedUser?._id === this.state.wave?.createdBy && <Button variant="dark" onClick={() => this.togglemodalForm(true)} > Edit</Button>}
+                                        
                                         <Link to={`/waves/${this.state.wave?.region}`} className="btn btn-outline-dark">Back to {this.state.wave?.region}</Link>
                                         <Button variant="dark" onClick={() => this.addFavourite()} > Add to favourites {this.state.added && '🤍'}</Button>
                                     </ButtonGroup>
                                     <hr />
                                     <p>{this.state.wave?.description}</p>
                                     <hr />
-                                    <p><strong>Swell Range:</strong> {this.state.wave?.swellRange} m </p>
-                                    <p><strong>Quality</strong> {this.state.wave?.quality}</p>
-                                    {/* to do */}
+
                                 </Col>
 
                                 <Col md={6}>
@@ -88,7 +89,74 @@ class WaveDetails extends Component {
                                 </Col>
 
                             </Row>
+                            <Row>
+                                <Col md={{span:8, offset:2}} className="conditions">
+                                <Accordion defaultActiveKey="0">
 
+                                    <Card>
+                                        <Card.Header>
+                                            <Accordion.Toggle as={Card.Header} eventKey="1">Ideal conditions</Accordion.Toggle>
+                                        </Card.Header>
+                                        <Accordion.Collapse eventKey="1">
+                                            <Card.Body><Table striped bordered hover>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>Type:</strong> </td>
+                                                        <td>{this.state.wave?.type} </td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Swell Range:</strong> </td>
+                                                        <td>{this.state.wave?.swellRange} m </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Quality</strong></td>
+                                                        <td>{this.state.wave?.quality}</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Sea Bed:</strong> </td>
+                                                        <td>{this.state.wave?.seaBed}</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Swell Direction:</strong> </td>
+                                                        <td>{this.state.wave?.swellDirections}º</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Wind Direction:</strong> </td>
+                                                        <td>{this.state.wave?.windDirections}º</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Best Season:</strong> </td>
+                                                        <td>{this.state.wave?.bestSeason}</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Crowd:</strong> </td>
+                                                        <td>{this.state.wave?.crowd}</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Level:</strong> </td>
+                                                        <td>{this.state.wave?.level}</td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td><strong>Tide:</strong> </td>
+                                                        <td>{this.state.wave?.tide}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </Table></Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card>
+                                </Accordion>
+                                </Col>
+                            </Row>
+                            <hr></hr>
                             <Row>
                                 <Col><Comments wave_id={this.state.wave._id} commentUser={this.props.loggedUser?._id}></Comments></Col>
                             </Row>
@@ -105,6 +173,15 @@ class WaveDetails extends Component {
                         :
                         <Spinner />}
                 </Container>
+                
+                </>
+                :
+                <>
+                <section className="pending-wave">
+                <h1>Your wave hasn´t been accepted yet!</h1>
+                </section>
+                </>
+    }
             </>
         )
     }

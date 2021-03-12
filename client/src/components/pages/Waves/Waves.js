@@ -5,9 +5,10 @@ import WavesList from './WavesList'
 import Spinner from '../../shared/Spinner/Spinner'
 import WaveForm from './../Wave-form/Wave-form'
 import './Waves.css'
-import Map from './../Map/Map'
 import MyMap from './../Cluster/MyMap'
 import WavesService from './../../../service/wave.service'
+import Alert from './../../shared/Alert/Alert'
+
 
 class Waves extends Component {
 
@@ -18,7 +19,13 @@ class Waves extends Component {
             showForm: false,
             lat: undefined,
             lng: undefined,
-            zoom: 4
+            zoom: 4,
+            alert: {
+                show: false,
+                title: '',
+                text: ''
+
+            }
         }
 
         this.wavesService = new WavesService()
@@ -35,12 +42,13 @@ class Waves extends Component {
                 const filteredArr = response.data
                 this.setState({ waves: filteredArr, lat: filteredArr[0].location.coordinates[0], lng: filteredArr[0].location.coordinates[1], zoom: 5 })
             })
-            .catch(err => console.log(err))
+            .catch(err => this.setState({ alert: { show: true, title: 'Error', text: err.response.data.message } }))
     }
 
     togglemodalForm(value) {
-        this.setState({ showForm: value })
+       this.setState({ showForm: value })
     }
+    handleAlert = (show, title, text) => this.setState({ alert: { show, title, text } })
 
     render() {
         return (
@@ -67,7 +75,7 @@ class Waves extends Component {
                         <Modal.Title>New wave</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <WaveForm closeModal={() => this.togglemodalForm(false)} modalType="New" refreshList={() => this.loadWaves()} />
+                        <WaveForm closeModal={() => this.togglemodalForm(false)} modalType="New" refreshList={() => this.loadWaves()} loggedUser={this.props.loggedUser} handleAlert={this.props.handleAlert} />
                     </Modal.Body>
                 </Modal>
             </>

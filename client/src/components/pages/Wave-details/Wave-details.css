@@ -38,4 +38,29 @@ body{
 .active{
     display: block;
 }
+.conditions{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: .1em;
+}
+.pending-wave{
+    background-image: url('https://www.surfline.com/cdn-cgi/image/q=85,f=auto,fit=contain/https://d14fqx6aetz9ka.cloudfront.net/wp-content/uploads/2019/04/02115205/rambo-estrada-new-zealand-7R306989.jpg');
+    margin-top: 0;
+    width: 100%;
+    height: 780px;
+    background-size: cover;
+    background-position: 100% 60%;
+    margin-bottom: 100px;
+}
 
+.pending-wave h1{
+    padding-top: 330px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 3em;
+    letter-spacing: .2em;
+    color:white;
+    text-transform: uppercase;
+    
+}

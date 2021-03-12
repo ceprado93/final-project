@@ -5,7 +5,7 @@ const WavesList = ({ waves }) => {
 
     return (
         <Row>
-            {waves?.map((elm, idx) => <WaveCard key={idx} {...elm} />)}
+            {waves?.map((elm, idx) => { return elm.isAccepted && <WaveCard key={idx} {...elm} />})}
         </Row>
     )
 }
