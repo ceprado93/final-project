@@ -73,5 +73,5 @@ Base Url => `heroku/api`
 
 ## Authors
 
-* Carlos Prado - [Github Page] (https://github.com/ceprado93/)
-* Eva Vírseda - [Github Page] (https://github.com/evavirseda)
+* Carlos Prado - [Github Page](https://github.com/ceprado93/)
+* Eva Vírseda - [Github Page](https://github.com/evavirseda)
