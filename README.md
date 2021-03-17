@@ -9,10 +9,10 @@
 
 ## Technologies
 ***
-*[React.js]
-*[Node.js]
-*[Express.js]
-*[React Bootstrap]
+* React.js
+* Node.js
+* Express.js
+* React Bootstrap
 
 -------------------------------------------------------------------
 
