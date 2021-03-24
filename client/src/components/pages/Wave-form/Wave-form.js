@@ -13,7 +13,7 @@ class WaveForm extends Component {
             imageUrl: this.props.wave?.images[0].url || '',
             imageAuthor: this.props.wave?.images[0].title || '',
             latitude: this.props.wave?.location.coordinates[0] || 0,
-            longitude: this.props.wave?.location.coordinates[0] || 0,
+            longitude: this.props.wave?.location.coordinates[1] || 0,
             region: this.props.wave?.region || '',
             continent: this.props.wave?.continent || '',
             type: this.props.wave?.type || '',

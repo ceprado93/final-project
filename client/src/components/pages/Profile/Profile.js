@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Container, Row, Col, Card, Carousel, Accordion, Button, Modal,Form } from 'react-bootstrap'
+import { Container, Row, Col, Card, Carousel, Accordion, Button, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Profile.css'
 import AuthService from './../../../service/auth.service'
@@ -14,8 +14,8 @@ class Profile extends Component {
         this.state = {
             waves: [],
             comments: undefined,
-            avatar:'',
-            showForm:false
+            avatar: '',
+            showForm: false
         }
         this.authService = new AuthService()
         this.commentService = new CommentService()
@@ -25,6 +25,7 @@ class Profile extends Component {
 
     componentDidMount() {
         this.load()
+        window.scrollTo(0, 0)
     }
 
     load() {
@@ -70,14 +71,14 @@ class Profile extends Component {
 
         e.preventDefault()
         this.profileService
-            .editAccount(this.props.loggedUser._id,this.state.avatar)
-            .then(()=>this.setState({showForm:false},()=>console.log(this.props.loggedUser)))
-            .catch(err=>console.log(err))
+            .editAccount(this.props.loggedUser._id, this.state.avatar)
+            .then(() => this.setState({ showForm: false }, () => console.log(this.props.loggedUser)))
+            .catch(err => console.log(err))
     }
 
     render() {
 
-  
+
         return (
             <>
                 <section className="profile-head">
@@ -140,7 +141,7 @@ class Profile extends Component {
                             </Carousel>
                         </Col>
                     </Row>
-                    <Button variant="outline-dark" onClick={() => this.deleteAccount()}>Delete your account</Button>
+                    <Button style={{ marginBottom: 50 }} variant="outline-dark" onClick={() => this.deleteAccount()}>Delete your account</Button>
 
                     <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)} size='xl'>
                         <Modal.Header closeButton>

@@ -13,12 +13,16 @@ class Signup extends Component {
             password: '',
             alert: {
                 show: false,
-                title:'',
+                title: '',
                 text: ''
 
             }
         }
         this.authService = new AuthService()
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
     }
 
     handleInputChange(e) {
@@ -36,9 +40,9 @@ class Signup extends Component {
                 this.props.storeUser(response.data)
                 this.props.history.push('/')
             })
-            .catch(err => this.setState({ alert: { show:true, title:'Error', text: err.response.data.message } }))
+            .catch(err => this.setState({ alert: { show: true, title: 'Error', text: err.response.data.message } }))
     }
-    handleAlert = (show, title, text) => this.setState({ alert: { show,title, text } })
+    handleAlert = (show, title, text) => this.setState({ alert: { show, title, text } })
 
     render() {
         return (
@@ -74,7 +78,7 @@ class Signup extends Component {
                         </Row>
 
                     </Container>
-                    <Alert handleAlert={this.handleAlert} show={this.state.alert.show} title={this.state.alert.title}text={this.state.alert.text} />
+                    <Alert handleAlert={this.handleAlert} show={this.state.alert.show} title={this.state.alert.title} text={this.state.alert.text} />
 
                 </section>
             </>

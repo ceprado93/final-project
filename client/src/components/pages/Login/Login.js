@@ -20,6 +20,10 @@ class Login extends Component {
         this.authService = new AuthService()
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     handleInputChange(e) {
         const { name, value } = e.target
         this.setState({ [name]: value })

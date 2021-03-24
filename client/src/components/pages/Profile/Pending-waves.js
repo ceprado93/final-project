@@ -64,7 +64,7 @@ class PendingWaves
                         </Row>
                         <hr></hr>
 
-                        <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)}>
+                        <Modal show={this.state.showForm} onHide={() => this.togglemodalForm(false)} size='xl'>
                             <Modal.Header closeButton>
                                 <Modal.Title>Edit wave</Modal.Title>
                             </Modal.Header>

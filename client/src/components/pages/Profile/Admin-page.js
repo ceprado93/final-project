@@ -18,7 +18,7 @@ class AdminPage extends Component {
 
     componentDidMount() {
         this.load()
-
+        window.scrollTo(0, 0)
     }
 
     load() {

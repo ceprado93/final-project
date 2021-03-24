@@ -22,7 +22,9 @@ class Regions extends Component {
 
     componentDidMount() {
         this.getRegion()
+        window.scrollTo(0, 0)
     }
+
 
     getRegion() {
         const newRegion = []

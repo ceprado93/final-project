@@ -32,6 +32,7 @@ class Waves extends Component {
 
     componentDidMount() {
         this.loadWaves()
+        window.scrollTo(0, 0)
     }
 
     loadWaves() {
